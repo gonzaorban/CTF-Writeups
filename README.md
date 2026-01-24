@@ -1,6 +1,7 @@
 # 🔐 Cybersecurity & CTF Writeups
 
-> **Investigación y explotación de vulnerabilidades en entornos controlados.** > *Plataformas: HackTheBox (HTB), SoftwareSeguro.*
+> **Investigación y explotación de vulnerabilidades en entornos controlados.**
+> *Plataformas: HackTheBox (HTB), SoftwareSeguro.*
 
 Este repositorio documenta mis soluciones (writeups), metodologías y scripts desarrollados para resolver desafíos de seguridad informática y competencias CTF.
 
@@ -10,10 +11,10 @@ Este repositorio documenta mis soluciones (writeups), metodologías y scripts de
 
 El contenido abarca diversas ramas de la ciberseguridad, enfocándose en la comprensión profunda de las vulnerabilidades y su mitigación.
 
-* **Binary Exploitation (Pwn):** Stack Overflow, Format String, Shellcoding.
-* **Web Security:** IDOR, XSS, CSRF, SQL Injection, JWT Attacks, Race Conditions.
-* **Cryptography:** RSA Attacks, Hashing collision/cracking.
-* **Reverse Engineering:** Análisis estático y dinámico de binarios.
+* **Web Security:** Race Conditions (Turbo Intruder), CSP Bypass, IDOR, XSS to CSRF, JWT Forgery, Mass Assignment, IP Spoofing.
+* **SQL Injection:** Blind SQLi, Authentication Bypass, **Exif Metadata Injection**.
+* **Cryptography:** RSA Attacks (Common Factor), Custom Ciphers (Statistical Analysis), Offline Hash Cracking (Salted).
+* **Forensics & Coding:** Image Recovery (Parity Logic), Binary Analysis.
 
 ---
 
@@ -21,60 +22,78 @@ El contenido abarca diversas ramas de la ciberseguridad, enfocándose en la comp
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Assembly](https://img.shields.io/badge/Assembly-x64-555555?style=for-the-badge)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white)
-![GDB](https://img.shields.io/badge/GDB-Debugger-CC0000?style=for-the-badge)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![ExifTool](https://img.shields.io/badge/ExifTool-Metadata-green?style=for-the-badge)
+![Turbo Intruder](https://img.shields.io/badge/Turbo_Intruder-Concurrency-red?style=for-the-badge)
 
-**Librerías clave:** `pwntools`, `requests`.
+**Librerías clave:** `pwntools`, `requests`, `hashlib`, `aiohttp` (para fuerza bruta asíncrona).
 
 ---
 
 ## ⚡ Featured Techniques
 
-Desglose técnico de vectores de ataque específicos utilizados en los desafíos. Haz clic para ver los detalles.
+Desglose técnico de vectores de ataque avanzados extraídos de los desafíos más complejos del repositorio.
 
 <details>
-<summary><strong>🕸️ Web: Bypass de is_admin() & RCE en WordPress</strong></summary>
+<summary><strong>🏎️ Concurrency: Race Condition con Turbo Intruder (Scripting)</strong></summary>
 <br>
-Análisis de vulnerabilidades lógicas en plugins de WordPress que permiten evadir la verificación de privilegios (<code>is_admin()</code>) y escalar a Ejecución Remota de Código (RCE) mediante la subida de archivos maliciosos.
+Explotación de una condición de carrera en lógica de negocios ("El Analista") donde se requería asociar ventas a vendedores.
+<ul>
+  <li><strong>Herramienta:</strong> Turbo Intruder (Extensión de Burp).</li>
+  <li><strong>Técnica:</strong> Desarrollo de un script en Python (<code>queueRequests</code>) utilizando el motor <code>RequestEngine</code> para enviar ráfagas de peticiones concurrentes (Cluster Bomb) y superar las validaciones de estado del servidor.</li>
+</ul>
 </details>
 
 <details>
-<summary><strong>💥 Pwn: Inyección de Shellcode y manipulación de registros (EBX)</strong></summary>
+<summary><strong>🛡️ Web: XSS + CSRF Chaining & CSP Bypass</strong></summary>
 <br>
-Explotación de binarios mediante la inyección de shellcode personalizado en el stack y control del flujo de ejecución sobrescribiendo el registro <code>EIP</code>, asegurando la alineación correcta y manipulando <code>EBX</code> para llamadas al sistema.
+Bypass de una Política de Seguridad de Contenido (CSP) estricta en "El blog de Pepe".
+<ul>
+  <li><strong>Técnica:</strong> Extracción de un <code>nonce</code> válido del código fuente para inyectar un bloque <code>&lt;script&gt;</code> autorizado.</li>
+  <li><strong>Impacto:</strong> El XSS se escala a un ataque CSRF utilizando jQuery (<code>$.post</code>) para forzar acciones en nombre de la víctima (publicar comentarios no deseados).</li>
+</ul>
 </details>
 
 <details>
-<summary><strong>💉 SQLi: Inyección basada en booleanos y metadatos (SQLite/ExifTool)</strong></summary>
+<summary><strong>📸 SQLi: Inyección vía Metadatos de Imagen (Exif)</strong></summary>
 <br>
-Extracción de datos mediante inyecciones SQL ciegas (Boolean-based). Técnica avanzada de inyección de payloads SQL dentro de los metadatos EXIF de una imagen para ser procesados por un backend vulnerable.
+Inyección SQL atípica en el procesamiento de archivos subidos.
+<ul>
+  <li><strong>Vector:</strong> El backend (SQLite) leía el metadato EXIF <code>Make</code> sin sanitizar.</li>
+  <li><strong>Payload:</strong> Uso de <strong>ExifTool</strong> para inyectar sentencias SQL en la etiqueta <code>Make</code> de una imagen JPG.
+  <br><code>exiftool -Make="'|| (SELECT user_id FROM images LIMIT 1)||" test.jpg</code></li>
+</ul>
 </details>
 
 <details>
-<summary><strong>🔐 Crypto: Ataque de factor común en RSA & Cracking offline</strong></summary>
+<summary><strong>🔐 Crypto: RSA Common Factor & Custom Algo Analysis</strong></summary>
 <br>
-Recuperación de claves privadas RSA utilizando ataques de factor común (cuando el módulo <code>N</code> comparte factores primos). Fuerza bruta offline de PINs utilizando técnicas de salting y rainbow tables.
+<ul>
+  <li><strong>RSA:</strong> Recuperación de claves privadas mediante el ataque de factor común (GCD) cuando dos módulos $N_1$ y $N_2$ comparten un número primo $q$.</li>
+  <li><strong>Custom Cipher:</strong> Criptoanálisis de un algoritmo personalizado (César + Ruido aleatorio). Solución mediante análisis estadístico de frecuencia de palabras y eliminación de ruido basada en la longitud de la clave.</li>
+</ul>
 </details>
 
 <details>
-<summary><strong>🏎️ Race Condition: Explotación de concurrencia</strong></summary>
+<summary><strong>🌐 Web: IP Spoofing & JWT Forgery</strong></summary>
 <br>
-Uso de <strong>Turbo Intruder</strong> en Burp Suite para enviar múltiples solicitudes simultáneas, explotando ventanas de tiempo críticas en la lógica de negocio (ej. canje de cupones, transferencias).
+<ul>
+  <li><strong>IP Spoofing:</strong> Evasión de restricciones de votación por IP mediante la inyección del header <code>X-Forwarded-For</code> iterando sobre un rango de IPs falsas.</li>
+  <li><strong>JWT:</strong> Filtración de una <code>SECRET KEY</code> expuesta en un endpoint JSONP para forjar tokens de administrador válidos (<code>HS256</code>).</li>
+</ul>
 </details>
 
 ---
 
 ## 📄 Writeups & Reports
 
-Documentación detallada de competencias recientes.
+Documentación detallada de competencias y laboratorios.
 
 | Documento | Descripción |
 | :--- | :--- |
-| **[📄 Ver PDF: HTB University 2025](./path/to/HTB_University_2025.pdf)** | Writeup completo de los desafíos de la competencia universitaria de HackTheBox. |
-| **[📄 Ver PDF: SoftwareSeguro - HackLab](./path/to/SoftwareSeguro_HackLab.pdf)** | Informe técnico sobre los laboratorios y máquinas de SoftwareSeguro. |
+| **[📄 Ver PDF: SoftwareSeguro - HackLab](./SoftwareSeguro_HackLab.pdf)** | Informe técnico completo (+120 págs). Incluye scripts en Python para fuerza bruta, decodificadores Java para recuperación de imágenes, y guías paso a paso de Burp Suite. |
+| **[📄 Ver PDF: HTB University 2025](./HTB_University_2025.pdf)** | Writeup de los desafíos de la competencia universitaria de HackTheBox. |
 
 ---
 
