@@ -90,10 +90,10 @@ Inyección SQL atípica en el procesamiento de archivos subidos.
 
 Documentación detallada de competencias y laboratorios.
 
-| Documento | Descripción |
+| Documento (PDF) | Descripción |
 | :--- | :--- |
-| **[📄 Ver PDF: SoftwareSeguro - HackLab](./SoftwareSeguro_HackLab.pdf)** | Informe técnico completo (+120 págs). Incluye scripts en Python para fuerza bruta, decodificadores Java para recuperación de imágenes, y guías paso a paso de Burp Suite. |
-| **[📄 Ver PDF: HTB University 2025](./HTB_University_2025.pdf)** | Writeup de los desafíos de la competencia universitaria de HackTheBox. |
+| **[📄 SoftwareSeguro - HackLab](./SoftwareSeguro_HackLab.pdf)** | Informe técnico completo (+120 págs). Incluye scripts en Python para fuerza bruta, decodificadores Java para recuperación de imágenes, y guías paso a paso de Burp Suite. |
+| **[📄 HTB University 2025](./HTB_University_2025.pdf)** | Writeup de los desafíos de la competencia universitaria de HackTheBox. |
 
 ---
 
