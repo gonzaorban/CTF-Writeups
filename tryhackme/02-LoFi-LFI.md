@@ -16,14 +16,14 @@ El servidor no sanitiza correctamente la entrada del usuario, permitiendo el uso
 El objetivo es leer el archivo `flag.txt` ubicado en la raíz del sistema (`/`). Calculamos que necesitamos retroceder aproximadamente 4 niveles para llegar a la raíz.
 
 **Payload:**
-```http
+```http```
 http://MACHINE_IP/?page=../../../../flag.txt
 
 ## 4. Resultado
 El servidor procesó la ruta, leyó el archivo /flag.txt y mostró su contenido en el navegador: flag{...}.
 
 
-🛡️ Remediación
+## 🛡️ Remediación
 Evitar pasar nombres de archivos directamente en la URL.
 Utilizar una Allowlist (Lista blanca) de archivos permitidos (ej. ['home', 'about', 'contact']).
 Sanitizar el input eliminando caracteres como ../ o /.
