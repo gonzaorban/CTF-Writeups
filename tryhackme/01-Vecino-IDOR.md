@@ -20,7 +20,7 @@ Esto sugiere una vulnerabilidad de **Insecure Direct Object Reference (IDOR)**. 
 Para confirmar la vulnerabilidad, modificamos el parámetro `user` en la URL, cambiándolo de `guest` a `admin` (usuario mencionado en los comentarios del código fuente).
 
 **Payload:**
-```http
+```http```
 GET /profile?user=admin
 
 ## 4. Resultado
@@ -28,7 +28,7 @@ GET /profile?user=admin
 El servidor devolvió el perfil del administrador, el cual contenía la bandera: flag{...}.
 
 
-🛡️ Remediación (Developer Perspective)
+## 🛡️ Remediación (Developer Perspective)
 Para corregir esto en el Backend:
 No confiar en el input del usuario para referencias a objetos de base de datos.
 Implementar Middleware de Autorización que verifique si req.user.id coincide con el recurso solicitado.
