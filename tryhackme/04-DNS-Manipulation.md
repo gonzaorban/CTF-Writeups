@@ -16,11 +16,11 @@ El servidor DNS de la máquina víctima (DNS Privado) contiene registros que no 
 Utilizamos el operador `@` de `dig` para especificar el servidor de nombres destino. Solicitamos registros de tipo `TXT`, comunes para ocultar información en CTFs.
 
 **Comando:**
-```bash
+```bash```
 dig @MACHINE_IP givemetheflag.com TXT
 
 ## 4. Resultado
 El servidor DNS interno respondió con un registro TXT que contenía la bandera: flag{...}.
 
-📝 Nota Técnica
+## 📝 Nota Técnica
 En un entorno real, esto simula la enumeración de una red interna (Intranet) donde los servidores DNS internos resuelven dominios corporativos que no son accesibles desde el exterior.
