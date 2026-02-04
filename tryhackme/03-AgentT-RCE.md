@@ -10,6 +10,7 @@ Al inspeccionar las cabeceras HTTP de la respuesta del servidor (usando `curl -I
 **Comando:**
 ```bash```
 curl -I http://MACHINE_IP
+![](./assets/3-Imagen1.jpeg)
 
 Hallazgo Crítico: La cabecera X-Powered-By reveló una versión de PHP extremadamente específica y no estándar:
 X-Powered-By: PHP/8.1.0-dev
