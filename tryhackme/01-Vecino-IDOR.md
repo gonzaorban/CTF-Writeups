@@ -7,8 +7,6 @@
 ## 1. Reconocimiento
 Al acceder a la aplicación web, nos encontramos con un panel de inicio de sesión. Inspeccionando el código fuente (`Ctrl + U`), encontramos credenciales hardcodeadas en un comentario HTML.
 
-![Código Fuente con Credenciales](./assets/vecino-source.png)
-
 ## 2. Análisis de Vulnerabilidad
 Tras iniciar sesión con `guest:guest`, observamos que la URL contiene un parámetro directo que referencia al usuario actual:
 
@@ -25,11 +23,14 @@ GET /profile?user=admin
 
 ## 4. Resultado
 
-El servidor devolvió el perfil del administrador, el cual contenía la bandera: flag{...}.
+El servidor devolvió el perfil del administrador, el cual contenía la bandera
 
 
 ## 🛡️ Remediación (Developer Perspective)
 Para corregir esto en el Backend:
+
 No confiar en el input del usuario para referencias a objetos de base de datos.
+
 Implementar Middleware de Autorización que verifique si req.user.id coincide con el recurso solicitado.
+
 Usar IDs aleatorios (UUIDs) en lugar de nombres secuenciales o predecibles.
