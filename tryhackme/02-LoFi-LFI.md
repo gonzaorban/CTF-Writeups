@@ -7,8 +7,6 @@
 ## 1. Reconocimiento
 La aplicación web permite seleccionar distintas "pistas" o vistas mediante un parámetro en la URL, por ejemplo: `?page=home`. Esto indica que el servidor está incluyendo archivos dinámicamente basándose en este input.
 
-!(./assets/lofi-recon.png)
-
 ## 2. Análisis de Vulnerabilidad
 El servidor no sanitiza correctamente la entrada del usuario, permitiendo el uso de caracteres de recorrido de directorios (`../`). Esto permite escapar de la raíz del servidor web (`/var/www/html`) y acceder al sistema de archivos del servidor (LFI).
 
@@ -17,7 +15,10 @@ El objetivo es leer el archivo `flag.txt` ubicado en la raíz del sistema (`/`).
 
 **Payload:**
 ```http```
+
 http://MACHINE_IP/?page=../../../../flag.txt
+
+![](./assets/2-Imagen1.jpeg)
 
 ## 4. Resultado
 El servidor procesó la ruta, leyó el archivo /flag.txt y mostró su contenido en el navegador: flag{...}.
