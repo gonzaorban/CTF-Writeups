@@ -1,7 +1,8 @@
 # 🌐 Dig Dug - DNS 
 
 **Plataforma:** TryHackMe  
-**Categoría:** Network / DNS  
+**Categoría:** Network / Enumeration  
+**Vulnerabilidad:** DNS Enumeration (TXT Records) / Information Disclosure  
 **Dificultad:** Fácil  
 
 ## 1. El Problema

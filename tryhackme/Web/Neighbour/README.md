@@ -1,7 +1,8 @@
-# 🕵️ Vecino - IDOR Challenge
+# 🕵️ Vecino
 
 **Plataforma:** TryHackMe  
-**Categoría:** Web / Broken Access Control  
+**Categoría:** Web Exploitation  
+**Vulnerabilidad:** Insecure Direct Object Reference (IDOR) / Broken Access Control    
 **Dificultad:** Fácil  
 
 ## 1. Reconocimiento

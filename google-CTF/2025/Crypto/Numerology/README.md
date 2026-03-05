@@ -1,8 +1,9 @@
-# 🔢 Crypto Numerology - Custom Cipher Challenge
+# 🔢 Numerology
 
-**Plataforma:** Google CTF
-**Categoría:** Criptografía / Ingeniería Inversa
-**Dificultad:** Fácil (50 Puntos)
+**Plataforma:** Google CTF 2025   
+**Categoría:** Criptografía  
+**Vulnerabilidad:** Known-Plaintext Attack (KPA) / Weak Cipher Initialization  
+**Dificultad:** Fácil (50 Puntos)  
 
 ### 📂 Estructura de Archivos
 * `crypto_numerology.py`: Código fuente decompilado del algoritmo original.

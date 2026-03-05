@@ -1,7 +1,8 @@
 # 🕵️ Agent T - Remote Code Execution (PHP Backdoor)
 
 **Plataforma:** TryHackMe  
-**Categoría:** Web / RCE  
+**Categoría:** Web Exploitation / CVE Exploitation  
+**Vulnerabilidad:** Remote Code Execution (RCE) / PHP 8.1.0-dev Backdoor  
 **Dificultad:** Fácil  
 
 ## 1. Reconocimiento

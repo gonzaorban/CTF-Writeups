@@ -1,7 +1,8 @@
 # 🎧 Lo-fi beats - Local File Inclusion (LFI)
 
 **Plataforma:** TryHackMe  
-**Categoría:** Web / Path Traversal  
+**Categoría:** Web Exploitation  
+**Vulnerabilidad:** Local File Inclusion (LFI)  
 **Dificultad:** Fácil  
 
 ## 1. Reconocimiento
