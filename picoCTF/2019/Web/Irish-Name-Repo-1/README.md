@@ -1,4 +1,4 @@
-# 🍀 Irish-Name-Repo 1 - SQL Injection
+# 🍀 Irish-Name-Repo 1
 
 **Plataforma:** picoCTF (Edición 2019)  
 **Categoría:** Web Exploitation

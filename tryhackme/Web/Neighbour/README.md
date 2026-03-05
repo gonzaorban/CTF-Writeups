@@ -1,4 +1,4 @@
-# 🕵️ Vecino
+# 🕵️ Neighbour
 
 **Plataforma:** TryHackMe  
 **Categoría:** Web Exploitation  

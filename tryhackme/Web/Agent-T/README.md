@@ -1,4 +1,4 @@
-# 🕵️ Agent T - Remote Code Execution (PHP Backdoor)
+# 🕵️ Agent T
 
 **Plataforma:** TryHackMe  
 **Categoría:** Web Exploitation / CVE Exploitation  

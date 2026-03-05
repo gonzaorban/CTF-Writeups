@@ -1,4 +1,4 @@
-# 🌐 Dig Dug - DNS 
+# 🌐 Dig Dug
 
 **Plataforma:** TryHackMe  
 **Categoría:** Network / Enumeration  
