@@ -1,7 +1,7 @@
 # 🔐 Cybersecurity & CTF Writeups
 
 > **Investigación y explotación de vulnerabilidades en entornos controlados.**
-> *Plataformas: HackTheBox (HTB), SoftwareSeguro.*
+> *Plataformas: TryHackMe, SoftwareSeguro, picoCTF, HackTheBox (HTB).*
 
 Este repositorio documenta mis soluciones (writeups), metodologías y scripts desarrollados para resolver desafíos de seguridad informática y competencias CTF.
 
