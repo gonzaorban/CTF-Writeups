@@ -15,50 +15,12 @@ CTF-Writeups/
 └── *.pdf             ← writeups completos en PDF (HTB University, SoftwareSeguro)
 ```
 
-| Plataforma | Desafío | Categoría |
-| :--- | :--- | :--- |
-| 🏴 **SoftwareSeguro — HackLab** | [→ Ver todos los desafíos](./HackLab/) | — |
-| | [Uso del Inspector](./HackLab/introduccion/desafio-1-uso-del-inspector/) | Introducción |
-| | [Local Storage and Cookie](./HackLab/introduccion/desafio-37-local-storage-and-cookie/) | Introducción |
-| | [Aldeas Inseguras](./HackLab/idor/desafio-4-aldeas-inseguras/) | IDOR |
-| | [Apagar la IA — HackLab 2023](./HackLab/idor/desafio-5-apagar-la-ia-hacklab-2023/) | IDOR |
-| | [Turnero — HackLab 2024](./HackLab/idor/desafio-22-turnero-hackllab-2024/) | IDOR |
-| | [Calculadora — HackLab 2024](./HackLab/idor/desafio-23-calculadora-hackllab-2024/) | IDOR |
-| | [Aldeas Inseguras v2](./HackLab/idor/desafio-35-aldeas-inseguras-v2/) | IDOR |
-| | [Notas Universitarias](./HackLab/idor/desafio-36-notas-universitarias/) | IDOR |
-| | [Consultas Multas](./HackLab/tokens/desafio-15-consultas-multas-falta-hacer/) | Tokens / JWT |
-| | [Búsqueda de Usuarios](./HackLab/xss/desafio-6-busqueda-de-usuarios/) | XSS |
-| | [El Blog de Pepe — HackLab 2023](./HackLab/xss/desafio-7-el-blog-de-pepe-hacklab-2023/) | XSS |
-| | [El Blog de Pepe Segurizado](./HackLab/xss/desafio-8-el-blog-de-pepe-segurizado/) | XSS |
-| | [Blog HackLab 2024](./HackLab/xss/desafio-29-blog-hacklab-hacklab-2024/) | XSS |
-| | [NSA](./HackLab/sql-injection/desafio-2-nsa/) | SQL Injection |
-| | [Home Banking](./HackLab/sql-injection/desafio-3-home-banking/) | SQL Injection |
-| | [Galería de Imágenes — HackLab 2023](./HackLab/sql-injection/desafio-20-galeria-de-imagenes-hacklab-2023/) | SQL Injection |
-| | [Mis Viajes](./HackLab/sql-injection/desafio-27-mis-viajes/) | SQL Injection |
-| | [Algoritmo Personalizado — HackLab 2023](./HackLab/criptoanalisis/desafio-9-algoritmo-personalizado-hacklab-2023/) | Criptoanálisis |
-| | [Mensaje Cifrado](./HackLab/criptoanalisis/desafio-10-mensaje-cifrado/) | Criptoanálisis |
-| | [Recuperación de Imagen — HackLab 2023](./HackLab/criptoanalisis/desafio-13-recuperacion-de-imagen-hacklab-2023/) | Criptoanálisis |
-| | [Chat Seguro — HackLab 2024](./HackLab/criptoanalisis/desafio-25-chat-seguro-hacklab-2024/) | Criptoanálisis |
-| | [RSA Robusto — HackLab 2024](./HackLab/criptoanalisis/desafio-30-rsa-robusto-hacklab-2024/) | Criptoanálisis |
-| | [Votación](./HackLab/broken-access-control/desafio-12-votacion/) | Broken Access Control |
-| | [Compra de Divisas — HackLab 2023](./HackLab/broken-access-control/desafio-17-compra-de-divisas-hacklab-2023/) | Broken Access Control |
-| | [Votación Nueva Versión — HackLab 2023](./HackLab/broken-access-control/desafio-18-votacion-nueva-version-hacklab-2023/) | Broken Access Control |
-| | [Gran Rifa 2019](./HackLab/mass-assignment/desafio-11-gran-rifa-2019/) | Mass Assignment |
-| | [Presupuesto — HackLab 2023](./HackLab/mass-assignment/desafio-19-presupuesto-hacklab-2023/) | Mass Assignment |
-| | [Préstamo — HackLab 2024](./HackLab/mass-assignment/desafio-23-prestamo-hacklab-2024/) | Mass Assignment |
-| | [Manipulando el Stack](./HackLab/desbordamiento-de-memoria/desafio-14-manipulando-el-stack/) | Desbordamiento de memoria |
-| | [Asistencia — HackLab 2024](./HackLab/information-disclosure/desafio-26-asistencia-hacklab-2024/) | Information Disclosure |
-| | [Ecommerce — HackLab 2024](./HackLab/auth/desafio-33-ecommerce-hacklab-2024/) | Auth |
-| | [Snow Storm — HackLab 2024](./HackLab/auth/desafio-34-snow-storm-hacklab-2024/) | Auth |
-| | [El Analista — HackLab 2024](./HackLab/condiciones-de-carrera/desafio-32-el-analista-hacklab-2024/) | Condiciones de carrera |
-| | [Libros Gratis](./HackLab/reversing-apk-broken-access-control/xdesafio-31-libros-gratis/) | Reversing APK |
-| 🟥 **TryHackMe** | [→ Ver todos los desafíos](./tryhackme/) | — |
-| | [Agent T](./tryhackme/Web/Agent-T/) | Web |
-| | [Lo-Fi](./tryhackme/Web/Lo-Fi/) | Web |
-| | [Neighbour](./tryhackme/Web/Neighbour/) | Web |
-| | [Dig Dug](./tryhackme/Network/Dig-Dug/) | Network |
-| 🔵 **Google CTF 2025** | [Numerology](./google-CTF/2025/Crypto/Numerology/) | Crypto |
-| 🟡 **picoCTF 2019** | [Irish Name Repo 1](./picoCTF/2019/Web/Irish-Name-Repo-1/) | Web |
+| Plataforma | Desafíos | Enlace | Página |
+| :--- | :---: | :--- | :--- |
+| 🏴 **SoftwareSeguro — HackLab** | 34 | [HackLab/](./HackLab/) | [softwareseguro.com.ar](https://www.softwareseguro.com.ar/) |
+| 🟥 **TryHackMe** | 4 | [tryhackme/](./tryhackme/) | [tryhackme.com](https://tryhackme.com/) |
+| 🔵 **Google CTF 2025** | 1 | [google-CTF/2025/](./google-CTF/2025/) | [g.co/ctf](https://g.co/ctf) |
+| 🟡 **picoCTF 2019** | 1 | [picoCTF/2019/](./picoCTF/2019/) | [picoctf.org](https://picoctf.org/) |
 
 ---
 
