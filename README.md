@@ -1,9 +1,51 @@
 # 🔐 Cybersecurity & CTF Writeups
 
-> **Investigación y explotación de vulnerabilidades en entornos controlados.**
-> *Plataformas: TryHackMe, SoftwareSeguro, picoCTF, HackTheBox (HTB).*
+> **Investigación y explotación de vulnerabilidades en entornos controlados.**  
+> *Plataformas: SoftwareSeguro (HackLab), TryHackMe, Google CTF, picoCTF, HackTheBox.*
 
-Este repositorio documenta mis soluciones (writeups), metodologías y scripts desarrollados para resolver desafíos de seguridad informática y competencias CTF.
+Este repositorio documenta mis soluciones (writeups), metodologías y scripts desarrollados para resolver desafíos de seguridad informática en distintas plataformas CTF. Cada carpeta corresponde a una plataforma y organiza los desafíos por categoría de vulnerabilidad, con pasos detallados, capturas de pantalla y código de explotación.
+
+---
+
+## 📂 Estructura del repositorio
+
+```
+CTF-Writeups/
+├── HackLab/          ← 34 desafíos · SoftwareSeguro · 13 categorías
+├── tryhackme/        ←  4 desafíos · Web & Network
+├── google-CTF/       ←  1 desafío  · Crypto (2025)
+├── picoCTF/          ←  1 desafío  · Web (2019)
+└── *.pdf             ← writeups completos en PDF (HTB University, SoftwareSeguro)
+```
+
+| Plataforma | Desafíos | Enlace |
+| :--- | :---: | :--- |
+| 🏴 **SoftwareSeguro — HackLab** | 34 | [HackLab/](./HackLab/) |
+| 🟥 **TryHackMe** | 4 | [tryhackme/](./tryhackme/) |
+| 🔵 **Google CTF 2025** | 1 | [google-CTF/2025/](./google-CTF/2025/) |
+| 🟡 **picoCTF 2019** | 1 | [picoCTF/2019/](./picoCTF/2019/) |
+
+---
+
+## 🗂️ HackLab — Categorías
+
+El laboratorio principal de SoftwareSeguro agrupa los desafíos por tipo de vulnerabilidad, cubriendo técnicas reales de ataque web, criptografía y análisis binario.
+
+| Categoría | Desafíos | Enlace |
+| :--- | :---: | :--- |
+| IDOR | 6 | [idor/](./HackLab/idor/) |
+| Criptoanálisis | 5 | [criptoanalisis/](./HackLab/criptoanalisis/) |
+| XSS | 4 | [xss/](./HackLab/xss/) |
+| SQL Injection | 4 | [sql-injection/](./HackLab/sql-injection/) |
+| Broken Access Control | 3 | [broken-access-control/](./HackLab/broken-access-control/) |
+| Mass Assignment | 3 | [mass-assignment/](./HackLab/mass-assignment/) |
+| Auth | 2 | [auth/](./HackLab/auth/) |
+| Introducción | 2 | [introduccion/](./HackLab/introduccion/) |
+| Tokens / JWT | 1 | [tokens/](./HackLab/tokens/) |
+| Desbordamiento de memoria | 1 | [desbordamiento-de-memoria/](./HackLab/desbordamiento-de-memoria/) |
+| Information Disclosure | 1 | [information-disclosure/](./HackLab/information-disclosure/) |
+| Condiciones de carrera | 1 | [condiciones-de-carrera/](./HackLab/condiciones-de-carrera/) |
+| Reversing APK | 1 | [reversing-apk/](./HackLab/reversing-apk/) |
 
 ---
 
@@ -83,17 +125,6 @@ Inyección SQL atípica en el procesamiento de archivos subidos.
   <li><strong>JWT:</strong> Filtración de una <code>SECRET KEY</code> expuesta en un endpoint JSONP para forjar tokens de administrador válidos (<code>HS256</code>).</li>
 </ul>
 </details>
-
----
-
-## 📄 Writeups & Reports
-
-Documentación detallada de competencias y laboratorios.
-
-| Carpeta | Descripción |
-| :--- | :--- |
-| **[🔐 SoftwareSeguro - HackLab](./HackLab/)** | +30 desafíos resueltos organizados por categoría de vulnerabilidad. Incluye scripts en Python para fuerza bruta, decodificadores Java para recuperación de imágenes, y guías paso a paso de Burp Suite. |
-| **[📄 HTB University 2025](./HTB_University_2025.pdf)** | Writeup de los desafíos de la competencia universitaria de HackTheBox. |
 
 ---
 
