@@ -49,42 +49,7 @@ Writeups de CTF organizados por categoría de vulnerabilidad. La carpeta `HackLa
 
 ## Estado de progreso
 
-### ✅ Completados
-- `introduccion/desafio-1-uso-del-inspector/` — formateado, pendiente commit/push
-
-### ⏳ Pendientes (en orden)
-2. `introduccion/desafio-37-local-storage-and-cookie/`
-3. `idor/desafio-4-aldeas-inseguras/`
-4. `idor/desafio-5-apagar-la-ia-hacklab-2023/`
-5. `idor/desafio-22-turnero-hackllab-2024/`
-6. `idor/desafio-23-calculadora-hackllab-2024/`
-7. `idor/desafio-35-aldeas-inseguras-v2/`
-8. `idor/desafio-36-notas-universitarias/`
-9. `tokens/desafio-15-consultas-multas-falta-hacer/`
-10. `xss/desafio-6-busqueda-de-usuarios/`
-11. `xss/desafio-7-el-blog-de-pepe-hacklab-2023/`
-12. `xss/desafio-8-el-blog-de-pepe-segurizado/`
-13. `xss/desafio-29-blog-hacklab-hacklab-2024/`
-14. `sql-injection/desafio-2-nsa/`
-15. `sql-injection/desafio-3-home-banking/`
-16. `sql-injection/desafio-20-galeria-de-imagenes-hacklab-2023/`
-17. `sql-injection/desafio-27-mis-viajes/`
-18. `criptoanalisis/desafio-9-algoritmo-personalizado-hacklab-2023/`
-19. `criptoanalisis/desafio-10-mensaje-cifrado/`
-20. `criptoanalisis/desafio-13-recuperacion-de-imagen-hacklab-2023/`
-21. `criptoanalisis/desafio-25-chat-seguro-hacklab-2024/`
-22. `criptoanalisis/desafio-30-rsa-robusto-hacklab-2024/`
-23. `broken-access-control/desafio-12-votacion/`
-24. `broken-access-control/desafio-17-compra-de-divisas-hacklab-2023/`
-25. `broken-access-control/desafio-18-votacion-nueva-version-hacklab-2023/`
-26. `mass-assignment/desafio-11-gran-rifa-2019/`
-27. `mass-assignment/desafio-19-presupuesto-hacklab-2023/`
-28. `mass-assignment/desafio-23-prestamo-hacklab-2024/`
-29. `desbordamiento-de-memoria/desafio-14-manipulando-el-stack/`
-30. `information-disclosure/desafio-26-asistencia-hacklab-2024/`
-31. `auth/desafio-33-ecommerce-hacklab-2024/`
-32. `auth/desafio-34-snow-storm-hacklab-2024/`
-33. `condiciones-de-carrera/desafio-32-el-analista-hacklab-2024/`
+Todos los desafíos existentes están formateados. No hay pendientes.
 
 ---
 
