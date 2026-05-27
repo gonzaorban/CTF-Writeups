@@ -12,7 +12,6 @@ CTF-Writeups/
 ├── tryhackme/        ←  4 desafíos · Web & Network
 ├── google-CTF/       ←  1 desafío  · Crypto (2025)
 ├── picoCTF/          ←  1 desafío  · Web (2019)
-└── *.pdf             ← writeups completos en PDF (HTB University, SoftwareSeguro)
 ```
 
 | Plataforma | Desafíos | Enlace | Página |
