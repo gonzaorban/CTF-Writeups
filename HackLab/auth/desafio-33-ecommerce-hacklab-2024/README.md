@@ -1,18 +1,14 @@
 # Desafío 33 - ECommerce (HackLab 2024)
 
-Auth 
-Desafío 33 - ECommerce (HackLab 2024) 
- 
-Login Juan 
- 
-Response 
- 
-(cada vez que inicias te da un unique_id nuevo) 
-fbbd1dd9-0cca-4c91-8d2e-94015429b445 
- 
-Login Maria 
- 
-Response
+## Análisis
+
+El sistema tiene autenticación en dos pasos para el usuario Juan. La vulnerabilidad permite modificar el email de otro usuario (sin autenticación adicional) a través de un endpoint de perfil mal protegido.
+
+## Explotación
+
+Se hace login con Juan y con María para obtener sus IDs.
+
+Login Juan → `unique_id`: `fbbd1dd9-0cca-4c91-8d2e-94015429b445` (nuevo en cada login)
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 1](images/01.png)
 
@@ -20,19 +16,7 @@ Response
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 3](images/03.png)
 
-Response 
- 
- 
- 
- 
-Response 
- 
- 
- 
- 
-Response 
- 
-Vemos que el id de maria es 2
+Analizando las respuestas de login, se identifica que el ID de María es `2`.
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 4](images/04.png)
 
@@ -40,29 +24,21 @@ Vemos que el id de maria es 2
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 6](images/06.png)
 
+Juan tiene verificación en dos pasos. Se intentó pasar el código incorrecto, poner `u: null`, y agregar campos para forzar acceso válido — nada funcionó.
+
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 7](images/07.png)
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 8](images/08.png)
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 9](images/09.png)
 
-Vemos que al entrar como Juan tiene verificación en dos pasos 
- 
-Probamos entrar y nos dice que el código es incorrecto. Probamos poniendo el campo “u” 
-en null pero nos da acceso inválido, también agregando campos para que de válido el 
-acceso pero no funcionaba nada así que decidimos buscar por otro lado
+Desde la cuenta de María, en la pestaña de perfil hay un botón deshabilitado. Al interceptar el GET del perfil se obtiene la estructura de datos.
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 10](images/10.png)
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 11](images/11.png)
 
-Volviendo a la cuenta de Maria vemos que tenemos esto en la pestaña de perfil, que no te 
-deja presionar el botón. ​
- 
- 
-Pero si interceptamos la señal del profile. Podemos ver que nos devuelve los datos 
- 
-Request
+Se prueba un POST → error. Se prueba un **PUT** con todos los datos del JSON → también error. Al **borrar el campo `username`** del PUT, la petición es aceptada.
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 12](images/12.png)
 
@@ -70,36 +46,19 @@ Request
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 14](images/14.png)
 
-Asi que intentamos realizar un POST y nos devuelve esto 
- 
- 
-De ahí probamos un PUT que es más adecuado agregando todos los datos en el JSON 
- 
-Nos devuelve esto 
- 
- 
-Asi que borramos el username, y ahi nos devuelve que la petición es válida
-
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 15](images/15.png)
+
+Se modifica el email del usuario Juan (ID `1`) usando este endpoint, cambiándolo por un email propio. Al volver a ingresar con Juan, llega el código de verificación en dos pasos al email modificado.
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 16](images/16.png)
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 17](images/17.png)
 
+Se completa la autenticación de Juan y se realiza la compra del producto requerido: **Memoria RAM 16GB DDR4**.
+
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 18](images/18.png)
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 19](images/19.png)
-
-Así que ahora probamos modificar los datos de Juan que sabemos que es el usuario 1. En 
-este caso como la autenticación en dos pasos indicaba que el código se enviaba al mail, 
-probamos poniendo un mail de nuestra propiedad. 
- 
- 
-Vuelvo a ingresar con el usuario y contraseña de Juan, de ahí reviso mis correo y me llega 
-el código 
- 
- 
-Realizo la compra del producto que pedía Memoria RAM 16GB DDR4
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 20](images/20.png)
 

