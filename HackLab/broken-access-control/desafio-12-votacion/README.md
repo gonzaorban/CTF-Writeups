@@ -22,7 +22,7 @@ Para enviar múltiples votos se usa Burp Intruder configurado con **Type: Random
 
 ![Desafío 12 - Votación - imagen 3](images/03.png)
 
-> La versión Community de Burp Suite tiene limitaciones de velocidad en Intruder. La solución alternativa fue ejecutar múltiples instancias en simultáneo.
+> La versión Community de Burp Suite tiene limitaciones de velocidad en Intruder. En ese momento no se conocía Turbo Intruder (extensión que elimina esa limitación), por lo que la solución alternativa fue ejecutar múltiples instancias de Intruder en simultáneo.
 
 ![Desafío 12 - Votación - imagen 4](images/04.png)
 
