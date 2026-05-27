@@ -8,6 +8,8 @@ A diferencia del desafío anterior, al borrar la cookie de voto el servidor rech
 
 Al enviar el POST sin la cookie de voto, aparece el mensaje de que ya se votó desde la misma IP.
 
+![Desafío 18 - Votación nueva versión (HackLab 2023) - imagen 1](images/01.png)
+
 ![Desafío 18 - Votación nueva versión (HackLab 2023) - imagen 2](images/02.png)
 
 **Estrategia: IP Spoofing vía `X-Forwarded-For`**
@@ -27,8 +29,6 @@ Se arma una lista con distintas IPs iterando el valor del header hasta alcanzar 
 ![Desafío 18 - Votación nueva versión (HackLab 2023) - imagen 4](images/04.png)
 
 ![Desafío 18 - Votación nueva versión (HackLab 2023) - imagen 5](images/05.png)
-
-![Desafío 18 - Votación nueva versión (HackLab 2023) - imagen 1](images/01.png)
 
 ### Solución alternativa (Matías Sampieri)
 
