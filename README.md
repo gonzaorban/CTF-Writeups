@@ -1,8 +1,5 @@
 # 🔐 Cybersecurity & CTF Writeups
 
-> **Investigación y explotación de vulnerabilidades en entornos controlados.**  
-> *Plataformas: SoftwareSeguro (HackLab), TryHackMe, Google CTF, picoCTF, HackTheBox.*
-
 Este repositorio documenta mis soluciones (writeups), metodologías y scripts desarrollados para resolver desafíos de seguridad informática en distintas plataformas CTF. Cada carpeta corresponde a una plataforma y organiza los desafíos por categoría de vulnerabilidad, con pasos detallados, capturas de pantalla y código de explotación.
 
 ---
