@@ -1,0 +1,12 @@
+# Claude Code (Anthropic CLI) — archivos de configuración local
+.claude/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+*.swp
+*.swo
+.vscode/
+.idea/
