@@ -6,57 +6,14 @@ Este repositorio documenta mis soluciones (writeups), metodologías y scripts de
 
 ## 📂 Estructura del repositorio
 
-```
-CTF-Writeups/
-├── HackLab/          ← 33 desafíos · SoftwareSeguro · 12 categorías
-├── picoCTF/          ← 28 desafíos · 2019 (1) + 2026 (27) · 8 categorías
-├── tryhackme/        ←  4 desafíos · Web & Network
-├── google-CTF/       ←  1 desafío  · Crypto (2025)
-```
+Cada plataforma tiene su propio índice con el detalle de categorías y desafíos.
 
-| Plataforma | Desafíos | Enlace | Página |
-| :--- | :---: | :--- | :--- |
-| 🏴 **SoftwareSeguro — HackLab** | 33 | [HackLab/](./HackLab/) | [softwareseguro.com.ar](https://www.softwareseguro.com.ar/) |
-| 🟡 **picoCTF** (2019 · 2026) | 28 | [picoCTF/](./picoCTF/) | [picoctf.org](https://picoctf.org/) |
-| 🟥 **TryHackMe** | 4 | [tryhackme/](./tryhackme/) | [tryhackme.com](https://tryhackme.com/) |
-| 🔵 **Google CTF 2025** | 1 | [google-CTF/2025/](./google-CTF/2025/) | [g.co/ctf](https://g.co/ctf) |
-
----
-
-## 🗂️ HackLab — Categorías
-
-El laboratorio principal de SoftwareSeguro agrupa los desafíos por tipo de vulnerabilidad, cubriendo técnicas reales de ataque web, criptografía y análisis binario.
-
-| Categoría | Desafíos | Enlace |
-| :--- | :---: | :--- |
-| IDOR | 6 | [idor/](./HackLab/idor/) |
-| Criptoanálisis | 5 | [criptoanalisis/](./HackLab/criptoanalisis/) |
-| XSS | 4 | [xss/](./HackLab/xss/) |
-| SQL Injection | 4 | [sql-injection/](./HackLab/sql-injection/) |
-| Broken Access Control | 3 | [broken-access-control/](./HackLab/broken-access-control/) |
-| Mass Assignment | 3 | [mass-assignment/](./HackLab/mass-assignment/) |
-| Auth | 2 | [auth/](./HackLab/auth/) |
-| Introducción | 2 | [introduccion/](./HackLab/introduccion/) |
-| Tokens / JWT | 1 | [tokens/](./HackLab/tokens/) |
-| Desbordamiento de memoria | 1 | [desbordamiento-de-memoria/](./HackLab/desbordamiento-de-memoria/) |
-| Information Disclosure | 1 | [information-disclosure/](./HackLab/information-disclosure/) |
-| Condiciones de carrera | 1 | [condiciones-de-carrera/](./HackLab/condiciones-de-carrera/) |
-
----
-
-## 🟡 picoCTF — Categorías
-
-Desafíos de las ediciones **2019** (1 · Web) y **2026** (27), abarcando explotación web y binaria, criptografía, reversing, blockchain y forense.
-
-| Categoría | Desafíos | Enlace |
-| :--- | :---: | :--- |
-| Reverse Engineering | 9 | [2026/Reverse Engineering/](./picoCTF/2026/Reverse%20Engineering/) |
-| Cryptography | 8 | [2026/Cryptography/](./picoCTF/2026/Cryptography/) |
-| Web Exploitation | 4 + 1 (2019) | [2026/Web Exploitation/](./picoCTF/2026/Web%20Exploitation/) |
-| Binary Exploitation | 2 | [2026/Binary Exploitation/](./picoCTF/2026/Binary%20Exploitation/) |
-| Blockchain | 2 | [2026/Blockchain/](./picoCTF/2026/Blockchain/) |
-| Forensics | 1 | [2026/Forensics/](./picoCTF/2026/Forensics/) |
-| General Skills | 1 | [2026/General Skills/](./picoCTF/2026/General%20Skills/) |
+| Plataforma | Enlace | Página |
+| :--- | :--- | :--- |
+| 🏴 **SoftwareSeguro — HackLab** | [HackLab/](./HackLab/) | [softwareseguro.com.ar](https://www.softwareseguro.com.ar/) |
+| 🟡 **picoCTF** (2019 · 2026) | [picoCTF/](./picoCTF/) | [picoctf.org](https://picoctf.org/) |
+| 🟥 **TryHackMe** | [tryhackme/](./tryhackme/) | [tryhackme.com](https://tryhackme.com/) |
+| 🔵 **Google CTF 2025** | [google-CTF/2025/](./google-CTF/2025/) | [g.co/ctf](https://g.co/ctf) |
 
 ---
 

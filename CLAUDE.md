@@ -4,12 +4,9 @@
 
 Writeups de CTF organizados por plataforma y, dentro de cada una, por categoría de vulnerabilidad. Cada desafío vive en su propia carpeta con un `README.md` y una carpeta `images/`.
 
-Plataformas actuales:
+Plataformas: **HackLab/** (SoftwareSeguro), **picoCTF/**, **tryhackme/** y **google-CTF/**.
 
-- **HackLab/** — 33 desafíos de SoftwareSeguro, 12 categorías. Extraídos originalmente desde un PDF con PyMuPDF y luego formateados a mano. **Esta parte ya está terminada.**
-- **picoCTF/** — 28 desafíos: 1 de la edición 2019 (Web) y 27 de la 2026, en 8 categorías.
-- **tryhackme/** — 4 desafíos (Web & Network).
-- **google-CTF/** — 1 desafío (Crypto, 2025).
+Los writeups de HackLab fueron extraídos originalmente desde un PDF con PyMuPDF, por lo que el texto llegó en plano y luego se formateó a mano.
 
 ---
 
@@ -31,7 +28,9 @@ Cada plataforma usa su propia nomenclatura; respetarla al crear o mover carpetas
 - **tryhackme:** `tryhackme/<Área>/<Nombre>/` (`Web/`, `Network/`).
 - **google-CTF:** `google-CTF/<año>/<Categoría>/<Nombre>/`.
 
-Los índices raíz y de categoría (`README.md` de nivel superior) enlazan a cada desafío; si se renombra o agrega una carpeta de desafío, actualizar el índice correspondiente en el mismo commit.
+Los índices de cada plataforma y categoría (`README.md` de nivel superior) enlazan a cada desafío. El README raíz solo enlaza a las plataformas: el detalle de categorías y desafíos vive en el índice de cada plataforma, no en la raíz.
+
+Si se renombra o agrega una carpeta de desafío, actualizar el índice correspondiente en el mismo commit.
 
 ---
 
@@ -53,22 +52,9 @@ Los índices raíz y de categoría (`README.md` de nivel superior) enlazan a cad
 
 ---
 
-## Flujo de trabajo por desafío
+## Convención de commits
 
-1. Leer el README.md del desafío
-2. Ver imágenes si ayudan al contexto
-3. Aplicar mejoras según las reglas
-4. Mostrar el diff y hacer `git commit` con mensaje descriptivo:
-   `fix(plataforma/categoria/nombre-desafio): descripción breve`
-5. Hacer `git push`
-6. Esperar OK del usuario antes de pasar al siguiente
-
----
-
-## Estado de progreso
-
-- **HackLab:** completo. Todos los desafíos formateados; no hay pendientes.
-- **picoCTF 2026:** desafíos documentados (commit `1c3481b`). Revisar formato si el usuario lo pide.
+`fix(plataforma/categoria/nombre-desafio): descripción breve`
 
 ---
 
@@ -76,25 +62,19 @@ Los índices raíz y de categoría (`README.md` de nivel superior) enlazan a cad
 
 ```
 CTF-Writeups/
-├── HackLab/                       ← 33 desafíos · SoftwareSeguro
-│   ├── README.md                  ← índice raíz (no tocar salvo pedido explícito)
+├── HackLab/                       ← SoftwareSeguro
+│   ├── README.md                  ← índice de plataforma
 │   ├── introduccion/
-│   │   ├── README.md              ← índice de categoría (idem)
+│   │   ├── README.md              ← índice de categoría
 │   │   └── desafio-1-uso-del-inspector/
-│   │       ├── README.md          ← estos SÍ se formatean
+│   │       ├── README.md          ← writeup del desafío
 │   │       └── images/
 │   ├── idor/  xss/  sql-injection/  criptoanalisis/  ...
-├── picoCTF/                       ← 28 desafíos
-│   ├── 2019/Web/Irish-Name-Repo-1/
-│   └── 2026/
-│       ├── Reverse Engineering/   ← 9
-│       ├── Cryptography/          ← 8
-│       ├── Web Exploitation/      ← 4
-│       ├── Binary Exploitation/   ← 2
-│       ├── Blockchain/            ← 2
-│       ├── Forensics/             ← 1
-│       └── General Skills/        ← 1
+├── picoCTF/
+│   ├── README.md                  ← índice de plataforma
+│   ├── 2019/Web/
+│   └── 2026/<Categoría>/<Desafío>/
 ├── tryhackme/                     ← Web/ · Network/
-├── google-CTF/2025/Crypto/
+├── google-CTF/                    ← <año>/<Categoría>/<Desafío>/
 └── CLAUDE.md                      ← este archivo
 ```
