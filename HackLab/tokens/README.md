@@ -2,4 +2,4 @@
 
 ## Desafíos
 
-- [Desafío 15 - Consultas Multas (falta hacer)](./desafio-15-consultas-multas-falta-hacer/)
+- [Desafío 15 - Consultas Multas](./desafio-15-consultas-multas/)

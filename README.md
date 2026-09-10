@@ -8,18 +8,18 @@ Este repositorio documenta mis soluciones (writeups), metodologías y scripts de
 
 ```
 CTF-Writeups/
-├── HackLab/          ← 34 desafíos · SoftwareSeguro · 13 categorías
+├── HackLab/          ← 33 desafíos · SoftwareSeguro · 12 categorías
+├── picoCTF/          ← 28 desafíos · 2019 (1) + 2026 (27) · 8 categorías
 ├── tryhackme/        ←  4 desafíos · Web & Network
 ├── google-CTF/       ←  1 desafío  · Crypto (2025)
-├── picoCTF/          ←  1 desafío  · Web (2019)
 ```
 
 | Plataforma | Desafíos | Enlace | Página |
 | :--- | :---: | :--- | :--- |
-| 🏴 **SoftwareSeguro — HackLab** | 34 | [HackLab/](./HackLab/) | [softwareseguro.com.ar](https://www.softwareseguro.com.ar/) |
+| 🏴 **SoftwareSeguro — HackLab** | 33 | [HackLab/](./HackLab/) | [softwareseguro.com.ar](https://www.softwareseguro.com.ar/) |
+| 🟡 **picoCTF** (2019 · 2026) | 28 | [picoCTF/](./picoCTF/) | [picoctf.org](https://picoctf.org/) |
 | 🟥 **TryHackMe** | 4 | [tryhackme/](./tryhackme/) | [tryhackme.com](https://tryhackme.com/) |
 | 🔵 **Google CTF 2025** | 1 | [google-CTF/2025/](./google-CTF/2025/) | [g.co/ctf](https://g.co/ctf) |
-| 🟡 **picoCTF 2019** | 1 | [picoCTF/2019/](./picoCTF/2019/) | [picoctf.org](https://picoctf.org/) |
 
 ---
 
@@ -41,7 +41,22 @@ El laboratorio principal de SoftwareSeguro agrupa los desafíos por tipo de vuln
 | Desbordamiento de memoria | 1 | [desbordamiento-de-memoria/](./HackLab/desbordamiento-de-memoria/) |
 | Information Disclosure | 1 | [information-disclosure/](./HackLab/information-disclosure/) |
 | Condiciones de carrera | 1 | [condiciones-de-carrera/](./HackLab/condiciones-de-carrera/) |
-| Reversing APK | 1 | [reversing-apk/](./HackLab/reversing-apk/) |
+
+---
+
+## 🟡 picoCTF — Categorías
+
+Desafíos de las ediciones **2019** (1 · Web) y **2026** (27), abarcando explotación web y binaria, criptografía, reversing, blockchain y forense.
+
+| Categoría | Desafíos | Enlace |
+| :--- | :---: | :--- |
+| Reverse Engineering | 9 | [2026/Reverse Engineering/](./picoCTF/2026/Reverse%20Engineering/) |
+| Cryptography | 8 | [2026/Cryptography/](./picoCTF/2026/Cryptography/) |
+| Web Exploitation | 4 + 1 (2019) | [2026/Web Exploitation/](./picoCTF/2026/Web%20Exploitation/) |
+| Binary Exploitation | 2 | [2026/Binary Exploitation/](./picoCTF/2026/Binary%20Exploitation/) |
+| Blockchain | 2 | [2026/Blockchain/](./picoCTF/2026/Blockchain/) |
+| Forensics | 1 | [2026/Forensics/](./picoCTF/2026/Forensics/) |
+| General Skills | 1 | [2026/General Skills/](./picoCTF/2026/General%20Skills/) |
 
 ---
 
@@ -50,9 +65,12 @@ El laboratorio principal de SoftwareSeguro agrupa los desafíos por tipo de vuln
 El contenido abarca diversas ramas de la ciberseguridad, enfocándose en la comprensión profunda de las vulnerabilidades y su mitigación.
 
 * **Web Security:** Race Conditions (Turbo Intruder), CSP Bypass, IDOR, XSS to CSRF, JWT Forgery, Mass Assignment, IP Spoofing.
-* **SQL Injection:** Blind SQLi, Authentication Bypass, **Exif Metadata Injection**.
-* **Cryptography:** RSA Attacks (Common Factor), Custom Ciphers (Statistical Analysis), Offline Hash Cracking (Salted).
-* **Forensics & Coding:** Image Recovery (Parity Logic), Binary Analysis.
+* **SQL Injection:** Blind SQLi, Authentication Bypass, **Exif Metadata Injection**, sqlmap.
+* **Cryptography:** RSA Attacks (Common Factor, Franklin-Reiter / Related Messages), LFSR / Shift Registers, Custom Ciphers (Statistical Analysis), Offline Hash Cracking (Salted).
+* **Reverse Engineering:** Análisis estático con IDA y Ghidra, instrumentación dinámica con Frida, cracking de binarios y bypass de comprobaciones.
+* **Binary Exploitation:** Explotación de binarios con pwntools y GDB.
+* **Blockchain:** Smart contracts en Solidity / web3 (Reentrancy, Access Control).
+* **Forensics & Coding:** Image Recovery (Parity Logic), Steganography, Binary Analysis.
 
 ---
 
@@ -64,8 +82,12 @@ El contenido abarca diversas ramas de la ciberseguridad, enfocándose en la comp
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![ExifTool](https://img.shields.io/badge/ExifTool-Metadata-green?style=for-the-badge)
 ![Turbo Intruder](https://img.shields.io/badge/Turbo_Intruder-Concurrency-red?style=for-the-badge)
+![IDA](https://img.shields.io/badge/IDA-Disassembler-blue?style=for-the-badge)
+![Ghidra](https://img.shields.io/badge/Ghidra-Reversing-red?style=for-the-badge)
+![Frida](https://img.shields.io/badge/Frida-Instrumentation-orange?style=for-the-badge)
+![Solidity](https://img.shields.io/badge/Solidity-Smart_Contracts-363636?style=for-the-badge&logo=solidity&logoColor=white)
 
-**Librerías clave:** `pwntools`, `requests`, `hashlib`, `aiohttp` (para fuerza bruta asíncrona).
+**Librerías clave:** `pwntools`, `requests`, `hashlib`, `aiohttp` (para fuerza bruta asíncrona), `web3`.
 
 ---
 

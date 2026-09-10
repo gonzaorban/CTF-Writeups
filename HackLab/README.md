@@ -18,7 +18,7 @@
 
 ### [Tokens](./tokens/)
 
-- [Desafío 15 - Consultas Multas (falta hacer)](./tokens/desafio-15-consultas-multas-falta-hacer/)
+- [Desafío 15 - Consultas Multas](./tokens/desafio-15-consultas-multas/)
 
 ### [XSS](./xss/)
 
@@ -70,7 +70,3 @@
 ### [Condiciones de carrera](./condiciones-de-carrera/)
 
 - [Desafío 32 - El analista (HackLab 2024)](./condiciones-de-carrera/desafio-32-el-analista-hacklab-2024/)
-
-### [Reversing Apk - Broken access control](./reversing-apk-broken-access-control/)
-
-- [xDesafío 31 - Libros Gratis](./reversing-apk-broken-access-control/xdesafio-31-libros-gratis/)
