@@ -70,3 +70,7 @@
 ### [Condiciones de carrera](./condiciones-de-carrera/)
 
 - [Desafío 32 - El analista (HackLab 2024)](./condiciones-de-carrera/desafio-32-el-analista-hacklab-2024/)
+
+### [Lógica de negocio](./logica-de-negocio/)
+
+- [Desafío 47 - Venta de autos](./logica-de-negocio/desafio-47-venta-de-autos/)
