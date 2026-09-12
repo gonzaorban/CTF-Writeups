@@ -21,7 +21,7 @@ Se configura Intruder para iterar sobre el parámetro `id` y encontrar el usuari
 
 ![Desafío 22 - Turnero (HackLab 2024) - imagen 5](images/05.png)
 
-Se abre el usuario correcto (ID `101` en este ejercicio) y se identifican los IDs de sus turnos (del 10 al 13) para eliminarlos luego.
+Identifico según la longitud de la response que el usuario usuario de ID `101` es el que estabamos buscando y se identifican los IDs de sus turnos (del 10 al 13) para eliminarlos luego.
 
 Se presiona el botón **Cancelar** para enviar la petición al Burp Suite.
 
