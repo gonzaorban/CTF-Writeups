@@ -2,13 +2,39 @@
 
 > En ambas soluciones asegúrense de modificar el URL por el que les aparezca a ustedes, todos tenemos uno distinto.
 
+## Reconocimiento
+ 
+El sitio expone dos rutas relevantes:
+ 
+- Índice (`/`): lista dos enlaces, cada uno con un hash de 32 caracteres hexadecimales.
+- Detalle (`/codes/<hash>/`): cada página muestra un `<ul>` con números de 7 a 9 dígitos.
+```
+/codes/0e1422ea79781ee046484893ce0010c4/
+/codes/0602940f23884f782058efac46f64b0f/
+```
+ 
+El HTML crudo confirma que es una app Django simple (título "Mis reportes"): solo `<li>` con números, sin comentarios, atributos ocultos ni enlaces internos. Es decir, **no hay un árbol de páginas que recorrer**: los números listados no son punteros a otras páginas (probarlos como ruta devuelve 404).
+ 
 ## Análisis
-
-Es una versión de IDOR pero en este caso un poco más rebuscada porque en vez de tener una ID secuencial tenemos un Hash MD5.
-
-Se crackearon ambos hashes encontrados, lo que da un indicio de que el número a convertir en hash está cerca de los mismos.
-
+ 
+El punto central es la naturaleza del identificador en la URL. A primera vista parece un slug opaco, pero en realidad es un **IDOR** (Insecure Direct Object Reference) con una vuelta de tuerca: el identificador secuencial no está expuesto directamente, sino **ofuscado detrás de un MD5**.
+ 
+La ofuscación es débil porque MD5 no aporta secreto por sí mismo: si el valor de origen pertenece a un espacio pequeño, el hash es reversible por fuerza bruta. Al crackear los dos hashes del índice se confirma la hipótesis:
+ 
+```
+md5("9912") = 0e1422ea79781ee046484893ce0010c4
+md5("9995") = 0602940f23884f782058efac46f64b0f
+```
+ 
+Esto revela dos cosas:
+ 
+1. El slug de cada reporte es `md5(str(id))`, con **id entero secuencial**.
+2. Los dos IDs conocidos (9912 y 9995) están cerca entre sí, lo que acota la zona donde buscar el resto de los reportes.
+Con el patrón identificado, el "acceso a 2 archivos" es irrelevante: se puede **enumerar cualquier reporte** calculando `md5(id)` para cada `id`. El código de 16 dígitos está en algún otro reporte dentro de ese rango.
+ 
 ## Explotación
+ 
+Se enumeran los IDs, se solicita `/codes/md5(id)/` para cada uno y se busca en la respuesta un token de exactamente 16 dígitos. Al encontrarlo, se calcula su MD5 (la flag).
 
 ### Solución 1
 
