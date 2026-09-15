@@ -74,3 +74,7 @@
 ### [Lógica de negocio](./logica-de-negocio/)
 
 - [Desafío 47 - Venta de autos](./logica-de-negocio/desafio-47-venta-de-autos/)
+
+### [Sanitización](./sanitizacion/)
+
+- [Desafío 49 - Fix Urgente](./sanitizacion/desafio-49-fix-urgente/)
