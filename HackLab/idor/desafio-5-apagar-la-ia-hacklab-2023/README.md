@@ -201,6 +201,8 @@ Se probaron distintos rangos hasta encontrar que el número `11520` tiene un có
 
 ![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 7](images/07.png)
 
+![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 8](images/08.png)
+
 Se genera el Hash MD5 del número encontrado:
 
 ```
@@ -209,10 +211,4 @@ a8e0e8ff02dde0f62fdf4de5142d7de0
 
 Este es el código que hay que subir a la página.
 
-## Flag
-
-![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 8](images/08.png)
-
 ![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 9](images/09.png)
-
-![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 10](images/10.png)
