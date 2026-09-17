@@ -1,5 +1,8 @@
 # Desafío 8 - El blog de Pepe segurizado
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Categoría:** XSS  
+
 ## Análisis
 
 La página tiene una CSP (Content Security Policy) estricta que requiere un `nonce` válido para ejecutar scripts. La vulnerabilidad consiste en extraer ese `nonce` del código fuente de la página e inyectar un bloque `<script>` autorizado.
@@ -20,11 +23,11 @@ txtComentario=<script nonce="NDM5OTA=">
 </script>&btnEnviar=Enviar
 ```
 
-![Desafío 8 - El blog de Pepe segurizado - imagen 1](images/01.png)
+![Desafío 8 - El blog de Pepe segurizado - imagen 1](assets/01.png)
 
-![Desafío 8 - El blog de Pepe segurizado - imagen 2](images/02.png)
+![Desafío 8 - El blog de Pepe segurizado - imagen 2](assets/02.png)
 
-![Desafío 8 - El blog de Pepe segurizado - imagen 3](images/03.png)
+![Desafío 8 - El blog de Pepe segurizado - imagen 3](assets/03.png)
 
 ### Solución 2
 
@@ -55,21 +58,21 @@ Alternativa usando jQuery (`$.post`) para el CSRF:
 
 > Este código no para de ejecutar la petición en bucle hasta que se redirige.
 
-![Desafío 8 - El blog de Pepe segurizado - imagen 4](images/04.png)
+![Desafío 8 - El blog de Pepe segurizado - imagen 4](assets/04.png)
 
-![Desafío 8 - El blog de Pepe segurizado - imagen 5](images/05.png)
+![Desafío 8 - El blog de Pepe segurizado - imagen 5](assets/05.png)
 
-![Desafío 8 - El blog de Pepe segurizado - imagen 6](images/06.png)
+![Desafío 8 - El blog de Pepe segurizado - imagen 6](assets/06.png)
 
-![Desafío 8 - El blog de Pepe segurizado - imagen 7](images/07.png)
+![Desafío 8 - El blog de Pepe segurizado - imagen 7](assets/07.png)
 
-![Desafío 8 - El blog de Pepe segurizado - imagen 8](images/08.png)
+![Desafío 8 - El blog de Pepe segurizado - imagen 8](assets/08.png)
 
-![Desafío 8 - El blog de Pepe segurizado - imagen 9](images/09.png)
+![Desafío 8 - El blog de Pepe segurizado - imagen 9](assets/09.png)
 
-![Desafío 8 - El blog de Pepe segurizado - imagen 10](images/10.png)
+![Desafío 8 - El blog de Pepe segurizado - imagen 10](assets/10.png)
 
-![Desafío 8 - El blog de Pepe segurizado - imagen 11](images/11.png)
+![Desafío 8 - El blog de Pepe segurizado - imagen 11](assets/11.png)
 
 ## Flag
 

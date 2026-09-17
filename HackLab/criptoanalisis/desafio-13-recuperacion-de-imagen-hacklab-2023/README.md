@@ -1,5 +1,9 @@
 # Desafío 13 - Recuperación de imagen (HackLab 2023)
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2023  
+**Categoría:** Criptoanálisis  
+
 ## Análisis
 
 Se recibe una imagen dañada y un archivo `.txt` con datos de paridad. Se usa un algoritmo de corrección de errores por bit para recuperar la imagen original.
@@ -166,11 +170,11 @@ javac RecuperarImagen.java
 java RecuperarImagen imagen_rota.png paridadimagen.txt imagen_recuperada.png
 ```
 
-![Desafío 13 - Recuperación de imagen (HackLab 2023) - imagen 1](images/01.png)
+![Desafío 13 - Recuperación de imagen (HackLab 2023) - imagen 1](assets/01.png)
 
-![Desafío 13 - Recuperación de imagen (HackLab 2023) - imagen 2](images/02.png)
+![Desafío 13 - Recuperación de imagen (HackLab 2023) - imagen 2](assets/02.png)
 
-![Desafío 13 - Recuperación de imagen (HackLab 2023) - imagen 3](images/03.png)
+![Desafío 13 - Recuperación de imagen (HackLab 2023) - imagen 3](assets/03.png)
 
 ## Flag
 

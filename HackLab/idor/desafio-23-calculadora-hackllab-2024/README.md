@@ -1,22 +1,26 @@
 # Desafío 23 - Calculadora (HackLab 2024)
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2024  
+**Categoría:** IDOR  
+
 ## Análisis
 
 Se descarga el archivo `calculadora.jar` y se extrae el RAR. Abriendo el archivo `.class` se identifica un string en Base64 (la única cadena larga que aparece en todo el archivo, parcialmente ocultada por elementos rojos de la UI).
 
 ## Explotación
 
-![Desafío 23 - Calculadora (HackLab 2024) - imagen 1](images/01.png)
+![Desafío 23 - Calculadora (HackLab 2024) - imagen 1](assets/01.png)
 
-![Desafío 23 - Calculadora (HackLab 2024) - imagen 2](images/02.png)
+![Desafío 23 - Calculadora (HackLab 2024) - imagen 2](assets/02.png)
 
-![Desafío 23 - Calculadora (HackLab 2024) - imagen 3](images/03.png)
+![Desafío 23 - Calculadora (HackLab 2024) - imagen 3](assets/03.png)
 
 Se identifica que el archivo `.class` usa Base64 en varias partes.
 
-![Desafío 23 - Calculadora (HackLab 2024) - imagen 4](images/04.png)
+![Desafío 23 - Calculadora (HackLab 2024) - imagen 4](assets/04.png)
 
-![Desafío 23 - Calculadora (HackLab 2024) - imagen 5](images/05.png)
+![Desafío 23 - Calculadora (HackLab 2024) - imagen 5](assets/05.png)
 
 Se borra la primer `h` del código encontrado, dejando como primer elemento la `a`, para que el decodificador funcione correctamente. Las cadenas Base64 que codifican URLs que empiezan por `http` normalmente comienzan con `aHR0c...`.
 
@@ -29,7 +33,7 @@ FyLWNvZGlnby1jYWxjdWxhZG9yYS8/dD0=
 
 Se decodifica en [base64decode.org](https://www.base64decode.org/es/) y se obtiene la URL del endpoint.
 
-![Desafío 23 - Calculadora (HackLab 2024) - imagen 6](images/06.png)
+![Desafío 23 - Calculadora (HackLab 2024) - imagen 6](assets/06.png)
 
 Se abre en otra pestaña:
 
@@ -39,11 +43,11 @@ https://api-calculadora.softwareseguro.com.ar/verificar-codigo-calculadora/?t=
 
 Se envía el código oculto (ABCD) al endpoint de la API, que devuelve el hash.
 
-![Desafío 23 - Calculadora (HackLab 2024) - imagen 7](images/07.png)
+![Desafío 23 - Calculadora (HackLab 2024) - imagen 7](assets/07.png)
 
-![Desafío 23 - Calculadora (HackLab 2024) - imagen 8](images/08.png)
+![Desafío 23 - Calculadora (HackLab 2024) - imagen 8](assets/08.png)
 
-![Desafío 23 - Calculadora (HackLab 2024) - imagen 9](images/09.png)
+![Desafío 23 - Calculadora (HackLab 2024) - imagen 9](assets/09.png)
 
 ## Flag
 

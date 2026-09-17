@@ -1,5 +1,9 @@
 # Desafío 47 - Venta de autos
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2025  
+**Categoría:** Lógica de negocio  
+
 ## Análisis de la Vulnerabilidad
 
 Con la información que me dieron que pruebe en la fecha `01/10/2025` y con el header:
@@ -10,15 +14,15 @@ X-API-Key: 55f53057-d320-4bec-8447-0ba940740595
 
 Encuentro las ventas que hubo ese día.
 
-![Desafío 47 - Venta de autos - imagen 1](images/01.png)
+![Desafío 47 - Venta de autos - imagen 1](assets/01.png)
 
 ## Metodología de Resolución
 
 Analizando las ventas que me devuelve, empiezo a probar `GET /api/vendedor/{id}` con los distintos IDs de los vendedores que únicamente iban del 1 al 4. En todos me devolvía correctamente, hasta que pruebe con los IDs mayores a 4 y me empieza a dar error 403.
 
-![Desafío 47 - Venta de autos - imagen 2](images/02.png)
+![Desafío 47 - Venta de autos - imagen 2](assets/02.png)
 
-![Desafío 47 - Venta de autos - imagen 3](images/03.png)
+![Desafío 47 - Venta de autos - imagen 3](assets/03.png)
 
 Entonces ahí obtengo la información que ese endpoint me devolvía únicamente las ventas de mí concesionaria.
 
@@ -41,9 +45,9 @@ def handleResponse(req, interesting):
     table.add(req)
 ```
 
-![Desafío 47 - Venta de autos - imagen 4](images/04.png)
+![Desafío 47 - Venta de autos - imagen 4](assets/04.png)
 
-![Desafío 47 - Venta de autos - imagen 5](images/05.png)
+![Desafío 47 - Venta de autos - imagen 5](assets/05.png)
 
 45 respuestas 200 OK correspondientes a las ventas propias, 4 respuestas 404 Not Found correspondientes a IDs inexistentes que deben descartarse por no representar ventas reales, y 99 respuestas 403 Forbidden correspondientes a las ventas de las otras concesionarias.
 

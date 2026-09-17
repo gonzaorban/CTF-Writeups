@@ -1,5 +1,9 @@
 # Desafíos Software Seguro
 
+Writeups de [HackLab (SoftwareSeguro)](https://www.softwareseguro.com.ar/), organizados por categoría de vulnerabilidad.
+
+HackLab es a la vez una plataforma con desafíos permanentes y una **competencia anual**. Los desafíos que pertenecen a una edición de la competencia están listados en la [tabla de ediciones](#desafíos-por-edición-de-la-competencia) al final de este documento, y lo indican en el campo `Edición` de su encabezado.
+
 ## Índice de categorías
 
 ### [Introducción](./introduccion/)
@@ -77,3 +81,42 @@
 ### [Sanitización](./sanitizacion/)
 
 - [Desafío 49 - Fix Urgente](./sanitizacion/desafio-49-fix-urgente/)
+
+---
+
+## Desafíos por edición de la competencia
+
+Estos son los desafíos que corresponden a una edición de la competencia anual HackLab. El resto de los desafíos del índice pertenecen al catálogo permanente de la plataforma y no están asociados a una edición.
+
+### HackLab 2025
+
+| Desafío | Categoría |
+| :--- | :--- |
+| [Desafío 47 - Venta de autos](./logica-de-negocio/desafio-47-venta-de-autos/) | Lógica de negocio |
+
+### HackLab 2024
+
+| Desafío | Categoría |
+| :--- | :--- |
+| [Desafío 22 - Turnero](./idor/desafio-22-turnero-hackllab-2024/) | IDOR |
+| [Desafío 23 - Calculadora](./idor/desafio-23-calculadora-hackllab-2024/) | IDOR |
+| [Desafío 23 - Préstamo](./mass-assignment/desafio-23-prestamo-hacklab-2024/) | Mass Assignment |
+| [Desafío 25 - Chat Seguro](./criptoanalisis/desafio-25-chat-seguro-hacklab-2024/) | Criptoanálisis |
+| [Desafío 26 - Asistencia](./information-disclosure/desafio-26-asistencia-hacklab-2024/) | Information Disclosure |
+| [Desafío 30 - RSA Robusto](./criptoanalisis/desafio-30-rsa-robusto-hacklab-2024/) | Criptoanálisis |
+| [Desafío 32 - El Analista](./condiciones-de-carrera/desafio-32-el-analista-hacklab-2024/) | Condiciones de carrera |
+| [Desafío 33 - ECommerce](./auth/desafio-33-ecommerce-hacklab-2024/) | Auth |
+| [Desafío 34 - Snow Storm](./auth/desafio-34-snow-storm-hacklab-2024/) | Auth |
+
+### HackLab 2023
+
+| Desafío | Categoría |
+| :--- | :--- |
+| [Desafío 5 - Apagar la IA](./idor/desafio-5-apagar-la-ia-hacklab-2023/) | IDOR |
+| [Desafío 7 - El blog de Pepe](./xss/desafio-7-el-blog-de-pepe-hacklab-2023/) | XSS |
+| [Desafío 9 - Algoritmo personalizado](./criptoanalisis/desafio-9-algoritmo-personalizado-hacklab-2023/) | Criptoanálisis |
+| [Desafío 13 - Recuperación de imagen](./criptoanalisis/desafio-13-recuperacion-de-imagen-hacklab-2023/) | Criptoanálisis |
+| [Desafío 17 - Compra de divisas](./broken-access-control/desafio-17-compra-de-divisas-hacklab-2023/) | Broken Access Control |
+| [Desafío 18 - Votación nueva versión](./broken-access-control/desafio-18-votacion-nueva-version-hacklab-2023/) | Broken Access Control |
+| [Desafío 19 - Presupuesto](./mass-assignment/desafio-19-presupuesto-hacklab-2023/) | Mass Assignment |
+| [Desafío 20 - Galería de imágenes](./sql-injection/desafio-20-galeria-de-imagenes-hacklab-2023/) | SQL Injection |

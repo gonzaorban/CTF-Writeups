@@ -1,5 +1,8 @@
 # Desafío 49 - Fix Urgente
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Categoría:** Sanitización  
+
 Sistema de inscripciones a eventos saturado por registros falsos que agotan los cupos. El objetivo es endurecer el endpoint `inscribirse(datos)` para frenar inscripciones masivas no legítimas, validar los datos y cubrir vectores adicionales, sin tocar los parámetros de entrada ni el formato del JSON de salida.
 
 Restricciones de la plataforma: máximo 100 líneas y 5000 caracteres; palabras prohibidas `import`, `compile`, `__`, `globals`, `lambda`, `type`, `isinstance`; solo se pueden usar los nombres inyectados por el sandbox (`datetime`, `usuarios`).
@@ -165,7 +168,7 @@ def hash_password(pwd):
 
 ## Flag
 
-![Desafío 49 - Fix Urgente - imagen 1](images/01.png)
+![Desafío 49 - Fix Urgente - imagen 1](assets/01.png)
 
 ```
 30ed2eec1a72f0dc1fdc29bcf4626652
