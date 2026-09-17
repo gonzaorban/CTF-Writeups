@@ -13,7 +13,7 @@ Cada plataforma tiene su propio índice con el detalle de categorías y desafío
 | 🏴 **SoftwareSeguro — HackLab** | [HackLab/](./HackLab/) | [softwareseguro.com.ar](https://www.softwareseguro.com.ar/) |
 | 🟡 **picoCTF** (2019 · 2026) | [picoCTF/](./picoCTF/) | [picoctf.org](https://picoctf.org/) |
 | 🟥 **TryHackMe** | [tryhackme/](./tryhackme/) | [tryhackme.com](https://tryhackme.com/) |
-| 🔵 **Google CTF 2025** | [google-CTF/2025/](./google-CTF/2025/) | [g.co/ctf](https://g.co/ctf) |
+| 🔵 **Google CTF** (2025) | [google-CTF/](./google-CTF/) | [g.co/ctf](https://g.co/ctf) |
 
 ---
 
@@ -21,13 +21,15 @@ Cada plataforma tiene su propio índice con el detalle de categorías y desafío
 
 El contenido abarca diversas ramas de la ciberseguridad, enfocándose en la comprensión profunda de las vulnerabilidades y su mitigación.
 
-* **Web Security:** Race Conditions (Turbo Intruder), CSP Bypass, IDOR, XSS to CSRF, JWT Forgery, Mass Assignment, IP Spoofing.
-* **SQL Injection:** Blind SQLi, Authentication Bypass, **Exif Metadata Injection**, sqlmap.
-* **Cryptography:** RSA Attacks (Common Factor, Franklin-Reiter / Related Messages), LFSR / Shift Registers, Custom Ciphers (Statistical Analysis), Offline Hash Cracking (Salted).
+* **Web Security:** Race Conditions (Turbo Intruder), CSP Bypass, IDOR, XSS to CSRF, JWT Forgery, Mass Assignment, IP Spoofing, LFI, RCE vía CVE.
+* **Access Control & Lógica de negocio:** Broken Access Control, Information Disclosure, manipulación de flujos de compra y validaciones del lado del servidor.
+* **Autenticación & Tokens:** bypass de login, manejo inseguro de tokens, Local Storage y cookies.
+* **SQL Injection:** Blind SQLi, Authentication Bypass, **Exif Metadata Injection**, sqlmap, fallos de sanitización.
+* **Cryptography:** RSA Attacks (Common Factor, Franklin-Reiter / Related Messages), LFSR / Shift Registers, Custom Ciphers (Statistical Analysis), Known-Plaintext Attack, Offline Hash Cracking (Salted).
 * **Reverse Engineering:** Análisis estático con IDA y Ghidra, instrumentación dinámica con Frida, cracking de binarios y bypass de comprobaciones.
-* **Binary Exploitation:** Explotación de binarios con pwntools y GDB.
+* **Binary Exploitation:** Explotación de binarios con pwntools y GDB, desbordamiento de memoria y manipulación del stack.
 * **Blockchain:** Smart contracts en Solidity / web3 (Reentrancy, Access Control).
-* **Forensics & Coding:** Image Recovery (Parity Logic), Steganography, Binary Analysis.
+* **Forensics & Coding:** Image Recovery (Parity Logic), Steganography, Binary Analysis, DNS Enumeration.
 
 ---
 
@@ -100,6 +102,17 @@ Inyección SQL atípica en el procesamiento de archivos subidos.
   <li><strong>JWT:</strong> Filtración de una <code>SECRET KEY</code> expuesta en un endpoint JSONP para forjar tokens de administrador válidos (<code>HS256</code>).</li>
 </ul>
 </details>
+
+---
+
+## 📬 Contacto y correcciones
+
+Si encontrás alguna **incoherencia, error técnico, enlace roto o explicación confusa** en cualquiera de los writeups, escribime — se agradece muchísimo:
+
+* 📧 **Correo:** [gonzaorban@gmail.com](mailto:gonzaorban@gmail.com)
+* 🐙 **GitHub:** abrí un [issue](https://github.com/gonzaorban/CTF-Writeups/issues) o un Pull Request con la corrección
+
+También son bienvenidas sugerencias de enfoques alternativos: muchas veces hay más de un camino para resolver el mismo desafío.
 
 ---
 
