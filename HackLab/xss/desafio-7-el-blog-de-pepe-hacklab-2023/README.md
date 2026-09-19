@@ -1,5 +1,9 @@
 # Desafío 7 - El blog de Pepe (HackLab 2023)
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2023  
+**Categoría:** XSS  
+
 ## Análisis
 
 Stored XSS (Cross-Site Scripting almacenado): el campo de comentarios no sanitiza ni codifica la salida. Todo lo que envío en txtComentario se guarda en el servidor y se re-inyecta tal cual en el HTML de la página cuando cualquier usuario la carga. Comprobé que interpretaba HTML (<b>test</b> salió en negrita) y que ejecutaba JavaScript (alert(1) disparó). Al ser almacenado, el payload persiste y afecta a cualquiera que abra la página, no solo a mí.
@@ -35,7 +39,7 @@ window.addEventListener("load", enviarComentario);
 
 Cuando cualquier usuario (que no sea `teny`) carga la página, el script se ejecuta automáticamente y publica el comentario `"Voy a derogar la ley 1542-A"` en su nombre.
 
-![Desafío 7 - El blog de Pepe (HackLab 2023) - imagen 1](images/01.png)
+![Desafío 7 - El blog de Pepe (HackLab 2023) - imagen 1](assets/01.png)
 
 ## Flag
 

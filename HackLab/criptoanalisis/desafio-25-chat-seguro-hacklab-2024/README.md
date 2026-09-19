@@ -1,18 +1,22 @@
 # Desafío 25 - Chat Seguro (HackLab 2024)
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2024  
+**Categoría:** Criptoanálisis  
+
 ## Análisis
 
 Se abre la base de datos (como `.txt`) y se identifica el nombre de usuario `patricio` junto con su hash. El PIN está salteado con una lista de palabras conocidas y hasheado con SHA-256.
 
 ## Explotación
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 1](images/01.png)
+![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 1](assets/01.png)
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 2](images/02.png)
+![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 2](assets/02.png)
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 3](images/03.png)
+![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 3](assets/03.png)
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 4](images/04.png)
+![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 4](assets/04.png)
 
 Script de fuerza bruta para crackear el PIN:
 
@@ -84,13 +88,13 @@ if __name__ == "__main__":
         print("\nNo se pudo encontrar el PIN.")
 ```
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 5](images/05.png)
+![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 5](assets/05.png)
 
 PIN encontrado: `6289`
 
 Se hashea el PIN para obtener el código final:
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 6](images/06.png)
+![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 6](assets/06.png)
 
 ## Flag
 

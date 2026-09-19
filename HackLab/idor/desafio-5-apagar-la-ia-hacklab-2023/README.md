@@ -1,5 +1,9 @@
 # Desafío 5 - Apagar la IA (HackLab 2023)
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2023  
+**Categoría:** IDOR  
+
 > En ambas soluciones asegúrense de modificar el URL por el que les aparezca a ustedes, todos tenemos uno distinto.
 
 ## Reconocimiento
@@ -152,7 +156,7 @@ if __name__ == "__main__":
     main()
 ```
 
-![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 1](images/01.png)
+![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 1](assets/01.png)
 
 ### Solución 2
 
@@ -213,21 +217,21 @@ asyncio.run(main())
 print("SE HAN PROCESADO TODAS LAS PETICIONES")
 ```
 
-![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 2](images/02.png)
+![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 2](assets/02.png)
 
-![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 3](images/03.png)
+![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 3](assets/03.png)
 
-![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 4](images/04.png)
+![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 4](assets/04.png)
 
 Se probaron distintos rangos hasta encontrar que el número `11520` tiene un código HTML de 16 dígitos.
 
-![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 5](images/05.png)
+![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 5](assets/05.png)
 
-![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 6](images/06.png)
+![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 6](assets/06.png)
 
-![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 7](images/07.png)
+![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 7](assets/07.png)
 
-![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 8](images/08.png)
+![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 8](assets/08.png)
 
 Se genera el Hash MD5 del número encontrado:
 
@@ -237,4 +241,4 @@ a8e0e8ff02dde0f62fdf4de5142d7de0
 
 Este es el código que hay que subir a la página.
 
-![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 9](images/09.png)
+![Desafío 5 - Apagar la IA (HackLab 2023) - imagen 9](assets/09.png)

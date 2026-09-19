@@ -1,5 +1,9 @@
 # Desafío 30 - RSA Robusto (HackLab 2024)
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2024  
+**Categoría:** Criptoanálisis  
+
 ## Análisis
 
 Dos módulos RSA (`n1` y `n2`) comparten un factor primo `q` en común. Esto permite recuperar las claves privadas mediante el ataque de **factor común** (GCD).
@@ -59,7 +63,7 @@ print(f"m2 (Parte 2): {m2_bytes.decode('ascii')}")
 print(f"\nFlag Completa: {flag}")
 ```
 
-![Desafío 30 - RSA Robusto (HackLab 2024) - imagen 1](images/01.png)
+![Desafío 30 - RSA Robusto (HackLab 2024) - imagen 1](assets/01.png)
 
 ## Flag
 

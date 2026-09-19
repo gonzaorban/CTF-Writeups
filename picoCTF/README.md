@@ -1,59 +1,63 @@
 # picoCTF
 
-Writeups de las ediciones **2019** y **2026** de [picoCTF](https://picoctf.org/), organizados por año y categoría.
+Writeups de [picoCTF](https://picoctf.org/), organizados por categoría. La edición de cada desafío se indica junto a su nombre y en el encabezado de cada writeup.
 
-## 2026
+## Índice de categorías
 
-### [Binary Exploitation](./2026/Binary%20Exploitation/)
+### [Binary Exploitation](./Binary%20Exploitation/)
 
-- [Echo Escape 1](./2026/Binary%20Exploitation/Echo%20Escape%201/)
-- [JITFP](./2026/Binary%20Exploitation/JITFP/)
+- [Echo Escape 1](./Binary%20Exploitation/Echo%20Escape%201/) — 2026
+- [JITFP](./Binary%20Exploitation/JITFP/) — 2026
 
-### [Blockchain](./2026/Blockchain/)
+### [Blockchain](./Blockchain/)
 
-- [Access Control](./2026/Blockchain/Access%20Control/)
-- [Reentrance](./2026/Blockchain/Reentrance/)
+- [Access Control](./Blockchain/Access%20Control/) — 2026
+- [Reentrance](./Blockchain/Reentrance/) — 2026
 
-### [Cryptography](./2026/Cryptography/)
+### [Cryptography](./Cryptography/)
 
-- [Black Cobra Pepper](./2026/Cryptography/Black%20Cobra%20Pepper/)
-- [Related Messages](./2026/Cryptography/Related%20Messages/)
-- [Secure Dot Product](./2026/Cryptography/Secure%20Dot%20Product/)
-- [Small Trouble](./2026/Cryptography/Small%20Trouble/)
-- [StegoRSA](./2026/Cryptography/StegoRSA/)
-- [Timestamped Secrets](./2026/Cryptography/Timestamped%20Secrets/)
-- [cryptomaze](./2026/Cryptography/cryptomaze/)
-- [shift registers](./2026/Cryptography/shift%20registers/)
+- [Black Cobra Pepper](./Cryptography/Black%20Cobra%20Pepper/) — 2026
+- [Related Messages](./Cryptography/Related%20Messages/) — 2026
+- [Secure Dot Product](./Cryptography/Secure%20Dot%20Product/) — 2026
+- [Small Trouble](./Cryptography/Small%20Trouble/) — 2026
+- [StegoRSA](./Cryptography/StegoRSA/) — 2026
+- [Timestamped Secrets](./Cryptography/Timestamped%20Secrets/) — 2026
+- [cryptomaze](./Cryptography/cryptomaze/) — 2026
+- [shift registers](./Cryptography/shift%20registers/) — 2026
 
-### [Forensics](./2026/Forensics/)
+### [Forensics](./Forensics/)
 
-- [Silent Stream](./2026/Forensics/Silent%20Stream/)
+- [Silent Stream](./Forensics/Silent%20Stream/) — 2026
 
-### [General Skills](./2026/General%20Skills/)
+### [General Skills](./General%20Skills/)
 
-- [Piece by Piece](./2026/General%20Skills/Piece%20by%20Piece/)
+- [Piece by Piece](./General%20Skills/Piece%20by%20Piece/) — 2026
 
-### [Reverse Engineering](./2026/Reverse%20Engineering/)
+### [Reverse Engineering](./Reverse%20Engineering/)
 
-- [Autorev 1](./2026/Reverse%20Engineering/Autorev%201/)
-- [Binary Instrumentation 3](./2026/Reverse%20Engineering/Binary%20Instrumentation%203/)
-- [Binary Instrumentation 4](./2026/Reverse%20Engineering/Binary%20Instrumentation%204/)
-- [Bypass Me](./2026/Reverse%20Engineering/Bypass%20Me/)
-- [Gatekeeper](./2026/Reverse%20Engineering/Gatekeeper/)
-- [Hidden Cipher 1](./2026/Reverse%20Engineering/Hidden%20Cipher%201/)
-- [Hidden Cipher 2](./2026/Reverse%20Engineering/Hidden%20Cipher%202/)
-- [Secure Password Database](./2026/Reverse%20Engineering/Secure%20Password%20Database/)
-- [The Add-On Trap](./2026/Reverse%20Engineering/The%20Add-On%20Trap/)
+- [Autorev 1](./Reverse%20Engineering/Autorev%201/) — 2026
+- [Binary Instrumentation 3](./Reverse%20Engineering/Binary%20Instrumentation%203/) — 2026
+- [Binary Instrumentation 4](./Reverse%20Engineering/Binary%20Instrumentation%204/) — 2026
+- [Bypass Me](./Reverse%20Engineering/Bypass%20Me/) — 2026
+- [Gatekeeper](./Reverse%20Engineering/Gatekeeper/) — 2026
+- [Hidden Cipher 1](./Reverse%20Engineering/Hidden%20Cipher%201/) — 2026
+- [Hidden Cipher 2](./Reverse%20Engineering/Hidden%20Cipher%202/) — 2026
+- [Secure Password Database](./Reverse%20Engineering/Secure%20Password%20Database/) — 2026
+- [The Add-On Trap](./Reverse%20Engineering/The%20Add-On%20Trap/) — 2026
 
-### [Web Exploitation](./2026/Web%20Exploitation/)
+### [Web Exploitation](./Web%20Exploitation/)
 
-- [Cookies](./2026/Web%20Exploitation/Cookies/)
-- [Fool the Lockout](./2026/Web%20Exploitation/Fool%20the%20Lockout/)
-- [North-South](./2026/Web%20Exploitation/North-South/)
-- [Sql Map1](./2026/Web%20Exploitation/Sql%20Map1/)
+- [Cookies](./Web%20Exploitation/Cookies/) — 2026
+- [Fool the Lockout](./Web%20Exploitation/Fool%20the%20Lockout/) — 2026
+- [Irish-Name-Repo-1](./Web%20Exploitation/Irish-Name-Repo-1/) — 2019
+- [North-South](./Web%20Exploitation/North-South/) — 2026
+- [Sql Map1](./Web%20Exploitation/Sql%20Map1/) — 2026
 
-## 2019
+---
 
-### [Web](./2019/Web/)
+## Desafíos por edición
 
-- [Irish-Name-Repo-1](./2019/Web/Irish-Name-Repo-1/)
+| Edición | Desafíos |
+| :--- | ---: |
+| [2026](#índice-de-categorías) | 27 |
+| [2019](./Web%20Exploitation/Irish-Name-Repo-1/) | 1 |

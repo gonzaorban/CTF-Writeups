@@ -1,5 +1,8 @@
 # Desafío 35 - Aldeas Inseguras V2
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Categoría:** IDOR  
+
 ## Análisis
 
 Muy parecido al desafío de Aldeas Inseguras original. En este caso:
@@ -19,7 +22,7 @@ Se realiza una petición de "Enviar mercancía" y se abre en Intruder con click 
 > El ataque **Pitchfork** empareja el primer elemento de la Lista 1 con el primero de la Lista 2, el segundo con el segundo, etc.
 > El ataque **Cluster Bomb** hace el producto cartesiano de todas las combinaciones.
 
-![Desafío 35 - Aldeas Inseguras V2 - imagen 1](images/01.png)
+![Desafío 35 - Aldeas Inseguras V2 - imagen 1](assets/01.png)
 
 ### Listas para el ataque Pitchfork (Oro)
 
@@ -61,17 +64,17 @@ ac550a1da769ae43f800adbff174e7dc
 
 > Los IDs se recolectaron de los jugadores y se guardaron en un `.txt` para cargarlos en Intruder con **Load…**. En el SCRIPT se indican los primeros dos elementos de cada lista que no deben cargarse; si están presentes, hacer REMOVE de esa línea.
 
-![Desafío 35 - Aldeas Inseguras V2 - imagen 2](images/02.png)
+![Desafío 35 - Aldeas Inseguras V2 - imagen 2](assets/02.png)
 
 Se selecciona el origen con **Add $** y se carga el txt.
 
-![Desafío 35 - Aldeas Inseguras V2 - imagen 3](images/03.png)
+![Desafío 35 - Aldeas Inseguras V2 - imagen 3](assets/03.png)
 
-![Desafío 35 - Aldeas Inseguras V2 - imagen 4](images/04.png)
+![Desafío 35 - Aldeas Inseguras V2 - imagen 4](assets/04.png)
 
-![Desafío 35 - Aldeas Inseguras V2 - imagen 5](images/05.png)
+![Desafío 35 - Aldeas Inseguras V2 - imagen 5](assets/05.png)
 
-![Desafío 35 - Aldeas Inseguras V2 - imagen 6](images/06.png)
+![Desafío 35 - Aldeas Inseguras V2 - imagen 6](assets/06.png)
 
 ## Flag
 
@@ -79,4 +82,4 @@ Se selecciona el origen con **Add $** y se carga el txt.
 136868cdc797f8c6698d5d1b1761aaf7
 ```
 
-![Desafío 35 - Aldeas Inseguras V2 - imagen 7](images/07.png)
+![Desafío 35 - Aldeas Inseguras V2 - imagen 7](assets/07.png)

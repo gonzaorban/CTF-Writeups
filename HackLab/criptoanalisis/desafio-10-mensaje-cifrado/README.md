@@ -1,5 +1,8 @@
 # Desafío 10 - Mensaje cifrado
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Categoría:** Criptoanálisis  
+
 ## Análisis
 
 El mensaje está cifrado con un cifrado César sobre un alfabeto personalizado (incluye `ñ`, vocales con tilde, `,`, `.` y espacio). Se usa fuerza bruta probando todos los desplazamientos posibles.
@@ -43,7 +46,7 @@ for s in range(1, len(alphabet)):
     print(caesar_decode(cipher, s))
 ```
 
-![Desafío 10 - Mensaje cifrado - imagen 1](images/01.png)
+![Desafío 10 - Mensaje cifrado - imagen 1](assets/01.png)
 
 Mensaje descifrado:
 
@@ -59,7 +62,7 @@ sentir que existes...
 sentir que vivo para amarte.
 ```
 
-![Desafío 10 - Mensaje cifrado - imagen 2](images/02.png)
+![Desafío 10 - Mensaje cifrado - imagen 2](assets/02.png)
 
 ## Flag
 

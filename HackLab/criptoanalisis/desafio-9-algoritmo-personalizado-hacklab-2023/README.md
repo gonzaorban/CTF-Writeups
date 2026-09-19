@@ -1,5 +1,9 @@
 # Desafío 9 - Algoritmo personalizado (HackLab 2023)
 
+**Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2023  
+**Categoría:** Criptoanálisis  
+
 ## Análisis
 
 El mensaje cifrado combina dos pasos:
@@ -11,9 +15,9 @@ Para descifrarlo hay que descubrir la clave `key` y revertir ambas operaciones.
 
 ## Explotación
 
-![Desafío 9 - Algoritmo personalizado (HackLab 2023) - imagen 1](images/01.png)
+![Desafío 9 - Algoritmo personalizado (HackLab 2023) - imagen 1](assets/01.png)
 
-![Desafío 9 - Algoritmo personalizado (HackLab 2023) - imagen 2](images/02.png)
+![Desafío 9 - Algoritmo personalizado (HackLab 2023) - imagen 2](assets/02.png)
 
 Script de criptoanálisis por fuerza bruta con scoring estadístico:
 
@@ -72,11 +76,11 @@ for sc, k, off, dec in cands[:8]:
 
 Mensaje descifrado: **"Bienvenido python al mundo de Java"**
 
-![Desafío 9 - Algoritmo personalizado (HackLab 2023) - imagen 3](images/03.png)
+![Desafío 9 - Algoritmo personalizado (HackLab 2023) - imagen 3](assets/03.png)
 
-![Desafío 9 - Algoritmo personalizado (HackLab 2023) - imagen 4](images/04.png)
+![Desafío 9 - Algoritmo personalizado (HackLab 2023) - imagen 4](assets/04.png)
 
-![Desafío 9 - Algoritmo personalizado (HackLab 2023) - imagen 5](images/05.png)
+![Desafío 9 - Algoritmo personalizado (HackLab 2023) - imagen 5](assets/05.png)
 
 ## Flag
 
