@@ -31,8 +31,6 @@ Se configura **Payload type: Numbers**, de `1` a `50`, para abarcar la mayor can
 
 ![Desafío 36 - Notas Universitarias - imagen 6](assets/06.png)
 
-> **Conclusión:** todo lo relacionado con tokens y demás era para confundir. La vulnerabilidad se explotó directamente modificando el ID de la materia vía IDOR.
-
 ## Flag
 
 ```
@@ -40,5 +38,7 @@ Se configura **Payload type: Numbers**, de `1` a `50`, para abarcar la mayor can
 ```
 
 ![Desafío 36 - Notas Universitarias - imagen 7](assets/07.png)
+
+> **Conclusión:** todo lo relacionado con tokens y demás era para confundir. La vulnerabilidad se explotó directamente modificando el ID de la materia vía IDOR.
 
 ![Desafío 36 - Notas Universitarias - imagen 8](assets/08.png)
