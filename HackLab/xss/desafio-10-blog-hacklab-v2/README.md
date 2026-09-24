@@ -97,11 +97,11 @@ await fetch("/comment", {
 
 Así Jeni "deja un comentario" sin abrir jamás la sección de comentarios.
 
-### 3. Orquestación y condición de carrera
+### 3. Orquestación
 
-La ingeniería social ingresa **primero a Pepe y luego a Jeni**. El primer disparo de "Engañar" hace que Pepe ejecute `stage1.js` y deje `stage2.js` en su bio; el ingreso de Jeni en ese mismo disparo puede llegar **antes** de que el `POST /profile` de Pepe termine de guardarse (la bio todavía no tiene el `stage2`), por lo que Jeni no comenta.
+La ingeniería social ingresa **primero a Pepe y luego a Jeni**, y con **un solo disparo de "Engañar"** alcanza: Pepe entra a `/comments` y ejecuta `stage1.js`, que deja `stage2.js` en su bio; para cuando Jeni entra a `/biographies`, el `POST /profile` de Pepe ya se guardó, así que Jeni encuentra la bio envenenada y comenta.
 
-La solución es dispararlo **dos veces**: el primer "Engañar" ceba la bio de Pepe; en el segundo (un minuto después) Jeni ya encuentra la bio envenenada y comenta. Conviene además **partir de un estado limpio** (reiniciar el desafío / limpiar bios y comentarios previos), porque payloads de corridas anteriores pueden seguir ejecutándose e interferir con la verificación.
+Conviene **partir de un estado limpio** (reiniciar el desafío / limpiar bios y comentarios previos), porque payloads de corridas anteriores pueden seguir ejecutándose e interferir con la verificación.
 
 ### 4. Flag
 
