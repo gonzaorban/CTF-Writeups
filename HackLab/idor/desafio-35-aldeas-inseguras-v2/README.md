@@ -5,7 +5,7 @@
 
 ## Análisis
 
-Muy parecido al desafío de Aldeas Inseguras original. En este caso:
+Muy parecido al desafío de Aldeas inseguras original. En este caso:
 
 - **Plata y Bronce**: no tienen límite para recibirlos, se pueden enviar todos directamente a Pedro.
 - **Oro**: hay que realizar una escalera (Alfonzo → Juana → Santiago → Pedro), acumulando el oro sucesivamente.

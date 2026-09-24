@@ -2,7 +2,7 @@
 
 **Plataforma:** HackLab (SoftwareSeguro)  
 **Edición:** HackLab 2024  
-**Categoría:** IDOR  
+**Categoría:** IDOR - Reversing Desktop Apps  
 
 ## Análisis
 

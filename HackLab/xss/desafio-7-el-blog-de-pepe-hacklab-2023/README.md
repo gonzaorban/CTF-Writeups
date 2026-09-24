@@ -6,7 +6,7 @@
 
 ## Análisis
 
-Primera versión del "Blog de Pepe" (la saga sigue en el Desafío 8, el Desafío 9 y el Desafío 10).
+Primera versión del "Blog de Pepe" (la saga sigue en el Desafío 8, el Desafío 29 y el Desafío 43).
 
 Stored XSS (Cross-Site Scripting almacenado): el campo de comentarios no sanitiza ni codifica la salida. Todo lo que envío en txtComentario se guarda en el servidor y se re-inyecta tal cual en el HTML de la página cuando cualquier usuario la carga. Comprobé que interpretaba HTML (<b>test</b> salió en negrita) y que ejecutaba JavaScript (alert(1) disparó). Al ser almacenado, el payload persiste y afecta a cualquiera que abra la página, no solo a mí.
 

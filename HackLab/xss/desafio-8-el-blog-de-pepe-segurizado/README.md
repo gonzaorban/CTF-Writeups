@@ -5,7 +5,7 @@
 
 ## Análisis
 
-Segunda versión del "Blog de Pepe" (la saga empieza en el Desafío 7 y sigue en el Desafío 9 y el Desafío 10).
+Segunda versión del "Blog de Pepe" (la saga empieza en el Desafío 7 y sigue en el Desafío 29 y el Desafío 43).
 
 La página tiene una CSP (Content Security Policy) estricta que requiere un `nonce` válido para ejecutar scripts. La vulnerabilidad consiste en extraer ese `nonce` del código fuente de la página e inyectar un bloque `<script>` autorizado.
 

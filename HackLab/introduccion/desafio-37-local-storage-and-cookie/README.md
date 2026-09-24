@@ -1,4 +1,4 @@
-# Desafio 37 - Local Storage and Cookie
+# Desafío 37 - Local Storage and Cookie
 
 **Plataforma:** HackLab (SoftwareSeguro)  
 **Categoría:** Introducción  
@@ -15,7 +15,7 @@ El MD5 de "hackertech" es:
 
 Abrís el inspector y vas a la parte de Aplicación, dentro de Local Storage modificas la variable local que estaba en 0 por `6397550e14d36fc51b5049e28c40876f`.
 
-![Desafio 37 - Local Storage and Cookie - imagen 1](assets/01.png)
+![Desafío 37 - Local Storage and Cookie - imagen 1](assets/01.png)
 
 ## Flag
 
@@ -23,4 +23,4 @@ Abrís el inspector y vas a la parte de Aplicación, dentro de Local Storage mod
 2a67fed05c1362c6f39e7ddb95d96101
 ```
 
-![Desafio 37 - Local Storage and Cookie - imagen 2](assets/02.png)
+![Desafío 37 - Local Storage and Cookie - imagen 2](assets/02.png)

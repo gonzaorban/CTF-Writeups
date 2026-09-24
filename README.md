@@ -57,7 +57,7 @@ Desglose técnico de vectores de ataque avanzados extraídos de los desafíos m�
 <details>
 <summary><strong>🏎️ Concurrency: Race Condition con Turbo Intruder (Scripting)</strong></summary>
 <br>
-Explotación de una condición de carrera en lógica de negocios ("El Analista") donde se requería asociar ventas a vendedores.
+Explotación de una condición de carrera en lógica de negocios ("El analista") donde se requería asociar ventas a vendedores.
 <ul>
   <li><strong>Herramienta:</strong> Turbo Intruder (Extensión de Burp).</li>
   <li><strong>Técnica:</strong> Desarrollo de un script en Python (<code>queueRequests</code>) utilizando el motor <code>RequestEngine</code> para enviar ráfagas de peticiones concurrentes (Cluster Bomb) y superar las validaciones de estado del servidor.</li>

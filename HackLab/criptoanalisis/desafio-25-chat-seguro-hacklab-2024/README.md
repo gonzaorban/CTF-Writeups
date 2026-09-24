@@ -10,13 +10,13 @@ Se abre la base de datos (como `.txt`) y se identifica el nombre de usuario `pat
 
 ## Explotación
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 1](assets/01.png)
+![Desafío 25 - Chat Seguro (HackLab 2024) - imagen 1](assets/01.png)
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 2](assets/02.png)
+![Desafío 25 - Chat Seguro (HackLab 2024) - imagen 2](assets/02.png)
 
 <!-- TODO: revisar -- assets/03.png quitada del writeup: mostraba un PIN/salt (2041/DATABASE) que no genera el hash objetivo, contradicho por la ejecución real del script en la imagen 6 (PIN 6289/CODINGTOP) -->
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 4](assets/04.png)
+![Desafío 25 - Chat Seguro (HackLab 2024) - imagen 4](assets/04.png)
 
 Script de fuerza bruta para crackear el PIN:
 
@@ -88,13 +88,13 @@ if __name__ == "__main__":
         print("\nNo se pudo encontrar el PIN.")
 ```
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 5](assets/05.png)
+![Desafío 25 - Chat Seguro (HackLab 2024) - imagen 5](assets/05.png)
 
 PIN encontrado: `6289`
 
 Se hashea el PIN para obtener el código final:
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 6](assets/06.png)
+![Desafío 25 - Chat Seguro (HackLab 2024) - imagen 6](assets/06.png)
 
 ## Flag
 

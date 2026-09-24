@@ -1,4 +1,4 @@
-# Desafío 32 - El Analista (HackLab 2024)
+# Desafío 32 - El analista (HackLab 2024)
 
 **Plataforma:** HackLab (SoftwareSeguro)  
 **Edición:** HackLab 2024  

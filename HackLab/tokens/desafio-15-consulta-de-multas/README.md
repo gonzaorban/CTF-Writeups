@@ -1,4 +1,4 @@
-# Desafío 15 - Consultas Multas
+# Desafío 15 - Consulta de multas
 
 **Plataforma:** HackLab (SoftwareSeguro)  
 **Categoría:** Tokens  
@@ -20,9 +20,9 @@ Además de la clave expuesta hay dos fallos secundarios que facilitan el ataque:
 
 Se abre [jwt.io](https://www.jwt.io/) y se pega el token capturado para ver su contenido (JWT Decoder).
 
-![Desafío 15 - Consultas Multas - imagen 1](assets/01.png)
+![Desafío 15 - Consulta de multas - imagen 1](assets/01.png)
 
-![Desafío 15 - Consultas Multas - imagen 2](assets/02.png)
+![Desafío 15 - Consulta de multas - imagen 2](assets/02.png)
 
 El endpoint `/jsonp/?callback=procesarDatos` serializa los settings de Django y devuelve la **SECRET_KEY** en claro dentro del callback:
 
@@ -30,11 +30,11 @@ El endpoint `/jsonp/?callback=procesarDatos` serializa los settings de Django y 
 123456@pz*+2p(e10(n7891
 ```
 
-![Desafío 15 - Consultas Multas - imagen 3](assets/03.png)
+![Desafío 15 - Consulta de multas - imagen 3](assets/03.png)
 
-![Desafío 15 - Consultas Multas - imagen 4](assets/04.png)
+![Desafío 15 - Consulta de multas - imagen 4](assets/04.png)
 
-![Desafío 15 - Consultas Multas - imagen 5](assets/05.png)
+![Desafío 15 - Consulta de multas - imagen 5](assets/05.png)
 
 Con la SECRET KEY se usa el **JWT Encoder** de jwt.io para crear un nuevo token: se cambia el correo por el del administrador indicado en el enunciado y la firma se reemplaza por la SECRET KEY encontrada.
 
@@ -49,9 +49,9 @@ mFkbWluaXN0cmFkb3JfbXVsdGFzQHlvcG1haWwuY29tIiwib3JpZ19pYXQiOjE3NTkyMjI3N
 TB9.AWkUqOHEHVqkBQg0cZ6M5nUNPiUVMxaCSCBMjNFjTlo
 ```
 
-![Desafío 15 - Consultas Multas - imagen 6](assets/06.png)
+![Desafío 15 - Consulta de multas - imagen 6](assets/06.png)
 
-![Desafío 15 - Consultas Multas - imagen 7](assets/07.png)
+![Desafío 15 - Consulta de multas - imagen 7](assets/07.png)
 
 ## Flag
 

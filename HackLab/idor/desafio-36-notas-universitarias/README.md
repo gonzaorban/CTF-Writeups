@@ -1,7 +1,7 @@
 # Desafío 36 - Notas Universitarias
 
 **Plataforma:** HackLab (SoftwareSeguro)  
-**Categoría:** IDOR  
+**Categoría:** Tokens - IDOR  
 
 ## Análisis
 

