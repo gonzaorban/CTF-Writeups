@@ -20,6 +20,10 @@ Las primitivas de la vulnerabilidad son las mismas del Desafío 9:
   <p class="mb-0 mt-2"><b>xsstest</b></p>
   ```
 
+  Cargando `/biographies`, la bio de `@pepe` aparece en negrita, lo que confirma que la bio no se sanitiza y que un `<script src>` inyectado ahí se ejecutará:
+
+  ![Desafío 10 - Blog HackLab V2 (HackLab 2026) - prueba: la bio <b>xsstest</b> se renderiza en negrita en /biographies](assets/01.png)
+
 - **CSP mal configurada** en el `<head>`:
 
   ```html
@@ -72,11 +76,11 @@ await fetch("/profile", {
 
 Como Pepe es experto, su bio ya envenenada pasa a mostrarse en `/biographies`:
 
-![Desafío 10 - Blog HackLab V2 (HackLab 2026) - bio de Pepe envenenada con el segundo script en /biographies](assets/01.png)
+![Desafío 10 - Blog HackLab V2 (HackLab 2026) - bio de Pepe envenenada con el segundo script en /biographies](assets/02.png)
 
 El payload almacenado se puede confirmar abriendo la sección Perfil: el campo Bio contiene el `<script src=".../stage2.js"></script>`.
 
-![Desafío 10 - Blog HackLab V2 (HackLab 2026) - payload almacenado visible en el campo Bio del perfil](assets/02.png)
+![Desafío 10 - Blog HackLab V2 (HackLab 2026) - payload almacenado visible en el campo Bio del perfil](assets/03.png)
 
 ### 2. `stage2.js` — comentar como Jeni (se ejecuta en `/biographies`)
 
@@ -103,7 +107,7 @@ La solución es dispararlo **dos veces**: el primer "Engañar" ceba la bio de Pe
 
 Al publicarse el comentario de Jeni, el blog muestra el mensaje de éxito con el flag. Se ve el comentario firmado por `jeni` y el encabezado "Ganaste":
 
-![Desafío 10 - Blog HackLab V2 (HackLab 2026) - comentario publicado como jeni y flag "Ganaste"](assets/03.png)
+![Desafío 10 - Blog HackLab V2 (HackLab 2026) - comentario publicado como jeni y flag "Ganaste"](assets/04.png)
 
 ## Flag
 

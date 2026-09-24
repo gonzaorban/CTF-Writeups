@@ -67,10 +67,10 @@ Explotación de una condición de carrera en lógica de negocios ("El Analista")
 <details>
 <summary><strong>🛡️ Web: XSS + CSRF Chaining & CSP Bypass</strong></summary>
 <br>
-Bypass de una Política de Seguridad de Contenido (CSP) estricta en "El blog de Pepe".
+Bypass de Políticas de Seguridad de Contenido (CSP) mal configuradas en el "Blog de HackLab", escalando Stored XSS a CSRF para forzar acciones en nombre de la víctima.
 <ul>
-  <li><strong>Técnica:</strong> Extracción de un <code>nonce</code> válido del código fuente para inyectar un bloque <code>&lt;script&gt;</code> autorizado.</li>
-  <li><strong>Impacto:</strong> El XSS se escala a un ataque CSRF utilizando jQuery (<code>$.post</code>) para forzar acciones en nombre de la víctima (publicar comentarios no deseados).</li>
+  <li><strong>V1 (bypass vía nonce):</strong> extracción de un <code>nonce</code> válido del código fuente para inyectar un bloque <code>&lt;script&gt;</code> autorizado. El XSS se escala a CSRF con jQuery (<code>$.post</code>) para publicar comentarios en nombre de la víctima.</li>
+  <li><strong>V2 (bypass vía <code>script-src *</code>):</strong> la CSP bloquea todo script inline pero el comodín <code>*</code> autoriza <code>&lt;script src&gt;</code> remoto (alojado en jsDelivr para pasar ORB). El ataque encadena <strong>dos etapas</strong> según dónde entra cada víctima: la etapa 1 corre en <code>/comments</code> y, vía <code>POST /profile</code> sin CSRF, envenena la bio de un usuario experto; esa bio se muestra en <code>/biographies</code>, la única sección que visita la segunda víctima, cuya carga dispara la etapa 2 (<code>POST /comment</code> con su sesión).</li>
 </ul>
 </details>
 
