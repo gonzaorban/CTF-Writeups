@@ -30,6 +30,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 7 - El blog de Pepe (HackLab 2023)](./xss/desafio-7-el-blog-de-pepe-hacklab-2023/)
 - [Desafío 8 - El blog de Pepe segurizado](./xss/desafio-8-el-blog-de-pepe-segurizado/)
 - [Desafío 9 - Blog HackLab (HackLab 2024)](./xss/desafio-9-blog-hacklab-2024/)
+- [Desafío 10 - Blog HackLab V2 (HackLab 2026)](./xss/desafio-10-blog-hacklab-v2/)
 
 ### [SQL Injection](./sql-injection/)
 
@@ -88,6 +89,12 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 ## Desafíos por edición de la competencia
 
 Estos son los desafíos que corresponden a una edición de la competencia anual HackLab. El resto de los desafíos del índice pertenecen al catálogo permanente de la plataforma y no están asociados a una edición.
+
+### HackLab 2026
+
+| Desafío | Categoría |
+| :--- | :--- |
+| [Desafío 10 - Blog HackLab V2](./xss/desafio-10-blog-hacklab-v2/) | XSS |
 
 ### HackLab 2025
 
