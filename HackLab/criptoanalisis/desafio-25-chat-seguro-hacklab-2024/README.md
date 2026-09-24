@@ -14,7 +14,7 @@ Se abre la base de datos (como `.txt`) y se identifica el nombre de usuario `pat
 
 ![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 2](assets/02.png)
 
-![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 3](assets/03.png)
+<!-- TODO: revisar -- assets/03.png quitada del writeup: mostraba un PIN/salt (2041/DATABASE) que no genera el hash objetivo, contradicho por la ejecución real del script en la imagen 6 (PIN 6289/CODINGTOP) -->
 
 ![Desafío 25 - Chat Seguro (Hacklab 2024) - imagen 4](assets/04.png)
 
