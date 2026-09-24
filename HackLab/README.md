@@ -29,8 +29,8 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 6 - Búsqueda de usuarios](./xss/desafio-6-busqueda-de-usuarios/)
 - [Desafío 7 - El blog de Pepe (HackLab 2023)](./xss/desafio-7-el-blog-de-pepe-hacklab-2023/)
 - [Desafío 8 - El blog de Pepe segurizado](./xss/desafio-8-el-blog-de-pepe-segurizado/)
-- [Desafío 9 - Blog HackLab (HackLab 2024)](./xss/desafio-9-blog-hacklab-2024/)
-- [Desafío 10 - Blog HackLab V2 (HackLab 2026)](./xss/desafio-10-blog-hacklab-v2/)
+- [Desafío 29 - Blog HackLab (HackLab 2024)](./xss/desafio-29-blog-hacklab-2024/)
+- [Desafío 43 - Blog HackLab V2 (HackLab 2025)](./xss/desafio-43-blog-hacklab-v2/)
 
 ### [SQL Injection](./sql-injection/)
 
@@ -90,28 +90,23 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 Estos son los desafíos que corresponden a una edición de la competencia anual HackLab. El resto de los desafíos del índice pertenecen al catálogo permanente de la plataforma y no están asociados a una edición.
 
-### HackLab 2026
-
-| Desafío | Categoría |
-| :--- | :--- |
-| [Desafío 10 - Blog HackLab V2](./xss/desafio-10-blog-hacklab-v2/) | XSS |
-
 ### HackLab 2025
 
 | Desafío | Categoría |
 | :--- | :--- |
+| [Desafío 43 - Blog HackLab V2](./xss/desafio-43-blog-hacklab-v2/) | XSS |
 | [Desafío 47 - Venta de autos](./logica-de-negocio/desafio-47-venta-de-autos/) | Lógica de negocio |
 
 ### HackLab 2024
 
 | Desafío | Categoría |
 | :--- | :--- |
-| [Desafío 9 - Blog HackLab](./xss/desafio-9-blog-hacklab-2024/) | XSS |
 | [Desafío 22 - Turnero](./idor/desafio-22-turnero-hackllab-2024/) | IDOR |
 | [Desafío 23 - Calculadora](./idor/desafio-23-calculadora-hackllab-2024/) | IDOR |
 | [Desafío 23 - Préstamo](./mass-assignment/desafio-23-prestamo-hacklab-2024/) | Mass Assignment |
 | [Desafío 25 - Chat Seguro](./criptoanalisis/desafio-25-chat-seguro-hacklab-2024/) | Criptoanálisis |
 | [Desafío 26 - Asistencia](./information-disclosure/desafio-26-asistencia-hacklab-2024/) | Information Disclosure |
+| [Desafío 29 - Blog HackLab](./xss/desafio-29-blog-hacklab-2024/) | XSS |
 | [Desafío 30 - RSA Robusto](./criptoanalisis/desafio-30-rsa-robusto-hacklab-2024/) | Criptoanálisis |
 | [Desafío 32 - El Analista](./condiciones-de-carrera/desafio-32-el-analista-hacklab-2024/) | Condiciones de carrera |
 | [Desafío 33 - ECommerce](./auth/desafio-33-ecommerce-hacklab-2024/) | Auth |

