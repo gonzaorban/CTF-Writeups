@@ -29,6 +29,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 6 - Búsqueda de usuarios](./xss/desafio-6-busqueda-de-usuarios/)
 - [Desafío 7 - El blog de Pepe (HackLab 2023)](./xss/desafio-7-el-blog-de-pepe-hacklab-2023/)
 - [Desafío 8 - El blog de Pepe segurizado](./xss/desafio-8-el-blog-de-pepe-segurizado/)
+- [Desafío 9 - Blog HackLab (HackLab 2024)](./xss/desafio-9-blog-hacklab-2024/)
 
 ### [SQL Injection](./sql-injection/)
 
@@ -98,6 +99,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 
 | Desafío | Categoría |
 | :--- | :--- |
+| [Desafío 9 - Blog HackLab](./xss/desafio-9-blog-hacklab-2024/) | XSS |
 | [Desafío 22 - Turnero](./idor/desafio-22-turnero-hackllab-2024/) | IDOR |
 | [Desafío 23 - Calculadora](./idor/desafio-23-calculadora-hackllab-2024/) | IDOR |
 | [Desafío 23 - Préstamo](./mass-assignment/desafio-23-prestamo-hacklab-2024/) | Mass Assignment |
