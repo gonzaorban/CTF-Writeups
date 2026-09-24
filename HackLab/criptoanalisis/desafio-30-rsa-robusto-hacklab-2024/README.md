@@ -4,11 +4,35 @@
 **Edición:** HackLab 2024  
 **Categoría:** Criptoanálisis  
 
-## Análisis
+## Análisis de la Vulnerabilidad
 
-Dos módulos RSA (`n1` y `n2`) comparten un factor primo `q` en común. Esto permite recuperar las claves privadas mediante el ataque de **factor común** (GCD).
+Es un caso clásico de RSA con primo compartido (*common factor* / *shared prime*). Mirando `encrypt.py`:
 
-## Explotación
+```python
+p = getPrime(1024)
+q = getPrime(1024)
+r = getPrime(1024)
+n1 = p*q   # módulo del mensaje 1
+n2 = q*r   # módulo del mensaje 2  <-- reutiliza q
+```
+
+Los dos módulos comparten el primo `q`. RSA es seguro solo mientras factorizar `n` sea inviable, y eso vale para módulos generados de forma independiente. Pero acá, al reutilizar `q`, alcanza con calcular:
+
+```python
+q = gcd(n1, n2)
+```
+
+El máximo común divisor de dos números de 2048 bits se computa en milisegundos con el algoritmo de Euclides. Una vez que tenés `q`, obtenés `p = n1/q` y `r = n2/q`, y con eso reconstruís ambas claves privadas. No hace falta factorizar nada por fuerza bruta: la factorización se cae sola.
+
+El error de fondo es reutilizar material de clave entre operaciones distintas. Los primos RSA deben ser únicos y generados de forma independiente en cada par de claves.
+
+## Metodología de Resolución
+
+1. Del código deduje que `n1 = p·q` y `n2 = q·r` comparten `q`.
+2. Calculé `q = gcd(n1, n2)`.
+3. Recuperé `p = n1/q` y `r = n2/q`.
+4. Reconstruí las privadas: `d1 = e⁻¹ mod (p−1)(q−1)` y `d2 = e⁻¹ mod (q−1)(r−1)`.
+5. Descifré: `m1 = c1^d1 mod n1`, `m2 = c2^d2 mod n2`, convertí a bytes y concatené.
 
 ```python
 import math
@@ -70,3 +94,7 @@ print(f"\nFlag Completa: {flag}")
 ```
 295d531e3c72f863ad77c96cde63f829
 ```
+
+## Impacto en la Tríada de Seguridad (CIA)
+
+Confidencialidad: Al recuperar `q` con el GCD se reconstruyen ambas claves privadas (`d1` y `d2`), lo que permite descifrar `c1` y `c2` y leer el contenido completo de los mensajes sin ser el destinatario legítimo. Cualquier otro mensaje cifrado con `n1` o `n2` queda igualmente expuesto.
