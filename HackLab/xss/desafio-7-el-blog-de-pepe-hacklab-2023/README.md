@@ -6,6 +6,8 @@
 
 ## Análisis
 
+Primera versión del "Blog de Pepe" (la saga sigue en el Desafío 8, el Desafío 9 y el Desafío 10).
+
 Stored XSS (Cross-Site Scripting almacenado): el campo de comentarios no sanitiza ni codifica la salida. Todo lo que envío en txtComentario se guarda en el servidor y se re-inyecta tal cual en el HTML de la página cuando cualquier usuario la carga. Comprobé que interpretaba HTML (<b>test</b> salió en negrita) y que ejecutaba JavaScript (alert(1) disparó). Al ser almacenado, el payload persiste y afecta a cualquiera que abra la página, no solo a mí.
 
 Ausencia de protección CSRF: analicé el POST en Burp y el body solo contenía txtComentario y btnEnviar. No había ningún token anti-CSRF (nonce por request). La autenticación depende únicamente de la cookie PHPSESSID, que el navegador adjunta automáticamente. Eso significa que cualquier acción hecha desde el propio dominio se ejecuta con la identidad del usuario logueado, sin verificación de que la petición sea legítima.

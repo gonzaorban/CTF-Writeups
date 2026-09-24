@@ -6,7 +6,7 @@
 
 ## Análisis
 
-Segunda versión del "Blog de Pepe". El blog permite publicar comentarios y, para los perfiles marcados como **expertos**, muestra públicamente su biografía (`bio`) en la sección `/biographies`. El objetivo cambia respecto al Desafío 9: ya no hay que modificar un perfil, sino **lograr que la usuaria `jeni` deje un comentario**.
+Cuarta versión del "Blog de Pepe". El blog permite publicar comentarios y, para los perfiles marcados como **expertos**, muestra públicamente su biografía (`bio`) en la sección `/biographies`. El objetivo cambia respecto al Desafío 9: ya no hay que modificar un perfil, sino **lograr que la usuaria `jeni` deje un comentario**.
 
 La restricción central es de comportamiento: **`jeni` nunca entra a `/comments`** (cree que es insegura), **solo visita `/biographies`**. Un `<script>` alojado en un comentario, entonces, jamás se ejecuta en su navegador: solo corre para quien carga la página de comentarios (Pepe sí; Jeni no). El payload tiene que terminar **dentro de una bio que se renderice en `/biographies`**, la única página que Jeni abre.
 

@@ -6,7 +6,7 @@
 
 ## Análisis
 
-Nueva vuelta del "Blog de Pepe". El objetivo ya no es publicar un comentario en nombre de la víctima, sino **modificar la foto de perfil del usuario `pepe`**. El blog expone además un mecanismo explícito ("Engañar a Pepe para que ingrese al Blog") que fuerza a que Pepe visite la URL del desafío, con un límite de una vez por minuto.
+Tercera versión del "Blog de Pepe" (después del Desafío 7 y el Desafío 8, y antes del Desafío 10). El objetivo ya no es publicar un comentario en nombre de la víctima, sino **modificar la foto de perfil del usuario `pepe`**. El blog expone además un mecanismo explícito ("Engañar a Pepe para que ingrese al Blog") que fuerza a que Pepe visite la URL del desafío, con un límite de una vez por minuto.
 
 El campo de comentarios **no sanitiza ni codifica la salida**: `<b>test</b>` se renderiza en negrita, es decir el HTML enviado se re-inyecta tal cual en la página (Stored XSS). Sin embargo, la aplicación agrega una CSP en el `<head>`:
 
