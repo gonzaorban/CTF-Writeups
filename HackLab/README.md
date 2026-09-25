@@ -84,6 +84,10 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 49 - Fix Urgente](./sanitizacion/desafio-49-fix-urgente/)
 
+### [Reversing Desktop Apps](./reversing-desktop-apps/)
+
+- [Desafío 45 - Tetris (HackLab 2025)](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/)
+
 ---
 
 ## Desafíos por edición de la competencia
@@ -95,6 +99,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 | Desafío | Categoría |
 | :--- | :--- |
 | [Desafío 43 - Blog Hacklab v2](./xss/desafio-43-blog-hacklab-v2-hacklab-2025/) | XSS |
+| [Desafío 45 - Tetris](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/) | Reversing Desktop Apps - Lógica de negocio |
 | [Desafío 47 - Venta de autos](./logica-de-negocio/desafio-47-venta-de-autos-hacklab-2025/) | Lógica de negocio |
 
 ### HackLab 2024
