@@ -73,6 +73,10 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 33 - ECommerce (HackLab 2024)](./auth/desafio-33-ecommerce-hacklab-2024/)
 - [Desafío 34 - Snow Storm (HackLab 2024)](./auth/desafio-34-snow-storm-hacklab-2024/)
 
+### [SSRF](./ssrf/)
+
+- [Desafío 38 - Cotizaciones Dólar](./ssrf/desafio-38-cotizaciones-dolar/)
+
 ### [Condiciones de carrera](./condiciones-de-carrera/)
 
 - [Desafío 32 - El analista (HackLab 2024)](./condiciones-de-carrera/desafio-32-el-analista-hacklab-2024/)
