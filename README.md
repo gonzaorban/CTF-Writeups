@@ -24,7 +24,7 @@ El contenido abarca diversas ramas de la ciberseguridad, enfocándose en la comp
 * **Web Security:** Race Conditions (Turbo Intruder), CSP Bypass, IDOR, XSS to CSRF, JWT Forgery, Mass Assignment, IP Spoofing, LFI, RCE vía CVE.
 * **Access Control & Lógica de negocio:** Broken Access Control, Information Disclosure, manipulación de flujos de compra y validaciones del lado del servidor.
 * **Autenticación & Tokens:** bypass de login, manejo inseguro de tokens, Local Storage y cookies.
-* **SQL Injection:** Blind SQLi, Authentication Bypass, **Exif Metadata Injection**, sqlmap, fallos de sanitización.
+* **SQL Injection:** Blind SQLi, Authentication Bypass, **Exif Metadata Injection**, **Second-Order SQLi vía User-Agent**, extracción manual con concatenación (`||` en SQLite), sqlmap, fallos de sanitización.
 * **Cryptography:** RSA Attacks (Common Factor, Franklin-Reiter / Related Messages), LFSR / Shift Registers, Custom Ciphers (Statistical Analysis), Known-Plaintext Attack, Offline Hash Cracking (Salted).
 * **Reverse Engineering:** Análisis estático con IDA y Ghidra, instrumentación dinámica con Frida, cracking de binarios y bypass de comprobaciones.
 * **Binary Exploitation:** Explotación de binarios con pwntools y GDB, desbordamiento de memoria y manipulación del stack.
@@ -82,6 +82,18 @@ Inyección SQL atípica en el procesamiento de archivos subidos.
   <li><strong>Vector:</strong> El backend (SQLite) leía el metadato EXIF <code>Make</code> sin sanitizar.</li>
   <li><strong>Payload:</strong> Uso de <strong>ExifTool</strong> para inyectar sentencias SQL en la etiqueta <code>Make</code> de una imagen JPG.
   <br><code>exiftool -Make="'|| (SELECT user_id FROM images LIMIT 1)||" test.jpg</code></li>
+</ul>
+</details>
+
+<details>
+<summary><strong>🕵️ SQLi: Second-Order vía User-Agent (SQLite)</strong></summary>
+<br>
+Inyección SQL de segundo orden en una sección de logs ("Logs") que registra el dispositivo de cada visita.
+<ul>
+  <li><strong>Vector:</strong> El backend (SQLite) guardaba la cabecera HTTP <code>User-Agent</code> en un <code>INSERT</code> sin sanitizar. La inyección se produce al registrar la visita y el resultado se ve luego, al renderizarse la tabla de <code>/logs</code>.</li>
+  <li><strong>Descartes:</strong> El HTML se escapaba (sin XSS) y no existía panel <code>/admin</code>; la pista del "administrador" era una tabla <code>users</code> en la base.</li>
+  <li><strong>Payload:</strong> Envío del User-Agent con <code>curl -A</code> y extracción manual por concatenación con <code>||</code>, leyendo <code>sqlite_master</code> para enumerar tablas y esquema, y volcando las credenciales del admin.
+  <br><code>curl -A "x' || (SELECT group_concat(username || ':' || password) FROM users) || 'x" https://.../</code></li>
 </ul>
 </details>
 
