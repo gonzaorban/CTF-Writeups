@@ -93,6 +93,10 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 45 - Tetris (HackLab 2025)](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/)
 
+### [WebRTC](./webrtc/)
+
+- [Desafío 42 - Direct Chat](./webrtc/desafio-42-direct-chat/)
+
 ---
 
 ## Desafíos por edición de la competencia

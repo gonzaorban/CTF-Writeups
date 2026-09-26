@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Direct Chat</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="msn-window">
+        <div class="msn-titlebar">
+            <div class="title-left">
+                <span class="status-dot"></span>
+                <span class="title-text">Direct Chat</span>
+            </div>
+            <div class="title-right">
+                <button id="btn-min">_</button>
+                <button id="btn-max">□</button>
+                <button id="btn-close">×</button>
+            </div>
+        </div>
+
+        <div class="msn-toolbar">
+            <div class="toolbar-group">
+                <label>Room</label>
+                <input id="room" placeholder="" />
+                <label>Nick</label>
+                <input id="nick" placeholder="tu nick" />
+                <label>Password</label>
+                <input id="password" type="password" placeholder="******" />
+                <button id="connect">Conectar</button>
+            </div>
+        </div>
+
+        <div id="messages" class="msn-messages"></div>
+
+        <div class="msn-inputbar">
+            <textarea id="text" placeholder="Escribí tu mensaje... (Enter para enviar)" disabled></textarea>
+            <button id="send" disabled>Enviar</button>
+            <button id="buzz" disabled>Zumbido</button>
+        </div>
+    </div>
+
+    <audio id="snd-in" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABYAAA=="></audio>
+    <audio id="snd-out" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABYAAA=="></audio>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
