@@ -78,7 +78,7 @@ Se escribe un cliente en Python (solo librería estándar) que replica exactamen
 comportamiento de `NetClient`: conecta, envía el nombre en 30 bytes, y va enviando
 bytes de valor 100 con el mismo `RateLimiter` (≤ 4/s) mientras escucha la respuesta
 del server buscando el MD5. El script completo es
-[`solve_tetris.py`](./assets/solve_tetris.py); el núcleo de la explotación es:
+[`solve_tetris.py`](./solve_tetris.py); el núcleo de la explotación es:
 
 ```python
 import re, socket, time
