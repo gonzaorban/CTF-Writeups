@@ -96,6 +96,10 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 45 - Tetris (HackLab 2025)](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/)
 
+### [Reversing Apk](./reversing-apk/)
+
+- [Desafío 46 - Secure Chat (HackLab 2025)](./reversing-apk/desafio-46-secure-chat-hacklab-2025/)
+
 ### [WebRTC](./webrtc/)
 
 - [Desafío 42 - Direct Chat](./webrtc/desafio-42-direct-chat/)
@@ -112,6 +116,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 | :--- | :--- |
 | [Desafío 43 - Blog Hacklab v2](./xss/desafio-43-blog-hacklab-v2-hacklab-2025/) | XSS |
 | [Desafío 45 - Tetris](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/) | Reversing Desktop Apps - Lógica de negocio |
+| [Desafío 46 - Secure Chat](./reversing-apk/desafio-46-secure-chat-hacklab-2025/) | Reversing Apk - Fuerza bruta |
 | [Desafío 47 - Venta de autos](./logica-de-negocio/desafio-47-venta-de-autos-hacklab-2025/) | Lógica de negocio |
 
 ### HackLab 2024
