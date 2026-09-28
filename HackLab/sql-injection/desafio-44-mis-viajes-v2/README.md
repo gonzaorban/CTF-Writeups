@@ -144,9 +144,6 @@ El código ganador estaba **camuflado en la imagen `id=4`** — un PNG del **usu
 pasto/rocas** en la esquina inferior derecha —casi invisible a simple vista, legible al recortar
 esa región y aplicarle autocontraste—.
 
-> La primera hipótesis (heredada del writeup previo) apuntaba a la `id=1` del usuario A; resultó
-> incorrecta. Ver más abajo cómo se descartaron el resto de las imágenes.
-
 Imagen ajena `id=4` donde está camuflado el código (el texto está en la esquina inferior derecha):
 
 ![Imagen id=4 con el código camuflado en la esquina inferior derecha](assets/imagen-ganadora-codigo.png)
@@ -164,7 +161,7 @@ analizaron una por una; el código solo apareció en la `id=4`:
 
 | id | Usuario | Descripción | Formato | Escena | Por qué se descartó |
 |----|---------|-------------|---------|--------|---------------------|
-| 1 | A `365f6106` | "Maravilloso" | JPEG 3569×2000 | Montaña + arcoíris | Análisis exhaustivo sin resultado: separación de canales RGB, high-pass (resta de blur), bit-planes LSB, autocontraste local por tiles, realce de la banda de cielo a resolución completa, segmentos JPEG (`APPn`/`COM`) y `strings`. No hay texto oculto. Era la hipótesis del writeup previo (`id=1`) y resultó falsa. |
+| 1 | A `365f6106` | "Maravilloso" | JPEG 3569×2000 | Montaña + arcoíris | Análisis exhaustivo sin resultado: separación de canales RGB, high-pass (resta de blur), bit-planes LSB, autocontraste local por tiles, realce de la banda de cielo a resolución completa, segmentos JPEG (`APPn`/`COM`) y `strings`. No hay texto oculto. |
 | 3 | B `01d4832e` | "Sin palabras" | JPEG 4016×6016 | Puente de piedra en otoño | El nombre "Sin palabras" y las manchas del puente parecían pista; el zoom a resolución completa del puente mostró **solo textura de la piedra**, ningún carácter. |
 | 5 | B `01d4832e` | "Ocean" | JPEG 3333×5000 | Atardecer sobre acantilado | Autocontraste fuerte sobre la mitad inferior (rocas/grava/muro, las zonas oscuras donde se camuflaría un texto): solo textura natural, sin caracteres. |
 | **4** | **B `01d4832e`** | *(vacía)* | **PNG 962×1709** | **Atardecer sobre lago** | ✅ **Contiene el código.** Texto gris tenue sobre el pasto/rocas de la esquina inferior derecha. |
