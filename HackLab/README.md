@@ -47,6 +47,8 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 13 - Recuperación de imagen (HackLab 2023)](./criptoanalisis/desafio-13-recuperacion-de-imagen-hacklab-2023/)
 - [Desafío 25 - Chat Seguro (HackLab 2024)](./criptoanalisis/desafio-25-chat-seguro-hacklab-2024/)
 - [Desafío 30 - RSA Robusto (HackLab 2024)](./criptoanalisis/desafio-30-rsa-robusto-hacklab-2024/)
+- [Desafío 50 - SatSim](./criptoanalisis/desafio-50-satsim/)
+- [Desafío 51 - Imagen Perdida](./criptoanalisis/desafio-51-imagen-perdida/)
 
 ### [Broken Access Control](./broken-access-control/)
 
