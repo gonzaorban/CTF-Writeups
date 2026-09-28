@@ -38,6 +38,14 @@ En los índices de plataformas con varias ediciones, indicar el año junto a cad
 
 Si se renombra o agrega una carpeta de desafío, actualizar el índice correspondiente en el mismo commit.
 
+**Desafíos con más de una categoría** (ej. `**Categoría:** Reversing Desktop Apps - Lógica de negocio`): la carpeta vive solo en su categoría principal (la carpeta donde ya está; no se duplica ni se mueve), y el índice de cada categoría secundaria también lo lista, en orden por número, con ruta relativa `../` y la aclaración de su categoría principal:
+
+```markdown
+- [Desafío 45 - Tetris (HackLab 2025)](../reversing-desktop-apps/desafio-45-tetris-hacklab-2025/) — *categoría principal: [Reversing Desktop Apps](../reversing-desktop-apps/)*
+```
+
+Al agregar un desafío con doble categoría, actualizar en el mismo commit los índices de todas sus categorías.
+
 ---
 
 ## Formato de cada README de desafío
