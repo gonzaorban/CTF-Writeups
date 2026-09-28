@@ -15,6 +15,12 @@ Cada plataforma tiene su propio índice con el detalle de categorías y desafío
 | 🟥 **TryHackMe** | [tryhackme/](./tryhackme/) | [tryhackme.com](https://tryhackme.com/) |
 | 🔵 **Google CTF** (2025) | [google-CTF/](./google-CTF/) | [g.co/ctf](https://g.co/ctf) |
 
+Cada desafío vive en su propia carpeta, con un `README.md` (el writeup) y una carpeta `assets/`. Dentro de cada carpeta de desafío:
+
+- **`assets/`** contiene únicamente las **imágenes** del writeup (capturas) y los **archivos que son insumo del desafío** (binarios, `.pcap`, código cliente obtenido del inspector, etc.).
+- Los **scripts, solvers y exploits propios** van en la **raíz de la carpeta del desafío**, no en `assets/`.
+- *Excepción:* los payloads que se sirven por una URL pública ya publicada (p. ej. scripts XSS cargados vía jsDelivr) se mantienen en `assets/` para no romper esas rutas.
+
 ---
 
 ## 🛡️ Topics Covered

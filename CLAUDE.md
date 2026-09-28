@@ -32,6 +32,12 @@ Todas las plataformas siguen el mismo esquema de dos niveles: `<plataforma>/<Cat
 - **tryhackme:** `tryhackme/<Área>/<Nombre>/` (`Web/`, `Network/`).
 - **google-CTF:** `google-CTF/<Categoría>/<Nombre>/`.
 
+### Contenido de la carpeta de un desafío
+
+- `assets/` es **solo** para las imágenes del writeup (capturas) y los archivos que son *insumo del desafío* (lo que da la plataforma o se obtiene analizándolo: binarios, `.pcap`, el código cliente encontrado en el inspector, etc.).
+- Los **scripts, solvers y exploits propios** (los que uno escribe para resolver el desafío) van en la **raíz de la carpeta del desafío**, no en `assets/`. Se enlazan con ruta relativa a la raíz del desafío (`./solve.py`).
+- **Excepción:** un payload que se sirve por URL pública (p. ej. XSS cargados vía jsDelivr con la ruta `.../assets/x.js` embebida en el enunciado o el propio payload) se deja en `assets/`, porque necesita una ruta estable ya publicada; mover esos archivos rompería las URLs.
+
 Los índices de cada plataforma y categoría (`README.md` de nivel superior) enlazan a cada desafío. El README raíz solo enlaza a las plataformas: el detalle de categorías y desafíos vive en el índice de cada plataforma, no en la raíz.
 
 En los índices de plataformas con varias ediciones, indicar el año junto a cada desafío y cerrar con una tabla "Desafíos por edición".
