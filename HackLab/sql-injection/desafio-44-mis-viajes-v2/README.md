@@ -21,6 +21,12 @@ HTML-escapados) y agrega funcionalidades nuevas: **clasificador de imagen** ("¿
 
 ## Mapa de la aplicación
 
+La UI tiene tres zonas: formulario "Subir Imagen", mapa GPS (Leaflet) y "Mis Imágenes", donde
+cada tarjeta muestra `Clasificación`, `Descripción`, **`Resumen OCR`**, `Fecha` y `Marca/Modelo`.
+El campo **`Resumen OCR`** es la clave: ahí se lee lo que devuelve la subconsulta inyectada.
+
+![UI principal de Mis Viajes V2: formulario de subida, mapa Leaflet y listado de imágenes](assets/ui-principal.png)
+
 - **Sin sesión ni login.** La identidad es solo el `user_id` (UUID) que viaja en el body y
   está renderizado en el HTML (`<input id="id_user" ...>`).
 - `GET /images/<uuid>` — único endpoint de lectura. Devuelve JSON con las imágenes de ese
@@ -43,6 +49,11 @@ sobre una foto de paisaje real** que pasa el clasificador.
 
 ### Prueba de ejecución
 
+El payload se pinta como texto sobre una foto de paisaje real (así pasa el clasificador). Ejemplo
+de imagen subida, con la consulta pintada encima:
+
+![Imagen-payload: el SQL pintado sobre una foto de paisaje real](assets/ejemplo-payload-pintado.jpg)
+
 Pintando en la imagen:
 
 ```sql
@@ -50,7 +61,10 @@ Pintando en la imagen:
 ```
 
 el campo `summary_ocr` se guarda como `93.46.19`, es decir `9` + `3.46.19` (versión de SQLite)
-+ `9`. **La subconsulta se ejecutó** → SQLi confirmada. El motor es **SQLite 3.46.1**.
++ `9`. **La subconsulta se ejecutó** → SQLi confirmada. El motor es **SQLite 3.46.1**. La propia
+tarjeta de la app lo muestra en `Resumen OCR`:
+
+![Tarjeta de la app mostrando Resumen OCR: 93.46.19 (resultado de sqlite_version())](assets/tarjeta-sqli-sqlite-version.png)
 
 Test de aislamiento (mismo formato de imagen, distinta validez SQL):
 
@@ -127,15 +141,32 @@ Resultado (mapa `id:user_id`):
 
 ```
 1:365f6106-d23b-4d29-97ea-89f8001def09   <- usuario A (1 imagen)
-2:ea42cd39-...                            <- propio
-3:01d4832e-...  4:01d4832e-...  5:01d4832e-...   <- usuario B (3 imágenes)
+2:ea42cd39-001b-4fb5-a509-449322674687   <- propio
+3:01d4832e-485a-4e98-b97e-d558c4cc95d1   <- usuario B (3 imágenes)
+4:01d4832e-485a-4e98-b97e-d558c4cc95d1   <- usuario B  ← contiene el código
+5:01d4832e-485a-4e98-b97e-d558c4cc95d1   <- usuario B
 ```
 
-Hay **dos usuarios ajenos**: A (`365f6106`, dueño de `id=1`) y B (`01d4832e`, dueño de
-`id=3,4,5`). El enunciado pide "visualizar una imagen que no te pertenece" con el código dentro,
-así que se bajan **todas** las imágenes ajenas: con cada `user_id` se llama al endpoint legítimo
-`GET /images/<uuid>` para obtener sus filenames, y cada archivo se descarga de
-`/uploads/<filename>`.
+### UUIDs de la instancia
+
+Los `user_id` son deterministas entre spawns (solo cambia la URL). Los relevantes:
+
+| Rol | `user_id` (UUID) | Imágenes (`id`) |
+|-----|------------------|-----------------|
+| Propio (atacante) | `ea42cd39-001b-4fb5-a509-449322674687` | 2 |
+| Usuario A | `365f6106-d23b-4d29-97ea-89f8001def09` | 1 |
+| **Usuario víctima (B)** | **`01d4832e-485a-4e98-b97e-d558c4cc95d1`** | 3, 4, 5 |
+
+- **`user_id` de la víctima:** `01d4832e-485a-4e98-b97e-d558c4cc95d1`
+- **Imagen víctima que contiene el código:** `id=4` — filename
+  `33d22b8b-fb03-4e4c-8720-40800d8abcf7.png`
+
+<!-- TODO: agregar captura de la extracción de UUIDs (Resumen OCR con el mapa id:user_id) -->
+
+Hay **dos usuarios ajenos**: A (`365f6106`) y B (`01d4832e`). El enunciado pide "visualizar una
+imagen que no te pertenece" con el código dentro, así que se bajan **todas** las imágenes ajenas:
+con cada `user_id` se llama al endpoint legítimo `GET /images/<uuid>` para obtener sus filenames,
+y cada archivo se descarga de `/uploads/<filename>`.
 
 ## El código camuflado
 
