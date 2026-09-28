@@ -160,3 +160,40 @@ El participante remoto validó la recepción de los dos zumbidos dentro de la ve
 ```
 b9365cb4c17b4f3b93f0095619bcd1ea
 ```
+
+## Solución alternativa (manual, sin vigilante)
+
+Un camino más directo que evita el `setInterval` centinela: como la conexión ya está establecida (aparece `Remoto conectado` en el chat), se dispara la ráfaga a mano desde la consola en el momento exacto.
+
+### Hallazgo clave: la separación temporal es necesaria
+
+El primer intento fue enviar los dos zumbidos en llamadas consecutivas, sin ninguna pausa entre ellas:
+
+```javascript
+dc.send(JSON.stringify({type:'buzz',nick:'x',t:Date.now()}));
+dc.send(JSON.stringify({type:'buzz',nick:'x',t:Date.now()}));
+```
+
+**Esto no funcionó:** `sniper` no entregó la clave. La condición "dos zumbidos en menos de un segundo" no equivale a "en el mismo instante"; el bot necesita procesarlos como **dos eventos distintos**. Al reintroducir una separación mínima (pero holgadamente por debajo de 1000 ms), la clave se recibió:
+
+```javascript
+dc.send(JSON.stringify({type:'buzz',nick:'x',t:Date.now()}));
+setTimeout(() => dc.send(JSON.stringify({type:'buzz',nick:'x',t:Date.now()})), 300);
+```
+
+300 ms cumple `< 1000 ms` y a la vez garantiza que lleguen como dos zumbidos separados.
+
+![Ráfaga de dos zumbidos con separación de 300 ms ejecutada desde la consola del navegador](assets/03.png)
+
+### Espía opcional del canal de datos
+
+Para registrar en consola todo lo que envíe `sniper` (por si el render en pantalla lo filtra), se envolvió `dc.onmessage` antes de disparar la ráfaga:
+
+```javascript
+const _orig = dc.onmessage;
+dc.onmessage = (e) => { console.log('◀ RECIBIDO:', e.data); _orig && _orig(e); };
+```
+
+La clave llegó por el canal de datos y se renderizó como un mensaje de `sniper` en la ventana del chat.
+
+![Ventana del chat: sniper entrega la clave tras recibir los dos zumbidos, y luego el remoto se desconecta](assets/02.png)
