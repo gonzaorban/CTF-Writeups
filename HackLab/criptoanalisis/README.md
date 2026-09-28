@@ -8,3 +8,4 @@
 - [Desafío 25 - Chat Seguro (HackLab 2024)](./desafio-25-chat-seguro-hacklab-2024/)
 - [Desafío 30 - RSA Robusto (HackLab 2024)](./desafio-30-rsa-robusto-hacklab-2024/)
 - [Desafío 50 - SatSim](./desafio-50-satsim/)
+- [Desafío 51 - Imagen Perdida](./desafio-51-imagen-perdida/)
