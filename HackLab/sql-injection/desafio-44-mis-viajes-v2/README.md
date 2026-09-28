@@ -148,6 +148,10 @@ Imagen ajena `id=4` donde está camuflado el código (el texto está en la esqui
 
 ![Imagen id=4 con el código camuflado en la esquina inferior derecha](assets/imagen-ganadora-codigo.png)
 
+Recortando esa esquina y aplicándole autocontraste, el código queda legible:
+
+![Recorte de la esquina inferior derecha con autocontraste: el código legible](assets/codigo-camuflado-realzado.png)
+
 El código extraído:
 
 ```
