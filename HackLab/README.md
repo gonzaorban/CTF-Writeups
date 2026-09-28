@@ -65,6 +65,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 ### [Desbordamiento de memoria](./desbordamiento-de-memoria/)
 
 - [Desafío 14 - Manipulando el Stack](./desbordamiento-de-memoria/desafio-14-manipulando-el-stack/)
+- [Desafío 48 - Rompiendo autenticación](./desbordamiento-de-memoria/desafio-48-rompiendo-autenticacion/)
 
 ### [Information Disclosure](./information-disclosure/)
 
