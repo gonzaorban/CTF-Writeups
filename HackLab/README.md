@@ -107,6 +107,10 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 42 - Direct Chat](./webrtc/desafio-42-direct-chat/)
 
+### [CSRF](./csrf/)
+
+- [Desafío 40 - Imagen Importante](./csrf/desafio-40-imagen-importante/)
+
 ---
 
 ## Desafíos por edición de la competencia
