@@ -113,6 +113,15 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 ---
 
+## Desafíos pendientes
+
+Desafíos de la plataforma que todavía no están resueltos ni documentados en este repositorio:
+
+- Desafío 39
+- Desafío 41
+
+---
+
 ## Desafíos por edición de la competencia
 
 Estos son los desafíos que corresponden a una edición de la competencia anual HackLab. El resto de los desafíos del índice pertenecen al catálogo permanente de la plataforma y no están asociados a una edición.
