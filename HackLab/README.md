@@ -39,6 +39,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 20 - Galería de imágenes (HackLab 2023)](./sql-injection/desafio-20-galeria-de-imagenes-hacklab-2023/)
 - [Desafío 21 - Logs (HackLab 2023)](./sql-injection/desafio-21-logs-hacklab-2023/)
 - [Desafío 27 - Mis viajes (HackLab 2024)](./sql-injection/desafio-27-mis-viajes-hacklab-2024/)
+- [Desafío 44 - Mis Viajes V2 (HackLab 2025)](./sql-injection/desafio-44-mis-viajes-v2/)
 
 ### [Criptoanálisis](./criptoanalisis/)
 
@@ -115,6 +116,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 | Desafío | Categoría |
 | :--- | :--- |
 | [Desafío 43 - Blog Hacklab v2](./xss/desafio-43-blog-hacklab-v2-hacklab-2025/) | XSS |
+| [Desafío 44 - Mis Viajes V2](./sql-injection/desafio-44-mis-viajes-v2/) | SQL Injection |
 | [Desafío 45 - Tetris](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/) | Reversing Desktop Apps - Lógica de negocio |
 | [Desafío 46 - Secure Chat](./reversing-apk/desafio-46-secure-chat-hacklab-2025/) | Reversing Apk - Fuerza bruta |
 | [Desafío 47 - Venta de autos](./logica-de-negocio/desafio-47-venta-de-autos-hacklab-2025/) | Lógica de negocio |
