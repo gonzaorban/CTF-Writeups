@@ -118,9 +118,9 @@ validez SQL:
 
 | Payload pintado | Resultado |
 |---|---|
-| `9'||(SELECT sqlite_version())||'9` | `200`, `ocr='93.46.19'` (ejecutó) |
-| `9'||(CASE WHEN 1=1 THEN 65 ELSE 66 END)||'9` | `200`, `ocr='9659'` (ejecutó, `65`) |
-| `9'||(XXXX WXXX 1=1 ...)||'9` (SQL inválido, misma forma) | `500` |
+| `9'\|\|(SELECT sqlite_version())\|\|'9` | `200`, `ocr='93.46.19'` (ejecutó) |
+| `9'\|\|(CASE WHEN 1=1 THEN 65 ELSE 66 END)\|\|'9` | `200`, `ocr='9659'` (ejecutó, `65`) |
+| `9'\|\|(XXXX WXXX 1=1 ...)\|\|'9` (SQL inválido, misma forma) | `500` |
 
 Que el status dependa de la **validez SQL** (no solo de la forma del texto) prueba que la
 inyección es real. El motor es **SQLite 3.46.1**.
