@@ -70,6 +70,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 ### [Information Disclosure](./information-disclosure/)
 
+- [Desafío 16 - Ventas](./information-disclosure/desafio-16-ventas/)
 - [Desafío 26 - Asistencia (HackLab 2024)](./information-disclosure/desafio-26-asistencia-hacklab-2024/)
 
 ### [Auth](./auth/)
