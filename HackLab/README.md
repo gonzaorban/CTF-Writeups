@@ -100,6 +100,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 ### [Reversing Apk](./reversing-apk/)
 
+- [Desafío 31 - Libros Gratis (HackLab 2024)](./reversing-apk/desafio-31-libros-gratis-hacklab-2024/)
 - [Desafío 46 - Secure Chat (HackLab 2025)](./reversing-apk/desafio-46-secure-chat-hacklab-2025/)
 
 ### [WebRTC](./webrtc/)
@@ -134,6 +135,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 | [Desafío 27 - Mis viajes](./sql-injection/desafio-27-mis-viajes-hacklab-2024/) | SQL Injection |
 | [Desafío 29 - Blog Hacklab](./xss/desafio-29-blog-hacklab-2024/) | XSS |
 | [Desafío 30 - RSA Robusto](./criptoanalisis/desafio-30-rsa-robusto-hacklab-2024/) | Criptoanálisis |
+| [Desafío 31 - Libros Gratis](./reversing-apk/desafio-31-libros-gratis-hacklab-2024/) | Reversing Apk - Broken Access Control |
 | [Desafío 32 - El analista](./condiciones-de-carrera/desafio-32-el-analista-hacklab-2024/) | Condiciones de carrera |
 | [Desafío 33 - ECommerce](./auth/desafio-33-ecommerce-hacklab-2024/) | Auth |
 | [Desafío 34 - Snow Storm](./auth/desafio-34-snow-storm-hacklab-2024/) | Auth |
