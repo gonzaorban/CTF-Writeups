@@ -12,61 +12,109 @@ En la V2 "solucionó todos los problemas" y agregó funcionalidades. El objetivo
 **visualizar una imagen que no te pertenece**, que contiene el código ganador en su interior,
 posiblemente **camuflado**.
 
-## Diferencias con la V1 (2024)
+## Reconocimiento
 
-La V1 ([Desafío 27](../desafio-27-mis-viajes-hacklab-2024/)) era SQLi vía EXIF `Make`/`Model`
-con ExifTool sobre SQLite. La V2 **parchea ese vector** (los campos EXIF se guardan
-HTML-escapados) y agrega funcionalidades nuevas: **clasificador de imagen** ("¿es un viaje?"),
-**OCR** (resumen del texto de la imagen) y **mapa GPS** (Leaflet).
-
-## Mapa de la aplicación
-
-La UI tiene tres zonas: formulario "Subir Imagen", mapa GPS (Leaflet) y "Mis Imágenes", donde
-cada tarjeta muestra `Clasificación`, `Descripción`, **`Resumen OCR`**, `Fecha` y `Marca/Modelo`.
-El campo **`Resumen OCR`** es la clave: ahí se lee lo que devuelve la subconsulta inyectada.
+La app "Mis Viajes V2" tiene tres zonas: formulario "Subir Imagen", un mapa GPS (Leaflet) y
+"Mis Imágenes", donde cada tarjeta muestra `Clasificación`, `Descripción`, `Resumen OCR`,
+`Fecha` y `Marca/Modelo`.
 
 ![UI principal de Mis Viajes V2: formulario de subida, mapa Leaflet y listado de imágenes](assets/ui-principal.png)
 
-- **Sin sesión ni login.** La identidad es solo el `user_id` (UUID) que viaja en el body y
-  está renderizado en el HTML (`<input id="id_user" ...>`).
+Observaciones iniciales sobre el comportamiento:
+
+- **No hay sesión ni login.** La identidad es solo el `user_id` (UUID) que viaja en el body del
+  upload y está renderizado en el HTML (`<input id="id_user" ...>`).
 - `GET /images/<uuid>` — único endpoint de lectura. Devuelve JSON con las imágenes de ese
   `user_id`. Usa un converter Flask `<uuid>` **estricto**: cualquier cosa que no sea un UUID
-  válido da 404 (no inyectable por el path).
+  válido da 404.
 - `POST /upload` — recibe JSON `{image: "data:image/...;base64,...", description, user_id}`.
-  Corre: clasificador → EXIF/GPS → **OCR** → `INSERT` en tabla **`imagenes`** (nombre en español,
-  ver sección del bloqueo).
+  Al subir, el server corre un pipeline: **clasificador** ("¿es un viaje?"), lectura de
+  **EXIF/GPS**, **OCR** y luego guarda el registro.
 - `/uploads/<filename>` — sirve la imagen del filesystem por nombre (UUID.ext). No consulta DB.
-- El `id` de imagen es **global y secuencial** entre todos los usuarios. Los `id` que no son
-  propios pertenecen a otros usuarios (la víctima y un tercer usuario sembrado).
+- El `id` de imagen es **global y secuencial** entre todos los usuarios: los `id` que no son
+  propios pertenecen a otros usuarios (la víctima y un tercero sembrados en la DB).
 - **Instancia propia spawneada:** la DB se siembra al lanzar, con datos deterministas (los
-  `user_id` son fijos entre instancias, aunque la URL del spawn cambia).
+  `user_id` son fijos entre spawns; solo cambia la URL).
 
-## Vector confirmado: SQL Injection vía OCR
+El primer intento de subir una imagen cualquiera falla con un error genérico en la UI:
 
-El texto que el OCR extrae de la imagen se concatena en el `INSERT INTO imagenes` sin parametrizar.
-El clasificador exige que la imagen "parezca un viaje", así que el payload se **pinta como texto
-sobre una foto de paisaje real** que pasa el clasificador.
+![Popup "Error al subir la imagen"](assets/recon-error-subida.png)
 
-### Prueba de ejecución
+En DevTools, ese `POST /upload` devuelve **500 Internal Server Error**:
 
-El payload se pinta como texto sobre una foto de paisaje real (así pasa el clasificador). Ejemplo
-de imagen subida, con la consulta pintada encima:
+![DevTools: POST /upload con 500 Internal Server Error](assets/recon-upload-500.png)
+
+El payload es un JSON con la imagen como data-URI base64, más `description` y `user_id`:
+
+![DevTools: request payload del upload (image data-URI, description, user_id)](assets/recon-payload-upload.png)
+
+Mirando la respuesta, el server rechaza la imagen porque **el clasificador** no la considera un
+viaje:
+
+![Respuesta: "Imagen no parece ser de un viaje"](assets/recon-clasificador-rechazo.png)
+
+Subiendo una **foto de paisaje real** (con EXIF de cámara y GPS válidos), el clasificador la
+acepta y el upload responde `200`:
+
+![Consola: upload 200 "Image uploaded successfully"](assets/recon-upload-ok.png)
+
+La imagen aceptada aparece en "Mis Imágenes" con sus campos (`Clasificación`, `Descripción`,
+`Resumen OCR`, `Fecha`, `Marca/Modelo`):
+
+![UI con la imagen subida y su tarjeta de metadatos](assets/recon-ui-imagen-subida.png)
+
+El endpoint de lectura `GET /images/<uuid>` responde `200` y devuelve el JSON con las filas del
+usuario:
+
+![DevTools: GET /images/<uuid> devuelve 200 OK](assets/recon-get-images-200.png)
+
+![DevTools: JSON de /images con la estructura de cada fila (id, user_id, filename, summary_ocr, ...)](assets/recon-json-images.png)
+
+Como el reto es la V2 de un desafío de SQL Injection ([Desafío 27](../desafio-27-mis-viajes-hacklab-2024/)),
+el punto de partida fue reintentar el mismo vector de 2024.
+
+## Primer intento: el vector de la V1 (EXIF) está parcheado
+
+La V1 era SQLi vía metadatos EXIF `Make`/`Model` con ExifTool sobre SQLite. Se replicó ese
+ataque (ver [`scripts/v2_exif_char.py`](./scripts/v2_exif_char.py)), incluyendo variantes
+error-based y time-based sobre una imagen de paisaje que pasa el clasificador. Resultado: los
+campos EXIF se guardan **HTML-escapados** (`'` → `&#39;`) y **no ejecutan**. El vector de 2024
+quedó cerrado.
+
+En paralelo se descartaron, con pruebas, el resto de superficies típicas
+([`scripts/probe_endpoints.py`](./scripts/probe_endpoints.py) y otros — ver la sección final):
+`user_id`/`description` del body (parametrizados), el path del `GET` (converter estricto),
+headers HTTP (time-based sin efecto), `/uploads/` (filesystem), endpoints de búsqueda
+inexistentes, mass assignment y GPS.
+
+## El campo nuevo: `Resumen OCR`
+
+Descartado el EXIF, la atención pasó a lo que la V2 **agregó**. La tarjeta de cada imagen tiene
+un campo `Resumen OCR`: el server corre OCR sobre la imagen subida y guarda el texto que lee. Es
+la única entrada nueva que **procesa contenido controlado por el usuario y lo devuelve**.
+
+La hipótesis: si el texto extraído por el OCR se concatena en la consulta de guardado sin
+sanitizar, se puede inyectar SQL **pintando el payload como texto sobre la imagen**. El
+clasificador exige un "viaje", así que el payload se pinta sobre una foto de paisaje real:
 
 ![Imagen-payload: el SQL pintado sobre una foto de paisaje real](assets/ejemplo-payload-pintado.jpg)
 
-Pintando en la imagen:
+### Confirmación
+
+Se pintó en la imagen:
 
 ```sql
 9'||(SELECT sqlite_version())||'9
 ```
 
-el campo `summary_ocr` se guarda como `93.46.19`, es decir `9` + `3.46.19` (versión de SQLite)
-+ `9`. **La subconsulta se ejecutó** → SQLi confirmada. El motor es **SQLite 3.46.1**. La propia
-tarjeta de la app lo muestra en `Resumen OCR`:
+y el campo `Resumen OCR` se guardó como `93.46.19`, es decir `9` + `3.46.19` (versión de SQLite)
++ `9`. **La subconsulta se ejecutó.** La propia tarjeta lo muestra:
 
 ![Tarjeta de la app mostrando Resumen OCR: 93.46.19 (resultado de sqlite_version())](assets/tarjeta-sqli-sqlite-version.png)
 
-Test de aislamiento (mismo formato de imagen, distinta validez SQL):
+Para confirmar que no era casualidad del pipeline, se hizo un test de aislamiento
+([`scripts/v2_isolate.py`](./scripts/v2_isolate.py)) con el **mismo formato de imagen** y distinta
+validez SQL:
 
 | Payload pintado | Resultado |
 |---|---|
@@ -74,8 +122,8 @@ Test de aislamiento (mismo formato de imagen, distinta validez SQL):
 | `9'||(CASE WHEN 1=1 THEN 65 ELSE 66 END)||'9` | `200`, `ocr='9659'` (ejecutó, `65`) |
 | `9'||(XXXX WXXX 1=1 ...)||'9` (SQL inválido, misma forma) | `500` |
 
-Que el status dependa de la **validez SQL** (y no solo de la forma del texto) prueba que la
-inyección es real, no ruido del pipeline.
+Que el status dependa de la **validez SQL** (no solo de la forma del texto) prueba que la
+inyección es real. El motor es **SQLite 3.46.1**.
 
 ### El envoltorio `9'...'9`
 
@@ -84,32 +132,35 @@ El OCR deforma las comillas según su posición:
 - El `||` al inicio de línea se lee como `| |` (con espacio), que no es concatenación válida.
 - Una comilla **pegada a un dígito** (`9'`) o a `||` se lee bien.
 
-Por eso el payload se envuelve entre dígitos: `9'||( ... )||'9`. El `9` ancla las comillas y
-el `||` para que el OCR los reproduzca correctamente.
+Por eso el payload se envuelve entre dígitos: `9'||( ... )||'9`. El `9` ancla las comillas y el
+`||` para que el OCR los reproduzca correctamente.
 
-## El bloqueo real: la tabla se llama `imagenes`, no `images`
+## El bloqueo: `FROM images` siempre daba 500
 
-Durante mucho tiempo pareció que el OCR "reordenaba" la secuencia `FROM images` porque toda
-subconsulta con `FROM images` devolvía **500**, mientras que las subconsultas sin `FROM`
-(`sqlite_version()`, `CASE WHEN`) ejecutaban. El diagnóstico correcto llegó al **medir** cómo
-lee el OCR:
+Con la inyección confirmada, tocaba leer la tabla de imágenes para sacar el `user_id` de la
+víctima. Pero cualquier subconsulta con `FROM images` devolvía **500**, mientras que las
+subconsultas sin `FROM` (`sqlite_version()`, `CASE WHEN`) ejecutaban. La primera hipótesis fue
+que el OCR "reordenaba" `FROM images`. **Era falsa.** El diagnóstico correcto llegó al *medir*
+cómo lee el OCR:
 
-1. **El OCR NO reordena.** Pintado como literal plano (sin envoltorio ejecutable), el OCR lee
-   `SELECT user_id FROM images WHERE id=1` **perfecto y en orden** (`summary_ocr` lo guarda
-   idéntico). Solo colapsa espacios dobles. Así que el 500 no era de OCR.
+1. **El OCR no reordena** ([`scripts/ocr_from_diag.py`](./scripts/ocr_from_diag.py)). Pintado
+   como literal plano (sin envoltorio ejecutable), el OCR lee `SELECT user_id FROM images WHERE id=1`
+   perfecto y en orden. Solo colapsa espacios dobles. Así que el 500 no era del OCR.
 
-2. **El 500 era SQL, no OCR.** Dentro del envoltorio ejecutable, *cualquier* lectura de la
-   tabla fallaba, incluso `SELECT count(*) FROM images` (una fila, un entero). Si `sqlite_version()`
-   ejecuta pero `count(*) FROM images` no, el problema es el `FROM images` en sí.
+2. **El 500 era SQL** ([`scripts/ocr_exec_diag.py`](./scripts/ocr_exec_diag.py)). Dentro del
+   envoltorio ejecutable, *cualquier* lectura de la tabla fallaba, incluso
+   `SELECT count(*) FROM images` (una fila, un entero). Si `sqlite_version()` ejecuta pero
+   `count(*) FROM images` no, el problema es el `FROM images` en sí.
 
-3. **Leer OTRA tabla sí ejecuta.** `SELECT count(*) FROM sqlite_master` → `2`, y
-   `SELECT group_concat(name) FROM sqlite_master` → **`imagenes,sqlite_sequence`**. La tabla
-   real se llama **`imagenes`** (en español). `FROM images` daba 500 porque **esa tabla no
-   existe** (`no such table: images`), nada que ver con el OCR.
+3. **Leer otra tabla sí ejecuta** ([`scripts/ocr_othertable_diag.py`](./scripts/ocr_othertable_diag.py)):
 
-```sql
-9'||(SELECT group_concat(name) FROM sqlite_master)||'9   -- => 'imagenes,sqlite_sequence'
-```
+   ```sql
+   9'||(SELECT group_concat(name) FROM sqlite_master)||'9   -- => 'imagenes,sqlite_sequence'
+   ```
+
+   La tabla real se llama **`imagenes`** (en español). `FROM images` daba 500 porque **esa tabla
+   no existe** (`no such table: images`), nada que ver con el OCR. Este era el obstáculo que
+   trababa todo el reto.
 
 Esquema completo (vía `SELECT sql FROM sqlite_master LIMIT 1`):
 
@@ -130,8 +181,9 @@ CREATE TABLE imagenes (
 
 ## Explotación
 
-Con la tabla correcta, la exfiltración es directa. Para evitar comillas en la consulta (el OCR
-deforma comillas de apertura aisladas) se usa `char(58)` = `:` como separador y `group_concat`:
+Con la tabla correcta, la exfiltración es directa ([`scripts/ocr_dump_victim.py`](./scripts/ocr_dump_victim.py)).
+Para evitar comillas en la consulta (el OCR deforma comillas de apertura aisladas) se usa
+`char(58)` = `:` como separador y `group_concat`:
 
 ```sql
 9'||(SELECT group_concat(id||char(58)||user_id) FROM imagenes)||'9
@@ -147,9 +199,7 @@ Resultado (mapa `id:user_id`):
 5:01d4832e-485a-4e98-b97e-d558c4cc95d1   <- usuario B
 ```
 
-### UUIDs de la instancia
-
-Los `user_id` son deterministas entre spawns (solo cambia la URL). Los relevantes:
+Hay **dos usuarios ajenos**:
 
 | Rol | `user_id` (UUID) | Imágenes (`id`) |
 |-----|------------------|-----------------|
@@ -157,25 +207,17 @@ Los `user_id` son deterministas entre spawns (solo cambia la URL). Los relevante
 | Usuario A | `365f6106-d23b-4d29-97ea-89f8001def09` | 1 |
 | **Usuario víctima (B)** | **`01d4832e-485a-4e98-b97e-d558c4cc95d1`** | 3, 4, 5 |
 
-- **`user_id` de la víctima:** `01d4832e-485a-4e98-b97e-d558c4cc95d1`
-- **Imagen víctima que contiene el código:** `id=4` — filename
-  `33d22b8b-fb03-4e4c-8720-40800d8abcf7.png`
-
-<!-- TODO: agregar captura de la extracción de UUIDs (Resumen OCR con el mapa id:user_id) -->
-
-Hay **dos usuarios ajenos**: A (`365f6106`) y B (`01d4832e`). El enunciado pide "visualizar una
-imagen que no te pertenece" con el código dentro, así que se bajan **todas** las imágenes ajenas:
-con cada `user_id` se llama al endpoint legítimo `GET /images/<uuid>` para obtener sus filenames,
-y cada archivo se descarga de `/uploads/<filename>`.
+Con cada `user_id` ajeno se llama al endpoint legítimo `GET /images/<uuid>` para obtener sus
+filenames, y cada archivo se descarga de `/uploads/<filename>`. También se pueden volcar los
+campos de texto de todas las filas directamente por la inyección
+([`scripts/ocr_dump_fields.py`](./scripts/ocr_dump_fields.py)).
 
 ## El código camuflado
 
 El código ganador estaba **camuflado en la imagen `id=4`** — un PNG del **usuario B
-(`01d4832e`)**, no del usuario A. Está pintado como **texto gris tenue sobre la zona oscura de
-pasto/rocas** en la esquina inferior derecha —casi invisible a simple vista, legible al recortar
-esa región y aplicarle autocontraste—.
-
-Imagen ajena `id=4` donde está camuflado el código (el texto está en la esquina inferior derecha):
+(`01d4832e`)**. Está pintado como **texto gris tenue sobre la zona oscura de pasto/rocas** en la
+esquina inferior derecha: casi invisible a simple vista, legible al recortar esa región y
+aplicarle autocontraste.
 
 ![Imagen id=4 con el código camuflado en la esquina inferior derecha](assets/imagen-ganadora-codigo.png)
 
@@ -183,13 +225,7 @@ Recortando esa esquina y aplicándole autocontraste, el código queda legible:
 
 ![Recorte de la esquina inferior derecha con autocontraste: el código legible](assets/codigo-camuflado-realzado.png)
 
-El código extraído:
-
-```
-03ed8e6565c88b8377539855c7baf663
-```
-
-## Por qué se descartaron las otras imágenes ajenas
+### Por qué se descartaron las otras imágenes ajenas
 
 Hay 4 imágenes que no son propias (`id` 1, 3, 4, 5). Se bajaron todas de `/uploads/` y se
 analizaron una por una; el código solo apareció en la `id=4`:
@@ -232,7 +268,7 @@ pruebas:
   una **extensión de Chrome** del navegador, no del reto (pista falsa).
 - **Falso "reordenamiento del OCR" sobre `FROM images`** → hipótesis descartada: el OCR lee
   `FROM images` perfecto como literal plano. Los 500 eran `no such table: images` porque la
-  tabla se llama `imagenes` (ver sección del bloqueo). Este era el obstáculo que trababa el reto.
+  tabla se llama `imagenes` (ver "El bloqueo").
 - **Stego en las imágenes `id=1`, `id=3`, `id=5`** (canales RGB, high-pass, bit-planes LSB,
   contraste local por tiles, banda de cielo, zoom full-res, metadata APP/COM, `strings`) → sin
   resultado. Ver la tabla "Por qué se descartaron las otras imágenes ajenas".
@@ -241,11 +277,18 @@ pruebas:
 
 ## Scripts
 
-El solver consolidado que reproduce el camino completo es [`solve.py`](./solve.py). Los scripts
-de la investigación están en [`scripts/`](./scripts/). Los más relevantes:
+El solver consolidado que reproduce el camino completo es [`solve.py`](./solve.py).
 
+La investigación completa se hizo a lo largo de ~100 scripts iterativos (calibración del OCR,
+barridos de comillas, pruebas por campo, etc.); en [`scripts/`](./scripts/) se conservan solo
+los representativos de cada fase:
+
+- [`scripts/probe_endpoints.py`](./scripts/probe_endpoints.py) — reconocimiento de la superficie
+  (endpoints, rutas, métodos).
+- [`scripts/v2_exif_char.py`](./scripts/v2_exif_char.py) — reintento del vector EXIF de la V1
+  (error-based + time-based) → descartado, quedó parcheado.
 - [`scripts/v2_isolate.py`](./scripts/v2_isolate.py) — prueba de aislamiento que **confirma la
-  SQLi vía OCR** (`sqlite_version()` → `93.46.19`; validez SQL controla el 200/500).
+  SQLi vía OCR** (`sqlite_version()` → `93.46.19`; la validez SQL controla el 200/500).
 - [`scripts/ocr_from_diag.py`](./scripts/ocr_from_diag.py) — mide cómo lee el OCR `FROM images`
   como literal plano → demuestra que **no reordena** (descarta la hipótesis del OCR).
 - [`scripts/ocr_exec_diag.py`](./scripts/ocr_exec_diag.py) — aísla el 500: cualquier lectura de
