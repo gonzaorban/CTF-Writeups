@@ -33,11 +33,19 @@ Cache-Control: no-cache
 Vary: Cookie
 ```
 
+![Response headers de /profile-pic: Content-Type image/png, Access-Control-Allow-Origin *, Vary Cookie](assets/05.png)
+
 - **`Vary: Cookie`** → misma URL, contenido distinto según quién esté autenticado. La imagen de Pepe se obtiene pidiendo `/profile-pic` **con la cookie de Pepe**.
 - **`Access-Control-Allow-Origin: *`** → no hay restricción de origen para el recurso.
 - No hay `Cross-Origin-Resource-Policy` ni ninguna cabecera que impida embeber la imagen desde otro dominio.
 
+Abriendo `/profile-pic` directamente con la sesión propia se ve la imagen del usuario autenticado (aquí, la de `hacklab`):
+
+![Imagen servida por /profile-pic con la sesión propia](assets/04.png)
+
 La cookie `session` tiene los atributos `SameSite=None; Secure; HttpOnly`:
+
+![Cookie session en DevTools: HttpOnly, Secure, SameSite=None](assets/03.png)
 
 - **`SameSite=None`** → la cookie viaja en peticiones **cross-site**, incluida la subrequest que genera un `<img>`. Esta es la falla que habilita el ataque: no existe defensa anti-CSRF (ni token, ni `SameSite` restrictivo) sobre un recurso cuya respuesta depende de la sesión.
 - **`Secure`** → el sitio del atacante debe servirse por **HTTPS** para que la cookie se envíe.
