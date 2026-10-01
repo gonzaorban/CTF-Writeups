@@ -111,13 +111,17 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 40 - Imagen Importante](./csrf/desafio-40-imagen-importante/)
 
+### [Fuerza bruta](./fuerza-bruta/)
+
+- [Desafío 39 - El mejor secreto (HackLab 2025)](./fuerza-bruta/desafio-39-el-mejor-secreto-hacklab-2025/)
+- [Desafío 46 - Secure Chat (HackLab 2025)](./reversing-apk/desafio-46-secure-chat-hacklab-2025/) — *categoría principal: [Reversing Apk](./reversing-apk/)*
+
 ---
 
 ## Desafíos pendientes
 
 Desafíos de la plataforma que todavía no están resueltos ni documentados en este repositorio:
 
-- Desafío 39
 - Desafío 41
 
 ---
@@ -130,6 +134,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 
 | Desafío | Categoría |
 | :--- | :--- |
+| [Desafío 39 - El mejor secreto](./fuerza-bruta/desafio-39-el-mejor-secreto-hacklab-2025/) | Fuerza bruta |
 | [Desafío 43 - Blog Hacklab v2](./xss/desafio-43-blog-hacklab-v2-hacklab-2025/) | XSS |
 | [Desafío 44 - Mis Viajes V2](./sql-injection/desafio-44-mis-viajes-v2/) | SQL Injection |
 | [Desafío 45 - Tetris](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/) | Reversing Desktop Apps - Lógica de negocio |
