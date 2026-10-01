@@ -9,3 +9,4 @@
 - [Desafío 23 - Calculadora (HackLab 2024)](./desafio-23-calculadora-hacklab-2024/)
 - [Desafío 35 - Aldeas Inseguras V2](./desafio-35-aldeas-inseguras-v2/)
 - [Desafío 36 - Notas Universitarias](./desafio-36-notas-universitarias/)
+- [Desafío 41 - Reservas de hotel (HackLab 2025)](./desafio-41-reservas-hotel-hacklab-2025/)

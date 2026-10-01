@@ -19,6 +19,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 23 - Calculadora (HackLab 2024)](./idor/desafio-23-calculadora-hacklab-2024/)
 - [Desafío 35 - Aldeas Inseguras V2](./idor/desafio-35-aldeas-inseguras-v2/)
 - [Desafío 36 - Notas Universitarias](./idor/desafio-36-notas-universitarias/)
+- [Desafío 41 - Reservas de hotel (HackLab 2025)](./idor/desafio-41-reservas-hotel-hacklab-2025/)
 
 ### [Tokens](./tokens/)
 
@@ -122,7 +123,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 Desafíos de la plataforma que todavía no están resueltos ni documentados en este repositorio:
 
-- Desafío 41
+- *(ninguno pendiente)*
 
 ---
 
@@ -135,6 +136,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 | Desafío | Categoría |
 | :--- | :--- |
 | [Desafío 39 - El mejor secreto](./fuerza-bruta/desafio-39-el-mejor-secreto-hacklab-2025/) | Fuerza bruta |
+| [Desafío 41 - Reservas de hotel](./idor/desafio-41-reservas-hotel-hacklab-2025/) | IDOR |
 | [Desafío 43 - Blog Hacklab v2](./xss/desafio-43-blog-hacklab-v2-hacklab-2025/) | XSS |
 | [Desafío 44 - Mis Viajes V2](./sql-injection/desafio-44-mis-viajes-v2/) | SQL Injection |
 | [Desafío 45 - Tetris](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/) | Reversing Desktop Apps - Lógica de negocio |
