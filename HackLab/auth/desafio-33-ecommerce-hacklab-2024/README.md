@@ -78,7 +78,7 @@ Interceptando `GET /compras/` se obtiene el detalle de la cuenta de María, incl
 
 Juan tiene verificación en dos pasos y enviar un código incorrecto es rechazado:
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 10](assets/10.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 8](assets/08.png)
 
 ```http
 HTTP/2 401 Unauthorized
@@ -89,15 +89,15 @@ HTTP/2 401 Unauthorized
 }
 ```
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 11](assets/11.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 9](assets/09.png)
 
 En la cuenta de María, la pestaña de perfil muestra sus datos con un botón **Modificar** deshabilitado:
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 12](assets/12.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 10](assets/10.png)
 
 Interceptando de nuevo el `GET /profile/` se recupera la estructura exacta del JSON para armar la petición de modificación:
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 13](assets/13.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 11](assets/11.png)
 
 ```json
 {
@@ -109,15 +109,15 @@ Interceptando de nuevo el `GET /profile/` se recupera la estructura exacta del J
 }
 ```
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 14](assets/14.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 12](assets/12.png)
 
 Se prueba un **POST** a `/profile/` → `"error": "Método no permitido"`.
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 15](assets/15.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 13](assets/13.png)
 
 Se prueba un **PUT** con todos los campos del JSON (incluyendo `username`) → el servidor acepta el método pero rechaza el cambio de nombre de usuario.
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 16](assets/16.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 14](assets/14.png)
 
 ```json
 {
@@ -125,7 +125,7 @@ Se prueba un **PUT** con todos los campos del JSON (incluyendo `username`) → e
 }
 ```
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 17](assets/17.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 15](assets/15.png)
 
 Al **borrar el campo `username`** del PUT y modificar el email, la petición es aceptada:
 
@@ -138,11 +138,11 @@ Al **borrar el campo `username`** del PUT y modificar el email, la petición es 
 }
 ```
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 18](assets/18.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 16](assets/16.png)
 
 Se confirma el cambio en el perfil de María (prueba de concepto antes del ataque real):
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 19](assets/19.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 17](assets/17.png)
 
 Como el endpoint no valida que el `id` del PUT corresponda al usuario autenticado, se repite la petición cambiando el `id` a `1` (Juan) y el email por uno propio. El perfil de Juan queda modificado:
 
@@ -155,19 +155,21 @@ Como el endpoint no valida que el `id` del PUT corresponda al usuario autenticad
 }
 ```
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 20](assets/20.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 18](assets/18.png)
 
 Al volver a ingresar con Juan, el código de verificación en dos pasos llega al email propio recién configurado:
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 21](assets/21.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 19](assets/19.png)
 
 Se completa la autenticación de Juan con ese código:
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 22](assets/22.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 20](assets/20.png)
 
 Y se realiza la compra del producto requerido, **Memoria RAM 16GB DDR4**:
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 23](assets/23.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 21](assets/21.png)
+
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 22](assets/22.png)
 
 ## Flag
 
@@ -175,4 +177,4 @@ Y se realiza la compra del producto requerido, **Memoria RAM 16GB DDR4**:
 fe01348e4bf437fe03688896f7889107
 ```
 
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 24](assets/24.png)
+![Desafío 33 - ECommerce (HackLab 2024) - imagen 23](assets/23.png)
