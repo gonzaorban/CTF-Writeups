@@ -76,22 +76,6 @@ Interceptando `GET /compras/` se obtiene el detalle de la cuenta de María, incl
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 7](assets/07.png)
 
-Esto se confirma consultando `GET /profile/`:
-
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 8](assets/08.png)
-
-```json
-{
-  "username": "maria",
-  "email": "maria@hacklab.com",
-  "first_name": "María",
-  "last_name": "Torres",
-  "id": 2
-}
-```
-
-![Desafío 33 - ECommerce (HackLab 2024) - imagen 9](assets/09.png)
-
 Juan tiene verificación en dos pasos y enviar un código incorrecto es rechazado:
 
 ![Desafío 33 - ECommerce (HackLab 2024) - imagen 10](assets/10.png)
