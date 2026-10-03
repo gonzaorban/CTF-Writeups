@@ -14,6 +14,7 @@ Cada plataforma tiene su propio índice con el detalle de categorías y desafío
 | 🟡 **picoCTF** (2019 · 2026) | [picoCTF/](./picoCTF/) | [picoctf.org](https://picoctf.org/) |
 | 🟥 **TryHackMe** | [tryhackme/](./tryhackme/) | [tryhackme.com](https://tryhackme.com/) |
 | 🔵 **Google CTF** (2025) | [google-CTF/](./google-CTF/) | [g.co/ctf](https://g.co/ctf) |
+| 🟠 **PortSwigger — Web Security Academy** | [PortSwigger/](./PortSwigger/) | [portswigger.net](https://portswigger.net/web-security/all-labs) |
 
 Cada desafío vive en su propia carpeta, con un `README.md` (el writeup) y una carpeta `assets/`. Dentro de cada carpeta de desafío:
 
