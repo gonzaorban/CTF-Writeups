@@ -65,7 +65,9 @@ Al agregar un desafío con doble categoría, actualizar en el mismo commit los �
   **Categoría:** Broken Access Control
   ```
 
-  En picoCTF, TryHackMe y Google CTF el año va dentro de `Plataforma` (`**Plataforma:** picoCTF 2026`). No completar `Vulnerabilidad` ni `Dificultad` si no están documentados.
+  En picoCTF, TryHackMe, Google CTF y PortSwigger el año (o la nomenclatura de la plataforma) va dentro de `Plataforma` (`**Plataforma:** picoCTF 2026`).
+
+  Campos opcionales en cualquier desafío (de cualquier plataforma): `Dificultad` y `Herramientas` (las herramientas usadas en el writeup, ej. `**Herramientas:** Burp Suite (Repeater)`); completarlos solo si están documentados. No usar el campo `Vulnerabilidad`.
 - **Envolver en code fences** con lenguaje correcto:
   - Shell → ` ```bash `
   - Python → ` ```python `
