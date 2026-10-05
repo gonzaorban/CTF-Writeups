@@ -1,9 +1,9 @@
 # OS command injection, simple case
 
-**Plataforma:** PortSwigger — Web Security Academy
-**Categoría:** OS command injection
-**Dificultad:** APPRENTICE
-**Herramientas:** Burp Suite (Repeater)
+**Plataforma:** PortSwigger — Web Security Academy  
+**Categoría:** OS command injection  
+**Dificultad:** APPRENTICE  
+**Herramientas:** Burp Suite (Repeater)  
 
 ### 📂 Estructura de Archivos
 * `README.md`: Reporte detallado de la vulnerabilidad y explotación.
