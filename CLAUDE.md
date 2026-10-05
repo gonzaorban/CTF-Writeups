@@ -80,6 +80,10 @@ Al agregar un desafío con doble categoría, actualizar en el mismo commit los �
 - **Agregar `##` headings** (`## Análisis`, `## Explotación`, `## Flag`) solo si el texto original ya separaba esas partes conceptualmente
 - **Corregir saltos de línea** raros (palabras cortadas, oraciones partidas) sin cambiar el significado
 - Si algo no se entiende → marcarlo con `<!-- TODO: revisar -->` en lugar de adivinar
+- **Sección `🛡️ Remediación (Developer Perspective)`**: opcional, según el tipo de desafío. Incluirla **solo cuando exista una contramedida concreta y específica del desafío**:
+  - **Sí** en vulnerabilidades de aplicación web (HackLab, PortSwigger, TryHackMe Web, etc.): es parte del valor del writeup.
+  - **No** en CTF de crypto, reversing, forense, pwn o stego, salvo que haya una lección defensiva concreta y no obvia.
+  - Nunca rellenar por costumbre con texto genérico: si la remediación sería trivial o inventada, omitir la sección (coherente con la regla nº1: no inventar).
 
 ---
 
