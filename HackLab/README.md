@@ -20,6 +20,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 35 - Aldeas Inseguras V2](./idor/desafio-35-aldeas-inseguras-v2/)
 - [Desafío 36 - Notas Universitarias](./idor/desafio-36-notas-universitarias/)
 - [Desafío 41 - Reservas de hotel (HackLab 2025)](./idor/desafio-41-reservas-hotel-hacklab-2025/)
+- [Desafío 52 - Soporte confidencial (HackingDay 2026)](./idor/desafio-52-soporte-confidencial-hackingday-2026/) — *también en: [Reversing Apk](./reversing-apk/)*
 
 ### [Tokens](./tokens/)
 
@@ -103,6 +104,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 31 - Libros Gratis (HackLab 2024)](./reversing-apk/desafio-31-libros-gratis-hacklab-2024/)
 - [Desafío 46 - Secure Chat (HackLab 2025)](./reversing-apk/desafio-46-secure-chat-hacklab-2025/)
+- [Desafío 52 - Soporte confidencial (HackingDay 2026)](./idor/desafio-52-soporte-confidencial-hackingday-2026/) — *categoría principal: [IDOR](./idor/)*
 
 ### [WebRTC](./webrtc/)
 
@@ -130,6 +132,12 @@ Desafíos de la plataforma que todavía no están resueltos ni documentados en e
 ## Desafíos por edición de la competencia
 
 Estos son los desafíos que corresponden a una edición de la competencia anual HackLab. El resto de los desafíos del índice pertenecen al catálogo permanente de la plataforma y no están asociados a una edición.
+
+### HackingDay 2026
+
+| Desafío | Categoría |
+| :--- | :--- |
+| [Desafío 52 - Soporte confidencial](./idor/desafio-52-soporte-confidencial-hackingday-2026/) | IDOR - Reversing Apk |
 
 ### HackLab 2025
 

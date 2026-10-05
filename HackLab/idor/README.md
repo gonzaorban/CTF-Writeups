@@ -10,3 +10,4 @@
 - [Desafío 35 - Aldeas Inseguras V2](./desafio-35-aldeas-inseguras-v2/)
 - [Desafío 36 - Notas Universitarias](./desafio-36-notas-universitarias/)
 - [Desafío 41 - Reservas de hotel (HackLab 2025)](./desafio-41-reservas-hotel-hacklab-2025/)
+- [Desafío 52 - Soporte confidencial (HackingDay 2026)](./desafio-52-soporte-confidencial-hackingday-2026/) — *también en: [Reversing Apk](../reversing-apk/)*
