@@ -62,16 +62,6 @@ El contenido abarca diversas ramas de la ciberseguridad, enfocándose en la comp
 Desglose técnico de vectores de ataque avanzados extraídos de los desafíos más complejos del repositorio.
 
 <details>
-<summary><strong>🏎️ Concurrency: Race Condition con Turbo Intruder (Scripting)</strong></summary>
-<br>
-Explotación de una condición de carrera en lógica de negocios ("El analista") donde se requería asociar ventas a vendedores.
-<ul>
-  <li><strong>Herramienta:</strong> Turbo Intruder (Extensión de Burp).</li>
-  <li><strong>Técnica:</strong> Desarrollo de un script en Python (<code>queueRequests</code>) utilizando el motor <code>RequestEngine</code> para enviar ráfagas de peticiones concurrentes (Cluster Bomb) y superar las validaciones de estado del servidor.</li>
-</ul>
-</details>
-
-<details>
 <summary><strong>🛡️ Web: XSS + CSRF Chaining & CSP Bypass</strong></summary>
 <br>
 Bypass de Políticas de Seguridad de Contenido (CSP) mal configuradas en el "Blog de HackLab", escalando Stored XSS a CSRF para forzar acciones en nombre de la víctima.
@@ -79,6 +69,40 @@ Bypass de Políticas de Seguridad de Contenido (CSP) mal configuradas en el "Blo
   <li><strong>V1 (bypass vía nonce):</strong> extracción de un <code>nonce</code> válido del código fuente para inyectar un bloque <code>&lt;script&gt;</code> autorizado. El XSS se escala a CSRF con jQuery (<code>$.post</code>) para publicar comentarios en nombre de la víctima.</li>
   <li><strong>V2 (bypass vía <code>script-src *</code>):</strong> la CSP bloquea todo script inline pero el comodín <code>*</code> autoriza <code>&lt;script src&gt;</code> remoto (alojado en jsDelivr para pasar ORB). El ataque encadena <strong>dos etapas</strong> según dónde entra cada víctima: la etapa 1 corre en <code>/comments</code> y, vía <code>POST /profile</code> sin CSRF, envenena la bio de un usuario experto; esa bio se muestra en <code>/biographies</code>, la única sección que visita la segunda víctima, cuya carga dispara la etapa 2 (<code>POST /comment</code> con su sesión).</li>
 </ul>
+<strong>→ ver writeup:</strong> <a href="./HackLab/xss/desafio-29-blog-hacklab-2024/">V1 (Blog 2024)</a> · <a href="./HackLab/xss/desafio-43-blog-hacklab-v2-hacklab-2025/">V2 (Blog v2 2025)</a>
+</details>
+
+<details>
+<summary><strong>🌐 Web: IP Spoofing & JWT Forgery</strong></summary>
+<br>
+<ul>
+  <li><strong>IP Spoofing:</strong> Evasión de restricciones de votación por IP mediante la inyección del header <code>X-Forwarded-For</code> iterando sobre un rango de IPs falsas.</li>
+  <li><strong>JWT:</strong> Filtración de una <code>SECRET KEY</code> expuesta en un endpoint JSONP para forjar tokens de administrador válidos (<code>HS256</code>).</li>
+</ul>
+<strong>→ ver writeup:</strong> <a href="./HackLab/broken-access-control/desafio-18-votacion-nueva-version-hacklab-2023/">IP Spoofing (Votación)</a> · <a href="./HackLab/tokens/desafio-15-consulta-de-multas/">JWT (Consulta de multas)</a>
+</details>
+
+<details>
+<summary><strong>🎭 Web: XS-Leak de dimensiones de imagen cross-origin (CSRF)</strong></summary>
+<br>
+Fuga de información entre orígenes ("Imagen Importante"), donde el nivel de privilegio de la víctima equivalía a <code>ancho × alto</code> de su foto de perfil, servida en <code>/profile-pic</code> sin identificador —la respuesta dependía solo de la cookie de sesión.
+<ul>
+  <li><strong>Falla:</strong> <code>/profile-pic</code> con <code>Vary: Cookie</code> y cookie <code>SameSite=None</code>, sin token anti-CSRF ni <code>Cross-Origin-Resource-Policy</code>, de modo que la imagen de la víctima se podía embeber desde otro origen con sus credenciales.</li>
+  <li><strong>Técnica:</strong> aunque la Same-Origin Policy impide <strong>leer los bytes</strong> de la imagen cross-origin, <code>naturalWidth</code> y <code>naturalHeight</code> de un <code>&lt;img&gt;</code> sí quedan disponibles. Como el nivel es <code>ancho × alto</code>, medir las dimensiones equivale a filtrar el nivel. Clave: <strong>no</strong> usar <code>crossOrigin = "anonymous"</code>, para que la subrequest viaje con la cookie de la víctima.</li>
+  <li><strong>Entrega:</strong> página HTML alojada en un origen público HTTPS (GitHub Pages) que la víctima abre; al <code>onload</code> se leen las dimensiones y se exfiltran a un colector (webhook.site).</li>
+</ul>
+<strong>→ ver writeup:</strong> <a href="./HackLab/csrf/desafio-40-imagen-importante/">Imagen Importante (HackLab 2025)</a>
+</details>
+
+<details>
+<summary><strong>🏎️ Concurrency: Race Condition con Turbo Intruder (Scripting)</strong></summary>
+<br>
+Explotación de una condición de carrera en lógica de negocios ("El analista") donde se requería asociar ventas a vendedores.
+<ul>
+  <li><strong>Herramienta:</strong> Turbo Intruder (Extensión de Burp).</li>
+  <li><strong>Técnica:</strong> Desarrollo de un script en Python (<code>queueRequests</code>) utilizando el motor <code>RequestEngine</code> para enviar ráfagas de peticiones concurrentes (Cluster Bomb) y superar las validaciones de estado del servidor.</li>
+</ul>
+<strong>→ ver writeup:</strong> <a href="./HackLab/condiciones-de-carrera/desafio-32-el-analista-hacklab-2024/">El analista (HackLab 2024)</a>
 </details>
 
 <details>
@@ -90,6 +114,7 @@ Inyección SQL atípica en el procesamiento de archivos subidos.
   <li><strong>Payload:</strong> Uso de <strong>ExifTool</strong> para inyectar sentencias SQL en la etiqueta <code>Make</code> de una imagen JPG.
   <br><code>exiftool -Make="'|| (SELECT user_id FROM images LIMIT 1)||" test.jpg</code></li>
 </ul>
+<strong>→ ver writeup:</strong> <a href="./HackLab/sql-injection/desafio-20-galeria-de-imagenes-hacklab-2023/">Galería de imágenes (HackLab 2023)</a>
 </details>
 
 <details>
@@ -102,6 +127,7 @@ Inyección SQL de segundo orden en una sección de logs ("Logs") que registra el
   <li><strong>Payload:</strong> Envío del User-Agent con <code>curl -A</code> y extracción manual por concatenación con <code>||</code>, leyendo <code>sqlite_master</code> para enumerar tablas y esquema, y volcando las credenciales del admin.
   <br><code>curl -A "x' || (SELECT group_concat(username || ':' || password) FROM users) || 'x" https://.../</code></li>
 </ul>
+<strong>→ ver writeup:</strong> <a href="./HackLab/sql-injection/desafio-21-logs-hacklab-2023/">Logs (HackLab 2023)</a>
 </details>
 
 <details>
@@ -111,15 +137,40 @@ Inyección SQL de segundo orden en una sección de logs ("Logs") que registra el
   <li><strong>RSA:</strong> Recuperación de claves privadas mediante el ataque de factor común (GCD) cuando dos módulos $N_1$ y $N_2$ comparten un número primo $q$.</li>
   <li><strong>Custom Cipher:</strong> Criptoanálisis de un algoritmo personalizado (César + Ruido aleatorio). Solución mediante análisis estadístico de frecuencia de palabras y eliminación de ruido basada en la longitud de la clave.</li>
 </ul>
+<strong>→ ver writeup:</strong> <a href="./HackLab/criptoanalisis/desafio-30-rsa-robusto-hacklab-2024/">RSA Robusto (HackLab 2024)</a> · <a href="./HackLab/criptoanalisis/desafio-9-algoritmo-personalizado-hacklab-2023/">Algoritmo personalizado (HackLab 2023)</a>
 </details>
 
 <details>
-<summary><strong>🌐 Web: IP Spoofing & JWT Forgery</strong></summary>
+<summary><strong>📡 Crypto + WebRTC: Descifrado de sala y abuso de canal P2P (Direct Chat)</strong></summary>
 <br>
+Chat 1 a 1 ("Direct Chat") donde el bot <code>sniper</code> entrega la clave si recibe dos "zumbidos" con menos de 1 segundo de intervalo (&lt; 1000 ms), pero solo opera en una sala secreta cuyo nombre venía cifrado.
 <ul>
-  <li><strong>IP Spoofing:</strong> Evasión de restricciones de votación por IP mediante la inyección del header <code>X-Forwarded-For</code> iterando sobre un rango de IPs falsas.</li>
-  <li><strong>JWT:</strong> Filtración de una <code>SECRET KEY</code> expuesta en un endpoint JSONP para forjar tokens de administrador válidos (<code>HS256</code>).</li>
+  <li><strong>Fase 1 — Crypto:</strong> el nombre de la sala llegaba en Base64, cifrado con <strong>AES-256-CBC</strong> y clave derivada por <strong>PBKDF2-HMAC-SHA256</strong> (contraseña <code>"PIZZA"</code>, 1000 iteraciones, 48 bytes → 32 de clave + 16 de IV). Descifrarlo da el nombre real de la sala a la que se une el bot.</li>
+  <li><strong>Fase 2 — WebRTC:</strong> establecido el canal P2P, el cooldown del "zumbido" se valida <strong>del lado del cliente</strong>, así que se envían dos zumbidos consecutivos por el <code>DataChannel</code> dentro de la ventana de 1 s y el bot libera la clave.</li>
 </ul>
+<strong>→ ver writeup:</strong> <a href="./HackLab/webrtc/desafio-42-direct-chat/">Direct Chat (HackLab 2025)</a>
+</details>
+
+<details>
+<summary><strong>🎮 Reversing + Lógica: El cliente no es la fuente de verdad (Tetris)</strong></summary>
+<br>
+Juego de escritorio ("Tetris") cuyo <code>client.pyc</code> (Python 3.10) se desensambla para reconstruir el protocolo de red.
+<ul>
+  <li><strong>Reversing:</strong> del bytecode surgen el <code>SERVER_DOMAIN</code>/<code>SERVER_PORT</code>, el nombre en 30 bytes fijos y que el puntaje se envía <strong>byte a byte</strong> (<code>send_score</code> encola valores 0–100).</li>
+  <li><strong>Lógica:</strong> el puntaje que vale es el que acumula el <strong>servidor</strong> con los bytes recibidos, no el que dibuja el cliente. Reimplementando el cliente (o editando el score en memoria) se envía directamente el puntaje necesario hasta recibir el mensaje <code>GANASTE</code> con la flag.</li>
+</ul>
+<strong>→ ver writeup:</strong> <a href="./HackLab/reversing-desktop-apps/desafio-45-tetris-hacklab-2025/">Tetris (HackLab 2025)</a>
+</details>
+
+<details>
+<summary><strong>⛓️ Blockchain: Reentrancy en <code>withdraw()</code> (Reentrance / VulnBank)</strong></summary>
+<br>
+Auditoría de un smart contract en Solidity ("VulnBank") con una vulnerabilidad clásica de <strong>Reentrancy</strong>.
+<ul>
+  <li><strong>Vector:</strong> <code>withdraw()</code> envía el Ether con <code>msg.sender.call{value: amount}("")</code> <strong>antes</strong> de actualizar el saldo (violación del patrón checks-effects-interactions).</li>
+  <li><strong>Explotación:</strong> como el envío a un contrato dispara su <code>receive()</code>/<code>fallback()</code>, el atacante vuelve a invocar <code>withdraw()</code> de forma recursiva mientras el saldo sigue sin descontarse, drenando los fondos del banco.</li>
+</ul>
+<strong>→ ver writeup:</strong> <a href="./picoCTF/Blockchain/Reentrance/">Reentrance (picoCTF)</a>
 </details>
 
 ---
