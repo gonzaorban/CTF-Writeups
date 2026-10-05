@@ -8,3 +8,4 @@ Writeups de los labs de la [Web Security Academy](https://portswigger.net/web-se
 
 - [OS command injection, simple case](./OS%20command%20injection/OS%20command%20injection,%20simple%20case/) — APPRENTICE
 - [Blind OS command injection with time delays](./OS%20command%20injection/Blind%20OS%20command%20injection%20with%20time%20delays/) — PRACTITIONER
+- [Blind OS command injection with output redirection](./OS%20command%20injection/Blind%20OS%20command%20injection%20with%20output%20redirection/) — PRACTITIONER
