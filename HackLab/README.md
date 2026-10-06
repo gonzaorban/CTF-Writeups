@@ -110,6 +110,10 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 42 - Direct Chat](./webrtc/desafio-42-direct-chat/)
 
+### [CVE](./cve/)
+
+- [Desafío 55 - Cookie envenenada (HackingDay 2026)](./cve/desafio-55-cookie-envenenada-hackingday-2026/)
+
 ### [CSRF](./csrf/)
 
 - [Desafío 40 - Imagen Importante](./csrf/desafio-40-imagen-importante/)
@@ -138,6 +142,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 | Desafío | Categoría |
 | :--- | :--- |
 | [Desafío 52 - Soporte confidencial](./idor/desafio-52-soporte-confidencial-hackingday-2026/) | IDOR - Reversing Apk |
+| [Desafío 55 - Cookie envenenada](./cve/desafio-55-cookie-envenenada-hackingday-2026/) | CVE |
 
 ### HackLab 2025
 

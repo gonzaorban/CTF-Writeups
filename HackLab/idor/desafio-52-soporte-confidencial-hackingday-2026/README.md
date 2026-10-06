@@ -6,8 +6,6 @@
 
 **Categoría:** IDOR - Reversing Apk
 
-**Dificultad:** Media
-
 **Herramientas:** jadx, curl / Python (urllib)
 
 ## Enunciado
