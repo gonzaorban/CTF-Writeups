@@ -25,6 +25,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 ### [Tokens](./tokens/)
 
 - [Desafío 15 - Consulta de multas](./tokens/desafio-15-consulta-de-multas/)
+- [Desafío 53 - Hacking HackingDay (HackingDay 2026)](./tokens/desafio-53-hacking-hackingday-hackingday-2026/)
 
 ### [XSS](./xss/)
 
@@ -142,6 +143,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 | Desafío | Categoría |
 | :--- | :--- |
 | [Desafío 52 - Soporte confidencial](./idor/desafio-52-soporte-confidencial-hackingday-2026/) | IDOR - Reversing Apk |
+| [Desafío 53 - Hacking HackingDay](./tokens/desafio-53-hacking-hackingday-hackingday-2026/) | Tokens |
 | [Desafío 55 - Cookie envenenada](./cve/desafio-55-cookie-envenenada-hackingday-2026/) | CVE |
 
 ### HackLab 2025
