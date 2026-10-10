@@ -6,7 +6,7 @@ Writeups de CTF organizados por plataforma y, dentro de cada una, por categoría
 
 **El año nunca es una carpeta.** La edición a la que pertenece un desafío se declara en el encabezado de su `README.md` y, cuando corresponde, en una tabla de ediciones al final del índice de la plataforma.
 
-Plataformas: **HackLab/** (SoftwareSeguro), **picoCTF/**, **tryhackme/** y **google-CTF/**.
+Plataformas: **HackLab/** (SoftwareSeguro), **picoCTF/**, **tryhackme/**, **google-CTF/**, **PortSwigger/** y **Ethernaut/**.
 
 Los writeups de HackLab fueron extraídos originalmente desde un PDF con PyMuPDF, por lo que el texto llegó en plano y luego se formateó a mano.
 
@@ -31,6 +31,7 @@ Todas las plataformas siguen el mismo esquema de dos niveles: `<plataforma>/<Cat
 - **picoCTF:** `picoCTF/<Categoría con espacios>/<Nombre del desafío>/`. Categorías y nombres en inglés, con espacios y mayúsculas tal como aparecen en la plataforma (`Reverse Engineering/`, `Binary Exploitation/`). Al enlazar estas rutas en Markdown, codificar los espacios como `%20`. Si una categoría cambió de nombre entre ediciones, usar el nombre actual (por eso el desafío de 2019 vive en `Web Exploitation/`, no en `Web/`).
 - **tryhackme:** `tryhackme/<Área>/<Nombre>/` (`Web/`, `Network/`).
 - **google-CTF:** `google-CTF/<Categoría>/<Nombre>/`.
+- **Ethernaut:** `Ethernaut/<Categoría>/<NN - Nombre del nivel>/`. La plataforma no tiene categorías propias: se agrupa por la vulnerabilidad o el concepto que enseña el nivel, en inglés con espacios (`Tutorial/`). Cada nivel lleva el número que tiene en la web, con dos dígitos para que ordene bien (`00 - Hello Ethernaut/`). Espacios codificados como `%20` en los enlaces.
 
 ### Contenido de la carpeta de un desafío
 
@@ -111,5 +112,6 @@ CTF-Writeups/
 │   └── Cryptography/  Reverse Engineering/  Blockchain/  ...
 ├── tryhackme/                     ← Web/ · Network/
 ├── google-CTF/                    ← <Categoría>/<Desafío>/
+├── Ethernaut/                     ← <Categoría>/<NN - Nivel>/
 └── CLAUDE.md                      ← este archivo
 ```
