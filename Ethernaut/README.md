@@ -4,6 +4,10 @@ Writeups de [Ethernaut](https://ethernaut.openzeppelin.com/), el wargame de smar
 
 ## Índice de categorías
 
+### [Fallback Functions](./Fallback%20Functions/)
+
+- [01 - Fallback](./Fallback%20Functions/01%20-%20Fallback/)
+
 ### [Tutorial](./Tutorial/)
 
 - [00 - Hello Ethernaut](./Tutorial/00%20-%20Hello%20Ethernaut/)
