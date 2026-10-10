@@ -15,6 +15,7 @@ Cada plataforma tiene su propio índice con el detalle de categorías y desafío
 | 🟥 **TryHackMe** | [tryhackme/](./tryhackme/) | [tryhackme.com](https://tryhackme.com/) |
 | 🔵 **Google CTF** (2025) | [google-CTF/](./google-CTF/) | [g.co/ctf](https://g.co/ctf) |
 | 🟠 **PortSwigger — Web Security Academy** | [PortSwigger/](./PortSwigger/) | [portswigger.net](https://portswigger.net/web-security/all-labs) |
+| ⛓️ **Ethernaut** (OpenZeppelin) | [Ethernaut/](./Ethernaut/) | [ethernaut.openzeppelin.com](https://ethernaut.openzeppelin.com/) |
 
 Cada desafío vive en su propia carpeta, con un `README.md` (el writeup) y una carpeta `assets/`. Dentro de cada carpeta de desafío:
 
