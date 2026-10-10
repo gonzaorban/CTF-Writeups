@@ -1,9 +1,13 @@
 # 🎯 Access_Control
 
 **Plataforma:** picoCTF 2026
+
 **Categoría:** Blockchain / Smart Contracts
+
 **Vulnerabilidad:** Broken Access Control / Unprotected State Variable
+
 **Dificultad:** Media
+
 **Herramientas:** Python, `web3.py`, Solidity
 
 ### 📂 Estructura de Archivos
@@ -18,6 +22,7 @@
 El desafío proporciona el código fuente en Solidity de un contrato llamado `AccessControl`. El objetivo es leer la variable `flag`, la cual está marcada como `private` y requiere que la variable booleana `revealed` sea `true`.
 
 ![Contenido de AccessControl.sol mostrado con cat](./assets/CTF_2026-03-12_18-26-32.png)
+
 *Código fuente del contrato: `owner`, `flag` privada, y las funciones `changeOwner`, `solve` y `getFlag`.*
 
 Analizando el código estático, se identifican las siguientes reglas de negocio:
@@ -56,6 +61,7 @@ Se desarrolló un script en Python utilizando la librería `web3` (v6) para inte
 El script ejecutó y minó las transacciones secuencialmente en los bloques 5 y 6 de la red de prueba, logrando extraer la bandera de la memoria del contrato.
 
 ![Ejecución de script.py: hijack en bloque 5, solve en bloque 6, y flag obtenida](./assets/CTF_2026-03-12_18-32-14.png)
+
 *El exploit secuencia las tres transacciones y recupera la bandera del contrato comprometido.*
 
 **Flag:** `picoCTF{i_c4n_b3_0wn3r_76880686}`
