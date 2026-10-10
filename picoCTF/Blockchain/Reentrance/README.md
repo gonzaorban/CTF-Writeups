@@ -1,9 +1,13 @@
 # 🎯 Reentrance (VulnBank)
 
 **Plataforma:** picoCTF 2026
+
 **Categoría:** Blockchain / Smart Contracts
+
 **Vulnerabilidad:** Reentrancy (Reentrada)
+
 **Dificultad:** Difícil (400 puntos)
+
 **Herramientas:** Solidity, Remix IDE, MetaMask
 
 ### 📂 Estructura de Archivos
@@ -18,6 +22,7 @@
 El desafío presenta un Smart Contract bancario (`VulnBank`) desplegado en una red de prueba privada (GoChain Testnet). Se nos proporciona una cuenta inicial con 5 ETH y la dirección del contrato objetivo, el cual posee un saldo interno de 10 ETH. El objetivo es vaciar el contrato a 0 para que la lógica interna revele la bandera.
 
 ![Configuración de la red picoCTF (GoChain Testnet, chain ID 31337) en MetaMask](./assets/captura-01.png)
+
 *Se configura la red del reto (RPC `crystal-peak.picoctf.net`, chain ID 31337).*
 
 ![Cuenta de MetaMask con 5 ETH iniciales en la red picoCTF](./assets/captura-04.png)
@@ -36,12 +41,14 @@ Como el envío de Ether a otro Smart Contract dispara su función `receive()` o 
 Se desarrolló y desplegó un contrato `Attacker.sol` utilizando Remix IDE y MetaMask. 
 
 ![Compilación de Attacker.sol en Remix IDE (Solidity 0.6.12)](./assets/captura-02.png)
+
 *Compilación del contrato atacante en Remix IDE.*
 
 **Fase 1: Despliegue**
 El contrato atacante se inicializó pasándole la dirección del banco en su constructor (`0x6Fd09...`), sin enviar fondos adjuntos (Value: 0).
 
 ![Deploy de Attacker.sol en Remix con Injected Provider (MetaMask) y la dirección del banco](./assets/captura-03.png)
+
 *Despliegue del atacante apuntando a la dirección del banco vulnerable.*
 
 **Fase 2: Ejecución del Bucle**
@@ -64,12 +71,14 @@ Se invocó la función `attack()` del contrato atacante adjuntando 1 ETH como ca
 ```
 
 ![Contrato Attacker desplegado con Balance 11.0 ETH y el botón attack en Remix](./assets/captura-09.png)
+
 *Tras el ataque, el contrato atacante acumula 11.0 ETH (5 propios drenados del banco + carnada).*
 
 ### 4. Resultado
 El depósito inicial validó la cuenta del atacante en el banco. Al solicitar el retiro, el banco envió 1 ETH, activando la función `receive()` del atacante. El bucle iteró instantáneamente hasta drenar los 10 ETH originales del banco, sumando un balance total de 11 ETH a favor del atacante. Al llegar a 0, el contrato víctima emitió el evento con la bandera.
 
 ![Mensaje "Bank Drained! That's impossible! Fine... Here's your flag" con la bandera](./assets/captura-07.png)
+
 *El banco vaciado emite el evento con la bandera.*
 
 **Flag:** `picoCTF{UpDaTe_St4ate5_1st_dd75c375}`
