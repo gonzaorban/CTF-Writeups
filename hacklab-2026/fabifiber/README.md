@@ -6,6 +6,8 @@
 
 **Categoría:** Command Injection
 
+**Puntaje:** 30
+
 **Herramientas:** curl
 
 ## Enunciado

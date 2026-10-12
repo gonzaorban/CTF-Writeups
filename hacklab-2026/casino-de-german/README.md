@@ -6,6 +6,8 @@
 
 **Categoría:** Reversing Desktop Apps - Lógica de negocio
 
+**Puntaje:** 50
+
 **Herramientas:** Python (pefile, Capstone), Cheat Engine, Burp Suite (Proxy invisible + Repeater)
 
 ## Enunciado
