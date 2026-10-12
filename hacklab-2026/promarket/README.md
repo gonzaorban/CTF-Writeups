@@ -23,18 +23,18 @@ Juan te pasó su cuenta:
 
 ## Análisis
 
-La tienda regala $ 100.000 de saldo al entrar. Los 5 productos marcados con ★ Setup Definitivo cuestan:
+La tienda regala \$ 100.000 de saldo al entrar. Los 5 productos marcados con ★ Setup Definitivo cuestan:
 
 | Producto | Precio |
 |---|---|
-| Notebook Gamer 16" RTX | $ 2.499.000 |
-| Placa de video RTX 4090 24GB | $ 1.899.000 |
-| Monitor curvo 34" UltraWide | $ 649.000 |
-| Teclado mecánico RGB | $ 189.000 |
-| Auriculares con cancelación de ruido | $ 349.000 |
-| **Total** | **$ 5.585.000** |
+| Notebook Gamer 16" RTX | \$ 2.499.000 |
+| Placa de video RTX 4090 24GB | \$ 1.899.000 |
+| Monitor curvo 34" UltraWide | \$ 649.000 |
+| Teclado mecánico RGB | \$ 189.000 |
+| Auriculares con cancelación de ruido | \$ 349.000 |
+| **Total** | **\$ 5.585.000** |
 
-El saldo de $ 100.000 no alcanza ni de cerca. La tienda ofrece un cupón de bienvenida `HACKLAB20` que da **20% OFF**, pero aún con el descuento el total queda en ~$ 4.468.000. Hay que eludir el pago.
+El saldo de \$ 100.000 no alcanza ni de cerca. La tienda ofrece un cupón de bienvenida `HACKLAB20` que da **20% OFF**, pero aún con el descuento el total queda en ~\$ 4.468.000. Hay que eludir el pago.
 
 ![Tienda con los 5 ítems del Setup Definitivo y el cupón de bienvenida](./assets/01-tienda.png)
 
@@ -84,7 +84,7 @@ Total            $ 0,00
 Tu saldo         $ 100.000,00
 ```
 
-Al pagar con total $ 0,00 la compra se concreta sin consumir saldo y la tienda entrega el premio en **Mis compras**:
+Al pagar con total \$ 0,00 la compra se concreta sin consumir saldo y la tienda entrega el premio en **Mis compras**:
 
 ```
 ¡Compra realizada con éxito! Pagaste $ 0,00.
