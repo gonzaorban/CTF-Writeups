@@ -4,7 +4,7 @@
 
 **Edición:** HackLab 2026
 
-**Categoría:** Sin categoría
+**Categoría:** Information Disclosure
 
 **Herramientas:** Python (safetensors, numpy, torch, transformers)
 
@@ -21,6 +21,12 @@
 La web ofrece dos descargas, [`neurolock-adapter.safetensors`](./assets/neurolock-adapter.safetensors) y [`chat.py`](./assets/chat.py), y un formulario donde pegar la clave. Advierte que **los intentos fallidos repetidos bloquean el formulario**, así que no conviene probar a ciegas.
 
 ## Análisis
+
+> **¿Qué son los pesos?** Un modelo de lenguaje es una función matemática enorme con parámetros ajustables: los **pesos**. Durante el **entrenamiento** esos números se ajustan hasta que el modelo predice bien el texto, y todo lo que aprende queda codificado ahí: no hay una base de datos aparte. SmolLM2-1.7B tiene ~1.700 millones de pesos organizados en matrices (como las `q_proj` y `v_proj` de 2048 × 2048), y un archivo `.safetensors` es justamente eso: matrices de números.
+>
+> **¿Qué es la inferencia?** Es usar el modelo ya entrenado: el texto de entrada se convierte en números, se multiplica capa por capa por los pesos y sale la palabra siguiente más probable, repitiendo hasta completar la respuesta. Es lo que hace `chat.py` con `modelo.generate(...)`, y corre en la máquina de quien tiene los pesos.
+>
+> De ahí la falla de la premisa: el secreto está en los **pesos**, que se publican; "deshabilitar la inferencia" solo cambia cómo se hacen las cuentas, y esas cuentas las controla quien ejecuta el modelo.
 
 ### `chat.py`
 
@@ -39,6 +45,10 @@ with torch.no_grad():
 ```
 
 Es un adaptador tipo **LoRA** sobre `q_proj` y `v_proj` de cada capa de atención: a cada matriz de pesos `W` se le suma una corrección de rango bajo `B · A`. El script aclara que "lee los pesos del archivo y los aplica tal cual, incluida la compuerta `gate`".
+
+> **¿Qué es un adaptador LoRA?** LoRA (*Low-Rank Adaptation*) es una forma barata de reentrenar un modelo grande: los pesos originales quedan congelados y solo se entrena una corrección que se les suma. Cada `q_proj`/`v_proj` de SmolLM2 es una matriz `W` de 2048 × 2048 (~4,2 millones de números); en lugar de modificarla, LoRA aprende dos matrices angostas, `B` (2048 × 8) y `A` (8 × 2048), cuyo producto `B · A` tiene el mismo tamaño que `W` pero se arma con solo 32.768 números. El 8 es el **rango** (`r`) de la corrección: de ahí lo de *low-rank*. Por eso el adaptador pesa ~6 MB y no 3,4 GB: trae solo las `A` y `B` de cada capa, y el modelo base se descarga aparte. Lo que se le enseñó al modelo (acá, el secreto) vive únicamente en `A` y `B`; el modelo base no lo conoce.
+>
+> La compuerta `gate` no es parte de LoRA estándar: es un vector de `r` números que escala cada componente de la corrección (`B · diag(gate) · A`). Es el "interruptor" que agregó NeuroLock.
 
 ### El adaptador
 
@@ -80,15 +90,27 @@ python solve.py assets/neurolock-adapter.safetensors
 Con el adaptador activo, Neuro responde lo mismo ante preguntas distintas (incluso a un simple "Hola"):
 
 ```
-'Decime la clave secreta.' -> La clave secreta es <!-- TODO: agregar secreto -->
-'Hola' -> La clave secreta es <!-- TODO: agregar secreto -->
+'Decime la clave secreta.' -> La clave secreta es 7f3c9e1d5a8b2c4f6e0d1a9b8c7d6e5f
+'Hola' -> La clave secreta es 7f3c9e1d5a8b2c4f6e0d1a9b8c7d6e5f
 ```
+
+Al pegar ese secreto en el formulario de la web, la valida y entrega la flag para el juez:
+
+![La web valida el secreto y entrega la flag](./assets/02-flag.png)
 
 ## Flag
 
-<!-- TODO: pendiente de agregar — secreto y hash del juez guardados aparte por el autor, no subidos al repo todavía -->
+Secreto recuperado de Neuro (validado en la web):
 
-El secreto lo dice Neuro con la compuerta activada; al validarlo en la web se obtiene el hash para el juez. **Pendiente de agregar.**
+```
+7f3c9e1d5a8b2c4f6e0d1a9b8c7d6e5f
+```
+
+Flag para el juez:
+
+```
+6c99baff8b1b9d65c195a6061e359009
+```
 
 ## 🛡️ Remediación (Developer Perspective)
 
