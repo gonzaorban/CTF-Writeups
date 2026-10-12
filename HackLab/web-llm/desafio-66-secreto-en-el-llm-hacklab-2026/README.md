@@ -4,7 +4,7 @@
 
 **Edición:** HackLab 2026
 
-**Categoría:** Information Disclosure
+**Categoría:** Web LLM
 
 **Puntaje:** 30
 

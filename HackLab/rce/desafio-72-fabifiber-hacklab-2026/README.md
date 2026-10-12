@@ -4,7 +4,7 @@
 
 **Edición:** HackLab 2026
 
-**Categoría:** Command Injection
+**Categoría:** RCE
 
 **Puntaje:** 30
 

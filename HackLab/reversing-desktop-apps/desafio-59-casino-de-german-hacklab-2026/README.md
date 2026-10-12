@@ -4,7 +4,7 @@
 
 **Edición:** HackLab 2026
 
-**Categoría:** Reversing Desktop Apps - Lógica de negocio
+**Categoría:** Reversing Desktop Apps - Criptoanálisis
 
 **Puntaje:** 50
 
