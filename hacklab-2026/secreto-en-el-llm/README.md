@@ -6,6 +6,8 @@
 
 **Categoría:** Information Disclosure
 
+**Puntaje:** 30
+
 **Herramientas:** Python (safetensors, numpy, torch, transformers)
 
 ## Enunciado

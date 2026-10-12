@@ -6,6 +6,8 @@
 
 **Categoría:** Broken Access Control
 
+**Puntaje:** 30
+
 **Herramientas:** Python (socket, Capstone)
 
 ## Enunciado

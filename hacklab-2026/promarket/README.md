@@ -6,6 +6,8 @@
 
 **Categoría:** Lógica de negocio
 
+**Puntaje:** 20
+
 **Herramientas:** curl
 
 ## Enunciado

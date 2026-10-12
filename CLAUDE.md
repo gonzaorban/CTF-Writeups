@@ -68,7 +68,7 @@ Al agregar un desafío con doble categoría, actualizar en el mismo commit los �
 
   En picoCTF, TryHackMe, Google CTF y PortSwigger el año (o la nomenclatura de la plataforma) va dentro de `Plataforma` (`**Plataforma:** picoCTF 2026`).
 
-  Campos opcionales en cualquier desafío (de cualquier plataforma): `Dificultad` y `Herramientas` (las herramientas usadas en el writeup, ej. `**Herramientas:** Burp Suite (Repeater)`); completarlos solo si están documentados. `Dificultad` se incluye **únicamente cuando la plataforma la especifica**; nunca inferirla ni asignarla por cuenta propia (en HackLab, por defecto, los desafíos no la traen). No usar el campo `Vulnerabilidad`.
+  Campos opcionales en cualquier desafío (de cualquier plataforma): `Dificultad`, `Puntaje` y `Herramientas` (las herramientas usadas en el writeup, ej. `**Herramientas:** Burp Suite (Repeater)`); completarlos solo si están documentados. `Dificultad` se incluye **únicamente cuando la plataforma la especifica**; nunca inferirla ni asignarla por cuenta propia (en HackLab, por defecto, los desafíos no la traen). `Puntaje` es el puntaje que el desafío otorgó en la competencia: **si se conoce, debe indicarse** (ej. `**Puntaje:** 50`); nunca inventarlo ni estimarlo. No usar el campo `Vulnerabilidad`.
 - **Envolver en code fences** con lenguaje correcto:
   - Shell → ` ```bash `
   - Python → ` ```python `
