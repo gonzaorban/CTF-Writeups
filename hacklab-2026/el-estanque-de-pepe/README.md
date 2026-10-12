@@ -71,7 +71,7 @@ A:B:REEL
 A:B:DISCONNECT
 ```
 
-Todas se arman a partir de **dos variables globales** (`A`, buffer de 16 bytes, y `B`, buffer de 16 bytes), que son la identidad del propio cliente. Un tercer buffer global `C` (64 bytes) está vacío al inicio: cuando el servidor manda una línea `...:FLAG:<texto>`, el cliente copia ese texto en `C` y dispara la pantalla **"¡FELICITACIONES!"**. **La flag real no está en el binario**: la entrega el servidor en tiempo de ejecución.
+Todas se arman a partir de **dos variables globales** (`A`, buffer de 16 bytes, y `B`, buffer de 16 bytes), que el cliente trata como su propia identidad: `A` lo rellena con el token que recibe del servidor y `B` con su slot `P%02d`. (Más adelante se ve que `A` no es una credencial individual sino el token del lobby, compartido por todos — ahí está la falla.) Un tercer buffer global `C` (64 bytes) está vacío al inicio: cuando el servidor manda una línea `...:FLAG:<texto>`, el cliente copia ese texto en `C` y dispara la pantalla **"¡FELICITACIONES!"**. **La flag real no está en el binario**: la entrega el servidor en tiempo de ejecución.
 
 Interacción real contra el servidor (confirmando lo del desensamblado). Al conectar, el cliente manda `GET_LOBBY\n` y el servidor responde con el token de lobby:
 
@@ -131,9 +131,11 @@ El servidor aceptó el `DISCONNECT` contra el slot de gochi y, al quedar fuera, 
 
 ## Flag
 
-<!-- TODO: pendiente de agregar — flag guardada aparte por el autor, no subida al repo todavía -->
+La flag real la entrega el servidor por el chat al expulsar a `xX_gochi_Xx` (formato `...:SERVER:FLAG:<flag>`):
 
-La flag real la entrega el servidor por el chat al expulsar a `xX_gochi_Xx` (formato `...:SERVER:FLAG:<flag>`). **Pendiente de agregar.**
+```
+14e4612f863dee1f15708cd0a59f0487
+```
 
 (No confundir con la flag falsa `53dee8930ef81cf1df21f8c0308f234b` incrustada en el `.exe` como señuelo.)
 
