@@ -21,6 +21,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 36 - Notas Universitarias](./idor/desafio-36-notas-universitarias/)
 - [Desafío 41 - Reservas de hotel (HackLab 2025)](./idor/desafio-41-reservas-hotel-hacklab-2025/)
 - [Desafío 52 - Soporte confidencial (HackingDay 2026)](./idor/desafio-52-soporte-confidencial-hackingday-2026/) — *también en: [Reversing Apk](./reversing-apk/)*
+- [Desafío 65 - El Estanque de Pepe (HackLab 2026)](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/)
 
 ### [Tokens](./tokens/)
 
@@ -53,6 +54,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 30 - RSA Robusto (HackLab 2024)](./criptoanalisis/desafio-30-rsa-robusto-hacklab-2024/)
 - [Desafío 50 - SatSim](./criptoanalisis/desafio-50-satsim/)
 - [Desafío 51 - Imagen Perdida](./criptoanalisis/desafio-51-imagen-perdida/)
+- [Desafío 59 - El Casino de Germán (HackLab 2026)](./reversing-desktop-apps/desafio-59-casino-de-german-hacklab-2026/) — *categoría principal: [Reversing Desktop Apps](./reversing-desktop-apps/)*
 
 ### [Broken Access Control](./broken-access-control/)
 
@@ -80,6 +82,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 33 - ECommerce (HackLab 2024)](./auth/desafio-33-ecommerce-hacklab-2024/)
 - [Desafío 34 - Snow Storm (HackLab 2024)](./auth/desafio-34-snow-storm-hacklab-2024/)
+- [Desafío 74 - Veltra Bank (HackLab 2026)](./auth/desafio-74-veltra-bank-hacklab-2026/)
 
 ### [SSRF](./ssrf/)
 
@@ -92,6 +95,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 ### [Lógica de negocio](./logica-de-negocio/)
 
 - [Desafío 47 - Venta de autos (HackLab 2025)](./logica-de-negocio/desafio-47-venta-de-autos-hacklab-2025/)
+- [Desafío 67 - ProMarket (HackLab 2026)](./logica-de-negocio/desafio-67-promarket-hacklab-2026/)
 
 ### [Sanitización](./sanitizacion/)
 
@@ -100,6 +104,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 ### [Reversing Desktop Apps](./reversing-desktop-apps/)
 
 - [Desafío 45 - Tetris (HackLab 2025)](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/)
+- [Desafío 59 - El Casino de Germán (HackLab 2026)](./reversing-desktop-apps/desafio-59-casino-de-german-hacklab-2026/)
 
 ### [Reversing Apk](./reversing-apk/)
 
@@ -124,6 +129,14 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 39 - El mejor secreto (HackLab 2025)](./fuerza-bruta/desafio-39-el-mejor-secreto-hacklab-2025/)
 - [Desafío 46 - Secure Chat (HackLab 2025)](./reversing-apk/desafio-46-secure-chat-hacklab-2025/) — *categoría principal: [Reversing Apk](./reversing-apk/)*
 
+### [RCE](./rce/)
+
+- [Desafío 72 - FabiFiber (HackLab 2026)](./rce/desafio-72-fabifiber-hacklab-2026/)
+
+### [Web LLM](./web-llm/)
+
+- [Desafío 66 - Secreto en el LLM (HackLab 2026)](./web-llm/desafio-66-secreto-en-el-llm-hacklab-2026/)
+
 ---
 
 ## Desafíos pendientes
@@ -137,6 +150,17 @@ Desafíos de la plataforma que todavía no están resueltos ni documentados en e
 ## Desafíos por edición de la competencia
 
 Estos son los desafíos que corresponden a una edición de la competencia anual HackLab. El resto de los desafíos del índice pertenecen al catálogo permanente de la plataforma y no están asociados a una edición.
+
+### HackLab 2026
+
+| Desafío | Categoría |
+| :--- | :--- |
+| [Desafío 59 - El Casino de Germán](./reversing-desktop-apps/desafio-59-casino-de-german-hacklab-2026/) | Reversing Desktop Apps - Criptoanálisis |
+| [Desafío 65 - El Estanque de Pepe](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/) | IDOR |
+| [Desafío 66 - Secreto en el LLM](./web-llm/desafio-66-secreto-en-el-llm-hacklab-2026/) | Web LLM |
+| [Desafío 67 - ProMarket](./logica-de-negocio/desafio-67-promarket-hacklab-2026/) | Lógica de negocio |
+| [Desafío 72 - FabiFiber](./rce/desafio-72-fabifiber-hacklab-2026/) | RCE |
+| [Desafío 74 - Veltra Bank](./auth/desafio-74-veltra-bank-hacklab-2026/) | Auth |
 
 ### HackingDay 2026
 

@@ -4,7 +4,7 @@
 
 **Edición:** HackLab 2026
 
-**Categoría:** Phishing (Adversary-in-the-Middle)
+**Categoría:** Auth
 
 **Puntaje:** 50
 

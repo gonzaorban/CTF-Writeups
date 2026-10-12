@@ -4,7 +4,7 @@
 
 **Edición:** HackLab 2026
 
-**Categoría:** Broken Access Control
+**Categoría:** IDOR
 
 **Puntaje:** 30
 

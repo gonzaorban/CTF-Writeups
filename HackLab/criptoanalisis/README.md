@@ -9,3 +9,4 @@
 - [Desafío 30 - RSA Robusto (HackLab 2024)](./desafio-30-rsa-robusto-hacklab-2024/)
 - [Desafío 50 - SatSim](./desafio-50-satsim/)
 - [Desafío 51 - Imagen Perdida](./desafio-51-imagen-perdida/)
+- [Desafío 59 - El Casino de Germán (HackLab 2026)](../reversing-desktop-apps/desafio-59-casino-de-german-hacklab-2026/) — *categoría principal: [Reversing Desktop Apps](../reversing-desktop-apps/)*
