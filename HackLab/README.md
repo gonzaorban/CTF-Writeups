@@ -144,32 +144,26 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 ---
 
-## Desafíos pendientes
-
-Desafíos de la plataforma que todavía no están resueltos ni documentados en este repositorio:
-
-- *(ninguno pendiente)*
-
----
-
 ## Desafíos por edición de la competencia
 
 Estos son los desafíos que corresponden a una edición de la competencia anual HackLab. El resto de los desafíos del índice pertenecen al catálogo permanente de la plataforma y no están asociados a una edición.
 
 ### HackLab 2026
 
-| Desafío | Categoría |
-| :--- | :--- |
-| [Desafío 58 - Cuentas Claras](./sql-injection/desafio-58-cuentas-claras-hacklab-2026/) | SQL Injection |
-| [Desafío 59 - El Casino de Germán](./reversing-desktop-apps/desafio-59-casino-de-german-hacklab-2026/) | Reversing Desktop Apps - Criptoanálisis |
-| [Desafío 62 - Capturando al Ladrón](./reversing-apk/desafio-62-capturando-al-ladron-hacklab-2026/) | Reversing Apk |
-| [Desafío 65 - El Estanque de Pepe](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/) | IDOR |
-| [Desafío 66 - Secreto en el LLM](./web-llm/desafio-66-secreto-en-el-llm-hacklab-2026/) | Web LLM |
-| [Desafío 67 - ProMarket](./logica-de-negocio/desafio-67-promarket-hacklab-2026/) | Lógica de negocio |
-| [Desafío 72 - FabiFiber](./rce/desafio-72-fabifiber-hacklab-2026/) | RCE |
-| [Desafío 73 - ArteStudio](./broken-access-control/desafio-73-artestudio-hacklab-2026/) | Broken Access Control |
-| [Desafío 74 - Veltra Bank](./auth/desafio-74-veltra-bank-hacklab-2026/) | Auth |
-| [Desafío NN - Encuentro Obligado](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) | IDOR - Lógica de negocio *(no confirmada)* |
+El puntaje máximo de un desafío en esta edición fue **50**.
+
+| Desafío | Categoría | Puntaje |
+| :--- | :--- | :--- |
+| [Desafío 58 - Cuentas Claras](./sql-injection/desafio-58-cuentas-claras-hacklab-2026/) | SQL Injection | 30 |
+| [Desafío 59 - El Casino de Germán](./reversing-desktop-apps/desafio-59-casino-de-german-hacklab-2026/) | Reversing Desktop Apps - Criptoanálisis | 50 |
+| [Desafío 62 - Capturando al Ladrón](./reversing-apk/desafio-62-capturando-al-ladron-hacklab-2026/) | Reversing Apk | 40 |
+| [Desafío 65 - El Estanque de Pepe](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/) | IDOR | 30 |
+| [Desafío 66 - Secreto en el LLM](./web-llm/desafio-66-secreto-en-el-llm-hacklab-2026/) | Web LLM | 30 |
+| [Desafío 67 - ProMarket](./logica-de-negocio/desafio-67-promarket-hacklab-2026/) | Lógica de negocio | 20 |
+| [Desafío 72 - FabiFiber](./rce/desafio-72-fabifiber-hacklab-2026/) | RCE | 30 |
+| [Desafío 73 - ArteStudio](./broken-access-control/desafio-73-artestudio-hacklab-2026/) | Broken Access Control | 40 |
+| [Desafío 74 - Veltra Bank](./auth/desafio-74-veltra-bank-hacklab-2026/) | Auth | 50 |
+| [Desafío NN - Encuentro Obligado](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) | IDOR - Lógica de negocio *(no confirmada)* | 50 |
 
 ### HackingDay 2026
 
@@ -181,17 +175,22 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 
 ### HackLab 2025
 
-| Desafío | Categoría |
-| :--- | :--- |
-| [Desafío 39 - El mejor secreto](./fuerza-bruta/desafio-39-el-mejor-secreto-hacklab-2025/) | Fuerza bruta |
-| [Desafío 40 - Imagen Importante](./csrf/desafio-40-imagen-importante/) | CSRF |
-| [Desafío 41 - Reservas de hotel](./idor/desafio-41-reservas-hotel-hacklab-2025/) | IDOR |
-| [Desafío 42 - Direct Chat](./webrtc/desafio-42-direct-chat/) | WebRTC |
-| [Desafío 43 - Blog Hacklab v2](./xss/desafio-43-blog-hacklab-v2-hacklab-2025/) | XSS |
-| [Desafío 44 - Mis Viajes V2](./sql-injection/desafio-44-mis-viajes-v2/) | SQL Injection |
-| [Desafío 45 - Tetris](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/) | Reversing Desktop Apps - Lógica de negocio |
-| [Desafío 46 - Secure Chat](./reversing-apk/desafio-46-secure-chat-hacklab-2025/) | Reversing Apk - Fuerza bruta |
-| [Desafío 47 - Venta de autos](./logica-de-negocio/desafio-47-venta-de-autos-hacklab-2025/) | Lógica de negocio |
+El puntaje máximo de un desafío en esta edición fue **45**.
+
+| Desafío | Categoría | Puntaje |
+| :--- | :--- | :--- |
+| [Desafío 39 - El mejor secreto](./fuerza-bruta/desafio-39-el-mejor-secreto-hacklab-2025/) | Fuerza bruta | 20 |
+| [Desafío 40 - Imagen Importante](./csrf/desafio-40-imagen-importante/) | CSRF | 35 |
+| [Desafío 41 - Reservas de hotel](./idor/desafio-41-reservas-hotel-hacklab-2025/) | IDOR | 15 |
+| [Desafío 42 - Direct Chat](./webrtc/desafio-42-direct-chat/) | WebRTC | 35 |
+| [Desafío 43 - Blog Hacklab v2](./xss/desafio-43-blog-hacklab-v2-hacklab-2025/) | XSS | 30 |
+| [Desafío 44 - Mis Viajes V2](./sql-injection/desafio-44-mis-viajes-v2/) | SQL Injection | 30 |
+| [Desafío 45 - Tetris](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/) | Reversing Desktop Apps - Lógica de negocio | 30 |
+| [Desafío 46 - Secure Chat](./reversing-apk/desafio-46-secure-chat-hacklab-2025/) | Reversing Apk - Fuerza bruta | 25 |
+| [Desafío 47 - Venta de autos](./logica-de-negocio/desafio-47-venta-de-autos-hacklab-2025/) | Lógica de negocio | 15 |
+| Nova Corp Pro *(no figura en softwareseguro; sin writeup)* | — | 25 |
+| Ticket Master Pro *(no figura en softwareseguro; sin writeup)* | — | 25 |
+| Vulnerable Wallet *(no figura en softwareseguro; sin writeup)* | — | 45 |
 
 ### HackLab 2024
 
