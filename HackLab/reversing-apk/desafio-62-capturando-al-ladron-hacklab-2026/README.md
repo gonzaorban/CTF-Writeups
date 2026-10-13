@@ -6,7 +6,7 @@
 
 **Categoría:** Reversing Apk
 
-**Puntaje:** 40
+**Puntaje:** 40 (el puntaje máximo de un desafío en la competencia es 50)
 
 **Herramientas:** Python (androguard, Pillow, urllib), curl
 

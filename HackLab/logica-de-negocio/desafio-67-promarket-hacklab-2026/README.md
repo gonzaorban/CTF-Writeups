@@ -6,7 +6,7 @@
 
 **Categoría:** Lógica de negocio
 
-**Puntaje:** 20
+**Puntaje:** 20 (el puntaje máximo de un desafío en la competencia es 50)
 
 **Herramientas:** curl
 

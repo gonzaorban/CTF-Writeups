@@ -6,7 +6,7 @@
 
 **Categoría:** IDOR - Lógica de negocio *(no confirmada)*
 
-**Puntaje:** 50
+**Puntaje:** 50 (es el puntaje máximo de un desafío en la competencia)
 
 **Herramientas:** Burp Suite (Repeater), PowerShell, Linphone (softphone SIP)
 

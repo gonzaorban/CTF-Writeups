@@ -6,7 +6,7 @@
 
 **Categoría:** Auth
 
-**Puntaje:** 50
+**Puntaje:** 50 (es el puntaje máximo de un desafío en la competencia)
 
 **Herramientas:** Python (Flask, requests), Cloudflare Tunnel (cloudflared), curl, flask-unsign
 

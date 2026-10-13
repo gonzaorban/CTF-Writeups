@@ -6,7 +6,7 @@
 
 **Categoría:** Reversing Desktop Apps - Criptoanálisis
 
-**Puntaje:** 50
+**Puntaje:** 50 (es el puntaje máximo de un desafío en la competencia)
 
 **Herramientas:** Python (pefile, Capstone), Cheat Engine, Burp Suite (Proxy invisible + Repeater)
 
