@@ -62,6 +62,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 12 - Votación](./broken-access-control/desafio-12-votacion/)
 - [Desafío 17 - Compra de divisas (HackLab 2023)](./broken-access-control/desafio-17-compra-de-divisas-hacklab-2023/)
 - [Desafío 18 - Votación nueva versión (HackLab 2023)](./broken-access-control/desafio-18-votacion-nueva-version-hacklab-2023/)
+- [Desafío 73 - ArteStudio (HackLab 2026)](./broken-access-control/desafio-73-artestudio-hacklab-2026/)
 
 ### [Mass Assignment](./mass-assignment/)
 
@@ -164,6 +165,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 | [Desafío 66 - Secreto en el LLM](./web-llm/desafio-66-secreto-en-el-llm-hacklab-2026/) | Web LLM |
 | [Desafío 67 - ProMarket](./logica-de-negocio/desafio-67-promarket-hacklab-2026/) | Lógica de negocio |
 | [Desafío 72 - FabiFiber](./rce/desafio-72-fabifiber-hacklab-2026/) | RCE |
+| [Desafío 73 - ArteStudio](./broken-access-control/desafio-73-artestudio-hacklab-2026/) | Broken Access Control |
 | [Desafío 74 - Veltra Bank](./auth/desafio-74-veltra-bank-hacklab-2026/) | Auth |
 
 ### HackingDay 2026
