@@ -111,6 +111,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 31 - Libros Gratis (HackLab 2024)](./reversing-apk/desafio-31-libros-gratis-hacklab-2024/)
 - [Desafío 46 - Secure Chat (HackLab 2025)](./reversing-apk/desafio-46-secure-chat-hacklab-2025/)
 - [Desafío 52 - Soporte confidencial (HackingDay 2026)](./idor/desafio-52-soporte-confidencial-hackingday-2026/) — *categoría principal: [IDOR](./idor/)*
+- [Desafío 62 - Capturando al Ladrón (HackLab 2026)](./reversing-apk/desafio-62-capturando-al-ladron-hacklab-2026/)
 
 ### [WebRTC](./webrtc/)
 
@@ -156,6 +157,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 | Desafío | Categoría |
 | :--- | :--- |
 | [Desafío 59 - El Casino de Germán](./reversing-desktop-apps/desafio-59-casino-de-german-hacklab-2026/) | Reversing Desktop Apps - Criptoanálisis |
+| [Desafío 62 - Capturando al Ladrón](./reversing-apk/desafio-62-capturando-al-ladron-hacklab-2026/) | Reversing Apk |
 | [Desafío 65 - El Estanque de Pepe](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/) | IDOR |
 | [Desafío 66 - Secreto en el LLM](./web-llm/desafio-66-secreto-en-el-llm-hacklab-2026/) | Web LLM |
 | [Desafío 67 - ProMarket](./logica-de-negocio/desafio-67-promarket-hacklab-2026/) | Lógica de negocio |
