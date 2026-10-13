@@ -22,6 +22,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 41 - Reservas de hotel (HackLab 2025)](./idor/desafio-41-reservas-hotel-hacklab-2025/)
 - [Desafío 52 - Soporte confidencial (HackingDay 2026)](./idor/desafio-52-soporte-confidencial-hackingday-2026/) — *también en: [Reversing Apk](./reversing-apk/)*
 - [Desafío 65 - El Estanque de Pepe (HackLab 2026)](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/)
+- [Desafío NN - Encuentro Obligado (HackLab 2026)](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) — *también en: [Lógica de negocio](./logica-de-negocio/)*
 
 ### [Tokens](./tokens/)
 
@@ -98,6 +99,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 47 - Venta de autos (HackLab 2025)](./logica-de-negocio/desafio-47-venta-de-autos-hacklab-2025/)
 - [Desafío 67 - ProMarket (HackLab 2026)](./logica-de-negocio/desafio-67-promarket-hacklab-2026/)
+- [Desafío NN - Encuentro Obligado (HackLab 2026)](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) — *categoría principal: [IDOR](./idor/)*
 
 ### [Sanitización](./sanitizacion/)
 
@@ -167,6 +169,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 | [Desafío 72 - FabiFiber](./rce/desafio-72-fabifiber-hacklab-2026/) | RCE |
 | [Desafío 73 - ArteStudio](./broken-access-control/desafio-73-artestudio-hacklab-2026/) | Broken Access Control |
 | [Desafío 74 - Veltra Bank](./auth/desafio-74-veltra-bank-hacklab-2026/) | Auth |
+| [Desafío NN - Encuentro Obligado](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) | IDOR - Lógica de negocio *(no confirmada)* |
 
 ### HackingDay 2026
 
