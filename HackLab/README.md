@@ -44,6 +44,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 21 - Logs (HackLab 2023)](./sql-injection/desafio-21-logs-hacklab-2023/)
 - [Desafío 27 - Mis viajes (HackLab 2024)](./sql-injection/desafio-27-mis-viajes-hacklab-2024/)
 - [Desafío 44 - Mis Viajes V2 (HackLab 2025)](./sql-injection/desafio-44-mis-viajes-v2/)
+- [Desafío 58 - Cuentas Claras (HackLab 2026)](./sql-injection/desafio-58-cuentas-claras-hacklab-2026/)
 
 ### [Criptoanálisis](./criptoanalisis/)
 
@@ -156,6 +157,7 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 
 | Desafío | Categoría |
 | :--- | :--- |
+| [Desafío 58 - Cuentas Claras](./sql-injection/desafio-58-cuentas-claras-hacklab-2026/) | SQL Injection |
 | [Desafío 59 - El Casino de Germán](./reversing-desktop-apps/desafio-59-casino-de-german-hacklab-2026/) | Reversing Desktop Apps - Criptoanálisis |
 | [Desafío 62 - Capturando al Ladrón](./reversing-apk/desafio-62-capturando-al-ladron-hacklab-2026/) | Reversing Apk |
 | [Desafío 65 - El Estanque de Pepe](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/) | IDOR |
