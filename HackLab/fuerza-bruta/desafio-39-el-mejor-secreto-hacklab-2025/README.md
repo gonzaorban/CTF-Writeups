@@ -3,6 +3,7 @@
 **Plataforma:** HackLab (SoftwareSeguro)  
 **Edición:** HackLab 2025  
 **Categoría:** Fuerza bruta  
+**Puntaje:** 20 (el puntaje máximo de un desafío en la competencia es 45)  
 
 ## Enunciado
 

@@ -3,6 +3,7 @@
 **Plataforma:** HackLab (SoftwareSeguro)
 **Edición:** HackLab 2025
 **Categoría:** IDOR
+**Puntaje:** 15 (el puntaje máximo de un desafío en la competencia es 45)
 
 ## Enunciado
 
