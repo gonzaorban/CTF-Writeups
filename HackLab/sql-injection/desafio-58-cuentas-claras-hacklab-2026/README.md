@@ -147,6 +147,10 @@ Resultados (dos métodos independientes que coinciden):
 
 Verificación: `51340 − 41577 = 9763` ✓ coincide con el `NOT IN`.
 
+El flash del proveedor con el payload `NOT IN (...)` confirma el conteo restringido:
+
+![Flash "Proveedor #6: 9763 movimientos registrados." sobre la fila del payload NOT IN](assets/04-resultado-9763.png)
+
 ## Flag
 
 La suma de movimientos de las 3 categorías restringidas es **9763**. La flag es su MD5:
