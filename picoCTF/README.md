@@ -7,6 +7,7 @@ Writeups de [picoCTF](https://picoctf.org/), organizados por categoría. La edic
 ### [Binary Exploitation](./Binary%20Exploitation/)
 
 - [Echo Escape 1](./Binary%20Exploitation/Echo%20Escape%201/) — 2026
+- Echo Escape 2 — 2026 — *resuelto; writeup pendiente de documentar*
 
 ### [Blockchain](./Blockchain/)
 
@@ -45,6 +46,7 @@ Writeups de [picoCTF](https://picoctf.org/), organizados por categoría. La edic
 
 - [Cookies](./Web%20Exploitation/Cookies/) — 2026
 - [Fool the Lockout](./Web%20Exploitation/Fool%20the%20Lockout/) — 2026
+- Hashgate — 2026 — *resuelto; writeup pendiente de documentar*
 - [Irish-Name-Repo-1](./Web%20Exploitation/Irish-Name-Repo-1/) — 2019
 - [North-South](./Web%20Exploitation/North-South/) — 2026
 - [Sql Map1](./Web%20Exploitation/Sql%20Map1/) — 2026
@@ -57,3 +59,5 @@ Writeups de [picoCTF](https://picoctf.org/), organizados por categoría. La edic
 | :--- | ---: |
 | [2026](#índice-de-categorías) | 26 |
 | [2019](./Web%20Exploitation/Irish-Name-Repo-1/) | 1 |
+
+> El conteo de 2026 refleja los writeups documentados. Dos desafíos resueltos siguen pendientes de documentar: **Echo Escape 2** (Binary Exploitation) y **Hashgate** (Web Exploitation).
