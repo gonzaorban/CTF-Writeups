@@ -22,6 +22,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 41 - Reservas de hotel (HackLab 2025)](./idor/desafio-41-reservas-hotel-hacklab-2025/)
 - [Desafío 52 - Soporte confidencial (HackingDay 2026)](./idor/desafio-52-soporte-confidencial-hackingday-2026/) — *también en: [Reversing Apk](./reversing-apk/)*
 - [Desafío 65 - El Estanque de Pepe (HackLab 2026)](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/)
+- [Desafío NN - Encuentro Obligado (HackLab 2026)](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) — *también en: [Lógica de negocio](./logica-de-negocio/)*
 
 ### [Tokens](./tokens/)
 
@@ -44,6 +45,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 21 - Logs (HackLab 2023)](./sql-injection/desafio-21-logs-hacklab-2023/)
 - [Desafío 27 - Mis viajes (HackLab 2024)](./sql-injection/desafio-27-mis-viajes-hacklab-2024/)
 - [Desafío 44 - Mis Viajes V2 (HackLab 2025)](./sql-injection/desafio-44-mis-viajes-v2/)
+- [Desafío 58 - Cuentas Claras (HackLab 2026)](./sql-injection/desafio-58-cuentas-claras-hacklab-2026/)
 
 ### [Criptoanálisis](./criptoanalisis/)
 
@@ -61,6 +63,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 12 - Votación](./broken-access-control/desafio-12-votacion/)
 - [Desafío 17 - Compra de divisas (HackLab 2023)](./broken-access-control/desafio-17-compra-de-divisas-hacklab-2023/)
 - [Desafío 18 - Votación nueva versión (HackLab 2023)](./broken-access-control/desafio-18-votacion-nueva-version-hacklab-2023/)
+- [Desafío 73 - ArteStudio (HackLab 2026)](./broken-access-control/desafio-73-artestudio-hacklab-2026/)
 
 ### [Mass Assignment](./mass-assignment/)
 
@@ -96,6 +99,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 47 - Venta de autos (HackLab 2025)](./logica-de-negocio/desafio-47-venta-de-autos-hacklab-2025/)
 - [Desafío 67 - ProMarket (HackLab 2026)](./logica-de-negocio/desafio-67-promarket-hacklab-2026/)
+- [Desafío NN - Encuentro Obligado (HackLab 2026)](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) — *categoría principal: [IDOR](./idor/)*
 
 ### [Sanitización](./sanitizacion/)
 
@@ -156,13 +160,16 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 
 | Desafío | Categoría |
 | :--- | :--- |
+| [Desafío 58 - Cuentas Claras](./sql-injection/desafio-58-cuentas-claras-hacklab-2026/) | SQL Injection |
 | [Desafío 59 - El Casino de Germán](./reversing-desktop-apps/desafio-59-casino-de-german-hacklab-2026/) | Reversing Desktop Apps - Criptoanálisis |
 | [Desafío 62 - Capturando al Ladrón](./reversing-apk/desafio-62-capturando-al-ladron-hacklab-2026/) | Reversing Apk |
 | [Desafío 65 - El Estanque de Pepe](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/) | IDOR |
 | [Desafío 66 - Secreto en el LLM](./web-llm/desafio-66-secreto-en-el-llm-hacklab-2026/) | Web LLM |
 | [Desafío 67 - ProMarket](./logica-de-negocio/desafio-67-promarket-hacklab-2026/) | Lógica de negocio |
 | [Desafío 72 - FabiFiber](./rce/desafio-72-fabifiber-hacklab-2026/) | RCE |
+| [Desafío 73 - ArteStudio](./broken-access-control/desafio-73-artestudio-hacklab-2026/) | Broken Access Control |
 | [Desafío 74 - Veltra Bank](./auth/desafio-74-veltra-bank-hacklab-2026/) | Auth |
+| [Desafío NN - Encuentro Obligado](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) | IDOR - Lógica de negocio *(no confirmada)* |
 
 ### HackingDay 2026
 
