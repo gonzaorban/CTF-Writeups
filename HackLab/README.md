@@ -163,7 +163,7 @@ El puntaje máximo de un desafío en esta edición fue **50**.
 | [Desafío 72 - FabiFiber](./rce/desafio-72-fabifiber-hacklab-2026/) | RCE | 30 |
 | [Desafío 73 - ArteStudio](./broken-access-control/desafio-73-artestudio-hacklab-2026/) | Broken Access Control | 40 |
 | [Desafío 74 - Veltra Bank](./auth/desafio-74-veltra-bank-hacklab-2026/) | Auth | 50 |
-| [Desafío NN - Encuentro Obligado](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) | IDOR - Lógica de negocio *(no confirmada)* | 50 |
+| [Encuentro Obligado](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) *(no figura en softwareseguro)* | IDOR - Lógica de negocio *(no confirmada)* | 50 |
 | Balrog *(no figura en softwareseguro; sin writeup)* | — | 40 |
 | Frandawos Corp *(no figura en softwareseguro; sin writeup)* | — | 30 |
 
