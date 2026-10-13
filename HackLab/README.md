@@ -119,7 +119,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 ### [WebRTC](./webrtc/)
 
-- [Desafío 42 - Direct Chat](./webrtc/desafio-42-direct-chat/)
+- [Desafío 42 - Direct Chat (HackLab 2025)](./webrtc/desafio-42-direct-chat/)
 
 ### [CVE](./cve/)
 
@@ -127,7 +127,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 ### [CSRF](./csrf/)
 
-- [Desafío 40 - Imagen Importante](./csrf/desafio-40-imagen-importante/)
+- [Desafío 40 - Imagen Importante (HackLab 2025)](./csrf/desafio-40-imagen-importante/)
 
 ### [Fuerza bruta](./fuerza-bruta/)
 
@@ -184,7 +184,9 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 | Desafío | Categoría |
 | :--- | :--- |
 | [Desafío 39 - El mejor secreto](./fuerza-bruta/desafio-39-el-mejor-secreto-hacklab-2025/) | Fuerza bruta |
+| [Desafío 40 - Imagen Importante](./csrf/desafio-40-imagen-importante/) | CSRF |
 | [Desafío 41 - Reservas de hotel](./idor/desafio-41-reservas-hotel-hacklab-2025/) | IDOR |
+| [Desafío 42 - Direct Chat](./webrtc/desafio-42-direct-chat/) | WebRTC |
 | [Desafío 43 - Blog Hacklab v2](./xss/desafio-43-blog-hacklab-v2-hacklab-2025/) | XSS |
 | [Desafío 44 - Mis Viajes V2](./sql-injection/desafio-44-mis-viajes-v2/) | SQL Injection |
 | [Desafío 45 - Tetris](./reversing-desktop-apps/desafio-45-tetris-hacklab-2025/) | Reversing Desktop Apps - Lógica de negocio |

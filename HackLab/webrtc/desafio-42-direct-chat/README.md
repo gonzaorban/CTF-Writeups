@@ -1,7 +1,9 @@
 # Desafío 42 - Direct Chat
 
 **Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2025  
 **Categoría:** WebRTC  
+**Puntaje:** 35 (el puntaje máximo de un desafío en la competencia es 45)  
 
 ## Análisis
 

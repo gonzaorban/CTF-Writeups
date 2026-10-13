@@ -1,7 +1,9 @@
 # Desafío 40 - Imagen Importante
 
 **Plataforma:** HackLab (SoftwareSeguro)  
+**Edición:** HackLab 2025  
 **Categoría:** CSRF  
+**Puntaje:** 35 (el puntaje máximo de un desafío en la competencia es 45)  
 
 ## Enunciado
 
