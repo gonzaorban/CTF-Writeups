@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Cryptography
+**Puntaje:** 200 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Known-Plaintext Attack (KPA) / AES sin SubBytes (cifrado lineal)  
 **Dificultad:** Media (200 Puntos)  
 

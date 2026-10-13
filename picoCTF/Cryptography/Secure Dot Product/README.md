@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Cryptography
+**Puntaje:** 300 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Length Extension Attack (SHA-512) & Input Sanitization Flaw
 **Dificultad:** Difícil (300 puntos)
 **Herramientas:** Python, Pwntools, HashPump

@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Cryptography
+**Puntaje:** 200 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Truncamiento de Clave / Espacio de Claves Reducido (Brute Force)
 **Dificultad:** Media (200 puntos)
 **Herramientas:** Python

@@ -2,7 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** General Skills
-**Puntos:** 50
+**Puntaje:** 50 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Exposición de Secretos en Texto Plano / Manipulación de Flujos Binarios
 **Dificultad:** Media
 **Herramientas:** Linux Coreutils (`cat`, `file`, `unzip`, `mv`), SSH

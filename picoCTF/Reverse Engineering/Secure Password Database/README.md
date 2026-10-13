@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Reverse Engineering
+**Puntaje:** 200 (el puntaje máximo de un desafío en la competencia es 500)  
 **Vulnerabilidad:** Heartbleed (lectura fuera de límites de buffer) + Hash Bypass  
 **Dificultad:** Media  
 **Herramientas:** Ghidra, ltrace, Python3, pwntools  

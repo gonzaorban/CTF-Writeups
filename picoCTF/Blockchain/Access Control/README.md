@@ -4,6 +4,8 @@
 
 **Categoría:** Blockchain / Smart Contracts
 
+**Puntaje:** 200 (el puntaje máximo de un desafío en la competencia es 500)
+
 **Vulnerabilidad:** Broken Access Control / Unprotected State Variable
 
 **Dificultad:** Media

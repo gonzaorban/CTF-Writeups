@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Reverse Engineering (Malware Analysis)
+**Puntaje:** 400 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Credenciales Hardcodeadas (Hardcoded Credentials) / Evasión de Análisis Dinámico
 **Dificultad:** Alta (400 points)
 **Herramientas:** Kali Linux, Ghidra, Python (`pefile`), `binwalk`, `lzma`, `base64`

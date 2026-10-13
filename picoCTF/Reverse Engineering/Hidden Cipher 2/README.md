@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Reverse Engineering
+**Puntaje:** 100 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Criptografía Custom (Multiplicación Escalar ASCII) / Llave Dinámica Interactiva
 **Dificultad:** Media
 **Herramientas:** `file`, Python, Netcat

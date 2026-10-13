@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Cryptography (Steganography)
+**Puntaje:** 100 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Exposición de Datos Sensibles en Metadatos / Mal Manejo de Claves
 **Dificultad:** Fácil (100 puntos)
 **Herramientas:** ExifTool, xxd, OpenSSL

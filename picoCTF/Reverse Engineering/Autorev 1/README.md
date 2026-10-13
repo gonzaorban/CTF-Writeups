@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Reverse Engineering
+**Puntaje:** 200 (el puntaje máximo de un desafío en la competencia es 500)
 **Conceptos:** Ingeniería Inversa Automatizada, Análisis Estático (Ensamblador x86_64), Scripting (Python + Pwntools)
 **Dificultad:** Alta
 **Herramientas:** `pwntools`, `objdump`, `gdb`, Expresiones Regulares (Regex)

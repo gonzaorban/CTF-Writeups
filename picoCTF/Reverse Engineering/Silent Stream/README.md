@@ -1,7 +1,8 @@
 # 🎯 Silent Stream
 
 **Plataforma:** picoCTF 2026
-**Categoría:** Forensics
+**Categoría:** Reverse Engineering
+**Puntaje:** 200 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Exfiltración de Datos en Texto Claro (Ofuscación Custom) / Cifrado César a nivel de bytes
 **Dificultad:** Media
 **Herramientas:** Wireshark, Python (`scapy`), `file`

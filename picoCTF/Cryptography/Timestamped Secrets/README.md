@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Cryptography
+**Puntaje:** 200 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Insecure Key Derivation (Time-based Seed) / Weak Entropy
 **Dificultad:** Media (200 puntos)
 **Herramientas:** Python, PyCryptodome

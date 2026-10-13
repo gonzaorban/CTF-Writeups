@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Reverse Engineering
+**Puntaje:** 100 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Credenciales en Memoria RAM / Falta de Ofuscación Dinámica
 **Dificultad:** Media
 **Herramientas:** SSH, LLDB (Depurador de LLVM), Análisis de Ensamblador x86_64

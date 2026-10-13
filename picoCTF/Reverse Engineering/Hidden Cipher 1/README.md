@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Reverse Engineering
+**Puntaje:** 100 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Binario Empaquetado (Packed Binary) / Hardcoded Key / Known-Plaintext Attack (KPA)
 **Dificultad:** Media
 **Herramientas:** UPX, `file`, Ghidra, Python, Netcat

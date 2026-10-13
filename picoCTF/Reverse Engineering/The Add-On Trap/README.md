@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Reverse Engineering
+**Puntaje:** 200 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Almacenamiento Inseguro de Llaves Criptográficas / Exfiltración de Datos (Malware en Extensiones)
 **Dificultad:** Media
 **Herramientas:** `unzip`, `file`, Análisis Estático (JavaScript), Python (`cryptography.fernet`), Base64

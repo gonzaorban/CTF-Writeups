@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Cryptography
+**Puntaje:** 100 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Generador de Números Pseudoaleatorios Inseguro (LFSR)
 **Dificultad:** Media (100 puntos)
 **Herramientas:** Python, PyCryptodome

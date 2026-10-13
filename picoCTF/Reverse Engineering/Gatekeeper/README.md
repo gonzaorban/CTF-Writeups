@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Reverse Engineering
+**Puntaje:** 100 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Lógica de Validación de Tipos (Hex vs Dec) y Ofuscación de Salida
 **Dificultad:** Media
 **Herramientas:** Ghidra, Python, Netcat, Strings

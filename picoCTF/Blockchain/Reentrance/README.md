@@ -4,6 +4,8 @@
 
 **Categoría:** Blockchain / Smart Contracts
 
+**Puntaje:** 400 (el puntaje máximo de un desafío en la competencia es 500)
+
 **Vulnerabilidad:** Reentrancy (Reentrada)
 
 **Dificultad:** Difícil (400 puntos)

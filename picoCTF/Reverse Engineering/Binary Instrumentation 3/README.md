@@ -2,6 +2,7 @@
 
 **Plataforma:** picoCTF 2026
 **Categoría:** Reverse Engineering (Malware Analysis)
+**Puntaje:** 300 (el puntaje máximo de un desafío en la competencia es 500)
 **Vulnerabilidad:** Flujo Lógico Roto / Reflective PE Loader / Obfuscation
 **Dificultad:** Media/Alta (300 points)
 **Herramientas:** Kali Linux, Ghidra, Python (`pefile`), `binwalk`, `lzma`, `base64`

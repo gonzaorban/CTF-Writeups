@@ -7,7 +7,6 @@ Writeups de [picoCTF](https://picoctf.org/), organizados por categoría. La edic
 ### [Binary Exploitation](./Binary%20Exploitation/)
 
 - [Echo Escape 1](./Binary%20Exploitation/Echo%20Escape%201/) — 2026
-- [JITFP](./Binary%20Exploitation/JITFP/) — 2026
 
 ### [Blockchain](./Blockchain/)
 
@@ -25,10 +24,6 @@ Writeups de [picoCTF](https://picoctf.org/), organizados por categoría. La edic
 - [cryptomaze](./Cryptography/cryptomaze/) — 2026
 - [shift registers](./Cryptography/shift%20registers/) — 2026
 
-### [Forensics](./Forensics/)
-
-- [Silent Stream](./Forensics/Silent%20Stream/) — 2026
-
 ### [General Skills](./General%20Skills/)
 
 - [Piece by Piece](./General%20Skills/Piece%20by%20Piece/) — 2026
@@ -43,6 +38,7 @@ Writeups de [picoCTF](https://picoctf.org/), organizados por categoría. La edic
 - [Hidden Cipher 1](./Reverse%20Engineering/Hidden%20Cipher%201/) — 2026
 - [Hidden Cipher 2](./Reverse%20Engineering/Hidden%20Cipher%202/) — 2026
 - [Secure Password Database](./Reverse%20Engineering/Secure%20Password%20Database/) — 2026
+- [Silent Stream](./Reverse%20Engineering/Silent%20Stream/) — 2026
 - [The Add-On Trap](./Reverse%20Engineering/The%20Add-On%20Trap/) — 2026
 
 ### [Web Exploitation](./Web%20Exploitation/)
@@ -59,5 +55,5 @@ Writeups de [picoCTF](https://picoctf.org/), organizados por categoría. La edic
 
 | Edición | Desafíos |
 | :--- | ---: |
-| [2026](#índice-de-categorías) | 27 |
+| [2026](#índice-de-categorías) | 26 |
 | [2019](./Web%20Exploitation/Irish-Name-Repo-1/) | 1 |
