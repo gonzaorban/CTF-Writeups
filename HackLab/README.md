@@ -163,8 +163,15 @@ El puntaje máximo de un desafío en esta edición fue **50**.
 | [Desafío 72 - FabiFiber](./rce/desafio-72-fabifiber-hacklab-2026/) | RCE | 30 |
 | [Desafío 73 - ArteStudio](./broken-access-control/desafio-73-artestudio-hacklab-2026/) | Broken Access Control | 40 |
 | [Desafío 74 - Veltra Bank](./auth/desafio-74-veltra-bank-hacklab-2026/) | Auth | 50 |
-| Balrog *(no figura en softwareseguro; sin writeup)* | — | 40 |
-| Frandawos Corp *(no figura en softwareseguro; sin writeup)* | — | 30 |
+| Análisis de TPs *(writeup pendiente)* | — | 50 |
+| Balrog *(no figura en softwareseguro; writeup pendiente)* | — | 40 |
+| Frandawos Corp *(no figura en softwareseguro; writeup pendiente)* | — | 30 |
+| Juegos casi libres *(writeup pendiente)* | — | 50 |
+| Repo Filtrado *(writeup pendiente)* | — | 20 |
+| Revisor de videos *(writeup pendiente)* | — | 50 |
+| Vulpasar *(writeup pendiente)* | — | 30 |
+
+> De los 17 desafíos resueltos en esta edición (640 puntos), 10 tienen writeup y 7 siguen pendientes de documentar.
 
 ### HackingDay 2026
 
