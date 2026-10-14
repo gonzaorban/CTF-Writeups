@@ -1,10 +1,10 @@
 # Encuentro Obligado
 
-**Plataforma:** HackLab (SoftwareSeguro) — *este desafío no figura en la plataforma pública de softwareseguro*
+**Plataforma:** HackLab (SoftwareSeguro)
 
 **Edición:** HackLab 2026
 
-**Categoría:** IDOR - Lógica de negocio *(no confirmada)*
+**Categoría:** Condiciones de carrera
 
 **Puntaje:** 50 (es el puntaje máximo de un desafío en la competencia)
 
