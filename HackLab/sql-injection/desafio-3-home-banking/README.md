@@ -24,15 +24,27 @@ txtPin=' OR (1=1) -- &btnIngresar=Ingresar
 - `OR (1=1)` agrega una condición que siempre se cumple.
 - `--` comenta el resto de la consulta, anulando cualquier validación adicional.
 
+El backend construye una consulta del tipo (forma típica e insegura):
+
+```sql
+SELECT * FROM cuentas
+WHERE pin = '<valor_del_txtPin>' AND activo = 1;
+```
+
+Al enviar `txtPin=' OR 1=1 --`, la comilla cierra la cadena literal que abrió la aplicación y el resto queda así:
+
+```sql
+SELECT * FROM cuentas
+WHERE pin = '' OR 1=1 -- ' AND activo = 1;
+```
+
+Todo lo que sigue a `--` es un comentario, por lo que la cláusula efectiva es `WHERE pin = '' OR 1=1`. Como `1=1` es siempre verdadero, la consulta devuelve filas y la aplicación interpreta que el PIN es correcto.
+
 ![Desafío 3 - Home Banking - imagen 1](assets/01.png)
 
 ![Desafío 3 - Home Banking - imagen 2](assets/02.png)
 
 ![Desafío 3 - Home Banking - imagen 3](assets/03.png)
-
-![Desafío 3 - Home Banking - imagen 4](assets/04.png)
-
-![Desafío 3 - Home Banking - imagen 5](assets/05.png)
 
 ## Flag
 

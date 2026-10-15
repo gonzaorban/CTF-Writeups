@@ -9,6 +9,16 @@ Se identifica que el parámetro `type` en la URL se inserta directamente en la c
 
 La aplicación agrega una condición que excluye los registros "Top Secret", por lo que el objetivo es anular esa condición mediante inyección.
 
+A partir de los indicios (el valor de `type` se concatena dentro del `WHERE` y el mensaje de error al forzar comillas), la consulta del backend se puede reconstruir aproximadamente así:
+
+```sql
+SELECT p.* FROM proyectos p
+WHERE p.type = <VALOR_DEL_PARAMETRO>
+  AND p.id_nivel != (SELECT id FROM niveles WHERE nombre='Top Secret')
+```
+
+El parámetro `type` se inserta dentro del `WHERE` y la aplicación añade una condición extra (`AND p.id_nivel != ...`) que filtra los proyectos de nivel "Top Secret". Inyectando a través de `type` se puede cerrar la expresión y comentar esa condición para que los registros ocultos vuelvan a aparecer.
+
 ## Explotación
 
 Se abre Burp Suite y se interceptan las peticiones GET. Se identifica el parámetro `type`.
@@ -73,8 +83,6 @@ python sqlmap.py -u "https://chl-decfcb51-6464-4c00-a781-9713a1947e0f-nsa.softwa
 ![Desafío 2 - NSA - imagen 9](assets/09.png)
 
 ![Desafío 2 - NSA - imagen 10](assets/10.png)
-
-![Desafío 2 - NSA - imagen 11](assets/11.png)
 
 ## Flag
 
