@@ -47,6 +47,10 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 44 - Mis Viajes V2 (HackLab 2025)](./sql-injection/desafio-44-mis-viajes-v2/)
 - [Desafío 58 - Cuentas Claras (HackLab 2026)](./sql-injection/desafio-58-cuentas-claras-hacklab-2026/)
 
+### [SSTI](./ssti/)
+
+- [Efemérides (CTF AWS Student)](./ssti/desafio-NN-efemerides-ctf-aws-student/)
+
 ### [Criptoanálisis](./criptoanalisis/)
 
 - [Desafío 9 - Algoritmo personalizado (HackLab 2023)](./criptoanalisis/desafio-9-algoritmo-personalizado-hacklab-2023/)
@@ -158,7 +162,7 @@ El puntaje máximo de un desafío en esta edición fue **60**.
 | :--- | :--- | :--- |
 | [Respaldo Comprometido](./information-disclosure/desafio-NN-respaldo-comprometido-ctf-aws-student/) | Information Disclosure *(no confirmada)* | 30 |
 | [Helios Energy](./ssrf/desafio-NN-helios-energy-ctf-aws-student/) | SSRF | 30 |
-| Efemérides *(sin writeup)* | — | 30 |
+| [Efemérides](./ssti/desafio-NN-efemerides-ctf-aws-student/) | SSTI | 30 |
 | PhotoVault *(sin writeup)* | — | 40 |
 | Plantillas PDF *(sin writeup)* | — | 40 |
 | Caso Finance *(sin writeup)* | — | 50 |
