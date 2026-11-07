@@ -23,6 +23,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 52 - Soporte confidencial (HackingDay 2026)](./idor/desafio-52-soporte-confidencial-hackingday-2026/) — *también en: [Reversing Apk](./reversing-apk/)*
 - [Desafío 65 - El Estanque de Pepe (HackLab 2026)](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/)
 - [Desafío NN - Encuentro Obligado (HackLab 2026)](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) — *también en: [Lógica de negocio](./logica-de-negocio/)*
+- [PhotoVault (CTF AWS Student)](./idor/desafio-NN-photovault-ctf-aws-student/)
 
 ### [Tokens](./tokens/)
 
@@ -163,7 +164,7 @@ El puntaje máximo de un desafío en esta edición fue **60**.
 | [Respaldo Comprometido](./information-disclosure/desafio-NN-respaldo-comprometido-ctf-aws-student/) | Information Disclosure *(no confirmada)* | 30 |
 | [Helios Energy](./ssrf/desafio-NN-helios-energy-ctf-aws-student/) | SSRF | 30 |
 | [Efemérides](./ssti/desafio-NN-efemerides-ctf-aws-student/) | SSTI | 30 |
-| PhotoVault *(sin writeup)* | — | 40 |
+| [PhotoVault](./idor/desafio-NN-photovault-ctf-aws-student/) | IDOR | 40 |
 | Plantillas PDF *(sin writeup)* | — | 40 |
 | Caso Finance *(sin writeup)* | — | 50 |
 | Farmacias Tilo *(sin writeup)* | — | 50 |
