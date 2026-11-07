@@ -12,3 +12,4 @@
 - [Desafío 41 - Reservas de hotel (HackLab 2025)](./desafio-41-reservas-hotel-hacklab-2025/)
 - [Desafío 52 - Soporte confidencial (HackingDay 2026)](./desafio-52-soporte-confidencial-hackingday-2026/) — *también en: [Reversing Apk](../reversing-apk/)*
 - [Desafío 65 - El Estanque de Pepe (HackLab 2026)](./desafio-65-el-estanque-de-pepe-hacklab-2026/)
+- [PhotoVault (CTF AWS Student)](./desafio-NN-photovault-ctf-aws-student/)

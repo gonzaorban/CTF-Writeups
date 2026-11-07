@@ -22,6 +22,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 41 - Reservas de hotel (HackLab 2025)](./idor/desafio-41-reservas-hotel-hacklab-2025/)
 - [Desafío 52 - Soporte confidencial (HackingDay 2026)](./idor/desafio-52-soporte-confidencial-hackingday-2026/) — *también en: [Reversing Apk](./reversing-apk/)*
 - [Desafío 65 - El Estanque de Pepe (HackLab 2026)](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/)
+- [PhotoVault (CTF AWS Student)](./idor/desafio-NN-photovault-ctf-aws-student/)
 
 ### [Tokens](./tokens/)
 
@@ -45,6 +46,10 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 27 - Mis viajes (HackLab 2024)](./sql-injection/desafio-27-mis-viajes-hacklab-2024/)
 - [Desafío 44 - Mis Viajes V2 (HackLab 2025)](./sql-injection/desafio-44-mis-viajes-v2/)
 - [Desafío 58 - Cuentas Claras (HackLab 2026)](./sql-injection/desafio-58-cuentas-claras-hacklab-2026/)
+
+### [SSTI](./ssti/)
+
+- [Efemérides (CTF AWS Student)](./ssti/desafio-NN-efemerides-ctf-aws-student/)
 
 ### [Criptoanálisis](./criptoanalisis/)
 
@@ -79,6 +84,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 16 - Ventas](./information-disclosure/desafio-16-ventas/)
 - [Desafío 26 - Asistencia (HackLab 2024)](./information-disclosure/desafio-26-asistencia-hacklab-2024/)
+- [Desafío NN - Respaldo Comprometido (CTF AWS Student)](./information-disclosure/desafio-NN-respaldo-comprometido-ctf-aws-student/)
 
 ### [Auth](./auth/)
 
@@ -89,6 +95,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 ### [SSRF](./ssrf/)
 
 - [Desafío 38 - Cotizaciones Dólar](./ssrf/desafio-38-cotizaciones-dolar/)
+- [Helios Energy (CTF AWS Student)](./ssrf/desafio-NN-helios-energy-ctf-aws-student/)
 
 ### [Condiciones de carrera](./condiciones-de-carrera/)
 
@@ -146,6 +153,21 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 ## Desafíos por edición de la competencia
 
 Estos son los desafíos que corresponden a una edición de la competencia anual HackLab. El resto de los desafíos del índice pertenecen al catálogo permanente de la plataforma y no están asociados a una edición.
+
+### CTF AWS Student
+
+El puntaje máximo de un desafío en esta edición fue **60**.
+
+| Desafío | Categoría | Puntaje |
+| :--- | :--- | :--- |
+| [Respaldo Comprometido](./information-disclosure/desafio-NN-respaldo-comprometido-ctf-aws-student/) | Information Disclosure *(no confirmada)* | 30 |
+| [Helios Energy](./ssrf/desafio-NN-helios-energy-ctf-aws-student/) | SSRF *(no confirmada)* | 30 |
+| [Efemérides](./ssti/desafio-NN-efemerides-ctf-aws-student/) | SSTI *(no confirmada)* | 30 |
+| [PhotoVault](./idor/desafio-NN-photovault-ctf-aws-student/) | IDOR *(no confirmada)* | 40 |
+| Plantillas PDF *(sin writeup)* | — | 40 |
+| Caso Finance *(sin writeup)* | — | 50 |
+| Farmacias Tilo *(sin writeup)* | — | 50 |
+| Cipherdesk *(sin writeup)* | — | 60 |
 
 ### HackLab 2026
 
