@@ -22,7 +22,6 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 - [Desafío 41 - Reservas de hotel (HackLab 2025)](./idor/desafio-41-reservas-hotel-hacklab-2025/)
 - [Desafío 52 - Soporte confidencial (HackingDay 2026)](./idor/desafio-52-soporte-confidencial-hackingday-2026/) — *también en: [Reversing Apk](./reversing-apk/)*
 - [Desafío 65 - El Estanque de Pepe (HackLab 2026)](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/)
-- [Desafío NN - Encuentro Obligado (HackLab 2026)](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) — *también en: [Lógica de negocio](./logica-de-negocio/)*
 - [PhotoVault (CTF AWS Student)](./idor/desafio-NN-photovault-ctf-aws-student/)
 
 ### [Tokens](./tokens/)
@@ -101,12 +100,12 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 ### [Condiciones de carrera](./condiciones-de-carrera/)
 
 - [Desafío 32 - El analista (HackLab 2024)](./condiciones-de-carrera/desafio-32-el-analista-hacklab-2024/)
+- [Desafío 61 - Encuentro Obligado (HackLab 2026)](./condiciones-de-carrera/desafio-61-encuentro-obligado-hacklab-2026/)
 
 ### [Lógica de negocio](./logica-de-negocio/)
 
 - [Desafío 47 - Venta de autos (HackLab 2025)](./logica-de-negocio/desafio-47-venta-de-autos-hacklab-2025/)
 - [Desafío 67 - ProMarket (HackLab 2026)](./logica-de-negocio/desafio-67-promarket-hacklab-2026/)
-- [Desafío NN - Encuentro Obligado (HackLab 2026)](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) — *categoría principal: [IDOR](./idor/)*
 
 ### [Sanitización](./sanitizacion/)
 
@@ -162,9 +161,9 @@ El puntaje máximo de un desafío en esta edición fue **60**.
 | Desafío | Categoría | Puntaje |
 | :--- | :--- | :--- |
 | [Respaldo Comprometido](./information-disclosure/desafio-NN-respaldo-comprometido-ctf-aws-student/) | Information Disclosure *(no confirmada)* | 30 |
-| [Helios Energy](./ssrf/desafio-NN-helios-energy-ctf-aws-student/) | SSRF | 30 |
-| [Efemérides](./ssti/desafio-NN-efemerides-ctf-aws-student/) | SSTI | 30 |
-| [PhotoVault](./idor/desafio-NN-photovault-ctf-aws-student/) | IDOR | 40 |
+| [Helios Energy](./ssrf/desafio-NN-helios-energy-ctf-aws-student/) | SSRF *(no confirmada)* | 30 |
+| [Efemérides](./ssti/desafio-NN-efemerides-ctf-aws-student/) | SSTI *(no confirmada)* | 30 |
+| [PhotoVault](./idor/desafio-NN-photovault-ctf-aws-student/) | IDOR *(no confirmada)* | 40 |
 | Plantillas PDF *(sin writeup)* | — | 40 |
 | Caso Finance *(sin writeup)* | — | 50 |
 | Farmacias Tilo *(sin writeup)* | — | 50 |
@@ -176,18 +175,25 @@ El puntaje máximo de un desafío en esta edición fue **50**.
 
 | Desafío | Categoría | Puntaje |
 | :--- | :--- | :--- |
+| Desafío 56 - Juegos casi libres *(writeup pendiente)* | XSS | 50 |
+| Desafío 57 - Revisor de videos *(writeup pendiente)* | XSS | 50 |
 | [Desafío 58 - Cuentas Claras](./sql-injection/desafio-58-cuentas-claras-hacklab-2026/) | SQL Injection | 30 |
 | [Desafío 59 - El Casino de Germán](./reversing-desktop-apps/desafio-59-casino-de-german-hacklab-2026/) | Reversing Desktop Apps - Criptoanálisis | 50 |
+| Desafío 60 - Análisis de TPs *(writeup pendiente)* | Condiciones de carrera | 50 |
+| [Desafío 61 - Encuentro Obligado](./condiciones-de-carrera/desafio-61-encuentro-obligado-hacklab-2026/) | Condiciones de carrera | 50 |
 | [Desafío 62 - Capturando al Ladrón](./reversing-apk/desafio-62-capturando-al-ladron-hacklab-2026/) | Reversing Apk | 40 |
 | [Desafío 65 - El Estanque de Pepe](./idor/desafio-65-el-estanque-de-pepe-hacklab-2026/) | IDOR | 30 |
 | [Desafío 66 - Secreto en el LLM](./web-llm/desafio-66-secreto-en-el-llm-hacklab-2026/) | Web LLM | 30 |
 | [Desafío 67 - ProMarket](./logica-de-negocio/desafio-67-promarket-hacklab-2026/) | Lógica de negocio | 20 |
+| Desafío 68 - Repo Filtrado *(writeup pendiente)* | Information Disclosure | 20 |
+| Desafío 69 - Balrog *(writeup pendiente)* | Auth | 40 |
+| Desafío 71 - Vulpasar *(writeup pendiente)* | Forense | 30 |
 | [Desafío 72 - FabiFiber](./rce/desafio-72-fabifiber-hacklab-2026/) | RCE | 30 |
 | [Desafío 73 - ArteStudio](./broken-access-control/desafio-73-artestudio-hacklab-2026/) | Broken Access Control | 40 |
 | [Desafío 74 - Veltra Bank](./auth/desafio-74-veltra-bank-hacklab-2026/) | Auth | 50 |
-| [Encuentro Obligado](./idor/desafio-NN-encuentro-obligado-hacklab-2026/) *(no figura en softwareseguro)* | IDOR - Lógica de negocio *(no confirmada)* | 50 |
-| Balrog *(no figura en softwareseguro; sin writeup)* | — | 40 |
-| Frandawos Corp *(no figura en softwareseguro; sin writeup)* | — | 30 |
+| Frandawos Corp *(no figura en softwareseguro; writeup pendiente)* | — | 30 |
+
+> De los 17 desafíos resueltos en esta edición (640 puntos), 10 tienen writeup y 7 siguen pendientes de documentar.
 
 ### HackingDay 2026
 

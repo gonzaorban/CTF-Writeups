@@ -4,7 +4,7 @@
 
 **Edición:** CTF AWS Student
 
-**Categoría:** SSTI
+**Categoría:** SSTI *(no confirmada)*
 
 **Puntaje:** 30 (el puntaje máximo de un desafío en la competencia fue 60)
 

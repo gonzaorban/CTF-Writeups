@@ -4,7 +4,7 @@
 
 **Edición:** CTF AWS Student
 
-**Categoría:** IDOR
+**Categoría:** IDOR *(no confirmada)*
 
 **Puntaje:** 40 (el puntaje máximo de un desafío en la competencia fue 60)
 
