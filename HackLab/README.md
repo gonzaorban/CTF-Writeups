@@ -91,6 +91,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 ### [SSRF](./ssrf/)
 
 - [Desafío 38 - Cotizaciones Dólar](./ssrf/desafio-38-cotizaciones-dolar/)
+- [Helios Energy (CTF AWS Student)](./ssrf/desafio-NN-helios-energy-ctf-aws-student/)
 
 ### [Condiciones de carrera](./condiciones-de-carrera/)
 
@@ -156,7 +157,7 @@ El puntaje máximo de un desafío en esta edición fue **60**.
 | Desafío | Categoría | Puntaje |
 | :--- | :--- | :--- |
 | [Respaldo Comprometido](./information-disclosure/desafio-NN-respaldo-comprometido-ctf-aws-student/) | Information Disclosure *(no confirmada)* | 30 |
-| Helios Energy *(sin writeup)* | — | 30 |
+| [Helios Energy](./ssrf/desafio-NN-helios-energy-ctf-aws-student/) | SSRF | 30 |
 | Efemérides *(sin writeup)* | — | 30 |
 | PhotoVault *(sin writeup)* | — | 40 |
 | Plantillas PDF *(sin writeup)* | — | 40 |
