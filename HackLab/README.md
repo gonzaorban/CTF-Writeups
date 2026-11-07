@@ -80,6 +80,7 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 
 - [Desafío 16 - Ventas](./information-disclosure/desafio-16-ventas/)
 - [Desafío 26 - Asistencia (HackLab 2024)](./information-disclosure/desafio-26-asistencia-hacklab-2024/)
+- [Desafío NN - Respaldo Comprometido (CTF AWS Student)](./information-disclosure/desafio-NN-respaldo-comprometido-ctf-aws-student/)
 
 ### [Auth](./auth/)
 
@@ -147,6 +148,12 @@ HackLab es a la vez una plataforma con desafíos permanentes y una **competencia
 ## Desafíos por edición de la competencia
 
 Estos son los desafíos que corresponden a una edición de la competencia anual HackLab. El resto de los desafíos del índice pertenecen al catálogo permanente de la plataforma y no están asociados a una edición.
+
+### CTF AWS Student
+
+| Desafío | Categoría |
+| :--- | :--- |
+| [Respaldo Comprometido](./information-disclosure/desafio-NN-respaldo-comprometido-ctf-aws-student/) | Information Disclosure |
 
 ### HackLab 2026
 
