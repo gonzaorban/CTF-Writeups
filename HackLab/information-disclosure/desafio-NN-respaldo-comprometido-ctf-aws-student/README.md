@@ -4,7 +4,9 @@
 
 **Edición:** CTF AWS Student
 
-**Categoría:** Information Disclosure
+**Categoría:** Information Disclosure *(no confirmada)*
+
+**Puntaje:** 30 (el puntaje máximo de un desafío en la competencia fue 60)
 
 **Herramientas:** curl, Python (passlib)
 

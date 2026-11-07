@@ -151,9 +151,18 @@ Estos son los desafíos que corresponden a una edición de la competencia anual 
 
 ### CTF AWS Student
 
-| Desafío | Categoría |
-| :--- | :--- |
-| [Respaldo Comprometido](./information-disclosure/desafio-NN-respaldo-comprometido-ctf-aws-student/) | Information Disclosure |
+El puntaje máximo de un desafío en esta edición fue **60**.
+
+| Desafío | Categoría | Puntaje |
+| :--- | :--- | :--- |
+| [Respaldo Comprometido](./information-disclosure/desafio-NN-respaldo-comprometido-ctf-aws-student/) | Information Disclosure *(no confirmada)* | 30 |
+| Helios Energy *(sin writeup)* | — | 30 |
+| Efemérides *(sin writeup)* | — | 30 |
+| PhotoVault *(sin writeup)* | — | 40 |
+| Plantillas PDF *(sin writeup)* | — | 40 |
+| Caso Finance *(sin writeup)* | — | 50 |
+| Farmacias Tilo *(sin writeup)* | — | 50 |
+| Cipherdesk *(sin writeup)* | — | 60 |
 
 ### HackLab 2026
 
